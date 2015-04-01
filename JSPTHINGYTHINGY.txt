@@ -1,0 +1,32 @@
+            <div class="row">
+                <div class="col-md-4">
+                    <p>Program date:</p>
+                    <br/>
+                    <input type="text" name="Program_date" placeholder="Enter Program date(DD-MM-YYYY)">
+                </div>
+                <div class="col-md-4">
+                    <p>Start time:</p>
+                    <br/>
+                    <input type="text" name="Start_time" placeholder="Enter Start time">
+                </div>
+                <div class="col-md-4">
+                    <p>End time:</p>
+                    <br/>
+                    <input type="text" name="End_time" placeholder="Enter End time">
+                </div>
+                <div class="col-md-4">
+                    <p>Estimated # of attendees:</p>
+                    <br/>
+                    <input type="text" name="Estimated_attendees" placeholder="Enter Estimated attendees">
+                </div>
+                <div class="col-md-4">
+                    <p>Venue name:</p>
+                    <br/>
+                    <input type="text" name="Venue_name" placeholder="Enter Venue name">
+                </div>
+                <div class="col-md-4">
+                    <p>Venue address (city, state and zip):</p>
+                    <br/>
+                    <input type="text" name="Venue_address" placeholder="Enter Address(city, state and zip)">
+                </div>
+            </div>
