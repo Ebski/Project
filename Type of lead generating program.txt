@@ -1,0 +1,31 @@
+<div class="row">
+                <div class="col-md-4">
+                    <input type="checkbox" name="face_to_face"><span> Face-to-face event</span>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="Tradeshows"><span> Tradeshows</span>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="Mutli_touch-campaign"><span> Multi-touch campaign</span><br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="Door_opener_campaign"><span> Door opener campaign</span><br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="Third_party_campaign"><span> Third party campaign</span><br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="Direct_mail"><span> Direct mail</span><br>
+                </div>
+                <div class="col-md-4">
+                    <input type="checkbox" name="Blitz_campaign"><span> Blitz campaign (appt-setting
+                        or opportunity blitz)</span><br/>
+                </div>
+                <div class="col-md-12">
+                    <br/>
+                    <hr>
+                    <p>Program description and/or agenda:<p>
+                    <br/>
+                    <textarea name="description_agenda" cols="40" rows="5" style="width:100%; resize:none"></textarea>
+                </div>
+            </div>
