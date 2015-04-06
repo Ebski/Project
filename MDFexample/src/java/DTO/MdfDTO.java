@@ -30,6 +30,7 @@ public class MdfDTO {
     private int Third_party_campaign;
     private int Direct_mail;
     private int Blitz_campaign;
+    private String description_agenda;
     private int Diss_Storage_1;
     private int Diss_Storage_2;
     private int Diss_Storage_3;
@@ -48,6 +49,7 @@ public class MdfDTO {
     private int Diss_Solutions_4;
     private int Diss_Solutions_5;
     private int Diss_Solutions_6;
+    private String Diss_text;
     private int Target_1;
     private int Target_2;
     private int Target_3;

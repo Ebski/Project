@@ -170,7 +170,7 @@
                         <p>If so, please detail the specific software component(s) in the space below.</p>
                     </div>
                     <div class="col-md-12">
-                        <textarea name="Diss-text" cols="40" rows="5" style="width: 100%; resize: none"></textarea>
+                        <textarea name="Diss_text" cols="40" rows="5" style="width: 100%; resize: none"></textarea>
                     </div>
                 </div>
                 <hr>
