@@ -31,29 +31,29 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Submission date:</p>
-                        <input type="text" name="Submission_date" placeholder="Enter submission date" class="inputfield">
+                        <input type="text" name="Submission_date" placeholder="Enter submission date" class="inputfield" required>
                         <br/>
                         <br/>
                         <p>Company address (city, state and zip):</p>
-                        <input type="text" name="Company_address" placeholder="Enter company address">
+                        <input type="text" name="Company_address" placeholder="Enter company address" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Contact name:</p>
-                        <input type="text" name="Contact_name" placeholder="Enter contact name">
+                        <input type="text" name="Contact_name" placeholder="Enter contact name" required>
                         <br/>
                         <br/>
                         <p>Contact email:</p>
-                        <input type="text" name="Contact_email" placeholder="Enter contact email">
+                        <input type="text" name="Contact_email" placeholder="Enter contact email" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Company name:</p>
-                        <input type="text" name="Company_name" placeholder="Enter company name">
+                        <input type="text" name="Company_name" placeholder="Enter company name" required>
                         <br/>
                         <br/>
                         <p>Contact phone:</p>
-                        <input type="text" name="Contact_phone" placeholder="Enter contact phone">
+                        <input type="text" name="Contact_phone" placeholder="Enter contact phone" required>
                     </div>
                 </div>
                 <hr>
@@ -71,29 +71,29 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Program date:</p>
-                        <input type="text" name="Program_date" placeholder="Enter Program date(DD-MM-YYYY)">
+                        <input type="text" name="Program_date" placeholder="Enter Program date(DD-MM-YYYY)" required>
                         <br/>
                         <br/>
                         <p>Estimated # of attendees:</p>
-                        <input type="text" name="Estimated_attendees" placeholder="Enter Estimated attendees">
+                        <input type="text" name="Estimated_attendees" placeholder="Enter Estimated attendees" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Start time:</p>
-                        <input type="text" name="Start_time" placeholder="Enter Start time">
+                        <input type="text" name="Start_time" placeholder="Enter Start time" required>
                         <br/>
                         <br/>
                         <p>Venue name:</p>
-                        <input type="text" name="Venue_name" placeholder="Enter Venue name">
+                        <input type="text" name="Venue_name" placeholder="Enter Venue name" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>End time:</p>
-                        <input type="text" name="End_time" placeholder="Enter End time">
+                        <input type="text" name="End_time" placeholder="Enter End time" required>
                         <br/>
                         <br/>
                         <p>Venue address (city, state and zip):</p>
-                        <input type="text" name="Venue_address" placeholder="Enter Address(city, state and zip)">
+                        <input type="text" name="Venue_address" placeholder="Enter Address(city, state and zip)" required>
                     </div>
                 </div>
                 <hr>
@@ -196,10 +196,10 @@
                     <h3><strong>Additional program information</strong></h3>
                     <br/>
                     <div class="col-md-12">
-                        <span>Total projected cost of program: </span><input type="text" name="Additional-totalcost" placeholder="Enter total projected cost of program">
+                        <span>Total projected cost of program: </span><input type="text" name="Additional-totalcost" placeholder="Enter total projected cost of program" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Total MDF requesting from Dell: </span><input type="text" name="Additional-totalmdf" placeholder="Enter total MDF requesting from Dell">
+                        <span>Total MDF requesting from Dell: </span><input type="text" name="Additional-totalmdf" placeholder="Enter total MDF requesting from Dell" required>
                     </div>
                     <div class="col-md-12">
                         <br/>
@@ -208,19 +208,19 @@
                         <br/>
                     </div>
                     <div class="col-md-12">
-                        <span>Preferred method of reimbursement (AMEX or check/EFT): </span><input type="text" name="Additional-reimbursement" placeholder="Enter preferred method of reimbursement">
+                        <span>Preferred method of reimbursement (AMEX or check/EFT): </span><input type="text" name="Additional-reimbursement" placeholder="Enter preferred method of reimbursement" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Participating Technology Partner(s) (VMware, Microsoft, etc.): </span><input type="text" name="Additional-participating" placeholder="Enter participating Technology Partner(s)">
+                        <span>Participating Technology Partner(s) (VMware, Microsoft, etc.): </span><input type="text" name="Additional-participating" placeholder="Enter participating Technology Partner(s)" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Total Technology Partner(s) MDF contribution: </span><input type="text" name="Additional-contribution" placeholder="Enter total technology partner(s) MDF contribution">
+                        <span>Total Technology Partner(s) MDF contribution: </span><input type="text" name="Additional-contribution" placeholder="Enter total technology partner(s) MDF contribution" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Estimated # of opportunities (deals registered through Dell Deal Registration): </span><input type="text" name="Additional-opportunities" placeholder="Enter estimated # of opportunities">
+                        <span>Estimated # of opportunities (deals registered through Dell Deal Registration): </span><input type="text" name="Additional-opportunities" placeholder="Enter estimated # of opportunities" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Estimated revenue from program: </span><input type="text" name="Additional-revenue" placeholder="Enter estimated revenue from program">
+                        <span>Estimated revenue from program: </span><input type="text" name="Additional-revenue" placeholder="Enter estimated revenue from program" required>
                     </div>
                     <div class="col-md-12"
                          <br/>
