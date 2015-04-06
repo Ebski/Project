@@ -107,7 +107,7 @@
                         <input type="checkbox" name="Tradeshows"><span> Tradeshows</span>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" name="Mutli_touch-campaign"><span> Multi-touch campaign</span><br>
+                        <input type="checkbox" name="Mutli_touch_campaign"><span> Multi-touch campaign</span><br>
                     </div>
                     <div class="col-md-4">
                         <input type="checkbox" name="Door_opener_campaign"><span> Door opener campaign</span><br>
@@ -133,36 +133,36 @@
                     <div class="col-md-3">
                         <br/>
                         <p><strong>Storage</strong></p>
-                        <input type="checkbox" name="Diss-Storage-1"><span> Dell storage SC4000 series</span><br/>
-                        <input type="checkbox" name="Diss-Storage-2"><span> Dell storage PS4210 series</span><br/>
-                        <input type="checkbox" name="Diss-Storage-3"><span> Dell storage solutions</span><br/>
-                        <input type="checkbox" name="Diss-Storage-4"><span> Flash at the price of disk</span><br/>
-                        <input type="checkbox" name="Diss-Storage-5"><span> Fluid cache for SAN</span><br/>
-                        <input type="checkbox" name="Diss-Storage-6"><span> Data protection</span><br/>
+                        <input type="checkbox" name="Diss_Storage_1"><span> Dell storage SC4000 series</span><br/>
+                        <input type="checkbox" name="Diss_Storage_2"><span> Dell storage PS4210 series</span><br/>
+                        <input type="checkbox" name="Diss_Storage_3"><span> Dell storage solutions</span><br/>
+                        <input type="checkbox" name="Diss_Storage_4"><span> Flash at the price of disk</span><br/>
+                        <input type="checkbox" name="Diss_Storage_5"><span> Fluid cache for SAN</span><br/>
+                        <input type="checkbox" name="Diss_Storage_6"><span> Data protection</span><br/>
                     </div>
                     <div class="col-md-3">
                         <br/>
                         <p><strong>Server</strong></p>
-                        <input type="checkbox" name="Diss-Server-1"><span> The latest generation of Dell PowerEdge servers</span><br/>
-                        <input type="checkbox" name="Diss-Server-2"><span> Windows Server 2003 migration</span><br/>
-                        <input type="checkbox" name="Diss-Server-3"><span> x86 server transition</span><br/>
-                        <input type="checkbox" name="Diss-Server-4"><span> PowerEdge VRTX</span><br/>
+                        <input type="checkbox" name="Diss_Server_1"><span> The latest generation of Dell PowerEdge servers</span><br/>
+                        <input type="checkbox" name="Diss_Server_2"><span> Windows Server 2003 migration</span><br/>
+                        <input type="checkbox" name="Diss_Server_3"><span> x86 server transition</span><br/>
+                        <input type="checkbox" name="Diss_Server_4"><span> PowerEdge VRTX</span><br/>
                     </div>
                     <div class="col-md-3">
                         <br/>
                         <p><strong>Networking</strong></p>
-                        <input type="checkbox" name="Diss-Network-1"><span> Software-defined networking (SDN): data center networking</span><br/>
-                        <input type="checkbox" name="Diss-Network-2"><span> User-centric networking</span><br/>
+                        <input type="checkbox" name="Diss_Network_1"><span> Software-defined networking (SDN): data center networking</span><br/>
+                        <input type="checkbox" name="Diss_Network_2"><span> User-centric networking</span><br/>
                     </div>
                     <div class="col-md-3">
                         <br/>
                         <p><strong>Solutions</strong></p>
-                        <input type="checkbox" name="Diss-Solutions-1"><span> Cloud client-computing</span><br/>
-                        <input type="checkbox" name="Diss-Solutions-2"><span> Converged infrastructure hardware</span><br/>
-                        <input type="checkbox" name="Diss-Solutions-3"><span> Dell converged blade data center</span><br/>
-                        <input type="checkbox" name="Diss-Solutions-4"><span> Optimized enterprise (Future-ready IT)</span><br/>
-                        <input type="checkbox" name="Diss-Solutions-5"><span> PowerEdge FX architecture</span><br/>
-                        <input type="checkbox" name="Diss-Solutions-6"><span> Software-defined storage (SDS)</span><br/>
+                        <input type="checkbox" name="Diss_Solutions_1"><span> Cloud client-computing</span><br/>
+                        <input type="checkbox" name="Diss_Solutions_2"><span> Converged infrastructure hardware</span><br/>
+                        <input type="checkbox" name="Diss_Solutions_3"><span> Dell converged blade data center</span><br/>
+                        <input type="checkbox" name="Diss_Solutions_4"><span> Optimized enterprise (Future-ready IT)</span><br/>
+                        <input type="checkbox" name="Diss_Solutions_5"><span> PowerEdge FX architecture</span><br/>
+                        <input type="checkbox" name="Diss_Solutions_6"><span> Software-defined storage (SDS)</span><br/>
                     </div>
                     <div class="col-md-12">
                         <br/>
@@ -178,13 +178,13 @@
                     <br/>
                     <p><strong style="padding-left: 12px">Target audience</strong> (Please check all that apply):</p>
                     <div class="col-md-4">
-                        <input type="checkbox" name="Target-1"><span> SMB (Small & Medium Business)</span><br/>
+                        <input type="checkbox" name="Target_1"><span> SMB (Small & Medium Business)</span><br/>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" name="Target-2"><span> LE (Large Enterprise, LEA & G500)</span><br/>
+                        <input type="checkbox" name="Target_2"><span> LE (Large Enterprise, LEA & G500)</span><br/>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" name="Target-3"><span> PUB (Public, Federal, Education and Healthcare)*</span><br/>
+                        <input type="checkbox" name="Target_3"><span> PUB (Public, Federal, Education and Healthcare)*</span><br/>
                     </div>
                     <div class="col-md-12">
                         <br/>
@@ -196,10 +196,10 @@
                     <h3><strong>Additional program information</strong></h3>
                     <br/>
                     <div class="col-md-12">
-                        <span>Total projected cost of program: </span><input type="text" name="Additional-totalcost" placeholder="Enter total projected cost of program" required>
+                        <span>Total projected cost of program: </span><input type="text" name="Additional_totalcost" placeholder="Enter total projected cost of program" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Total MDF requesting from Dell: </span><input type="text" name="Additional-totalmdf" placeholder="Enter total MDF requesting from Dell" required>
+                        <span>Total MDF requesting from Dell: </span><input type="text" name="Additional_totalmdf" placeholder="Enter total MDF requesting from Dell" required>
                     </div>
                     <div class="col-md-12">
                         <br/>
@@ -208,19 +208,19 @@
                         <br/>
                     </div>
                     <div class="col-md-12">
-                        <span>Preferred method of reimbursement (AMEX or check/EFT): </span><input type="text" name="Additional-reimbursement" placeholder="Enter preferred method of reimbursement" required>
+                        <span>Preferred method of reimbursement (AMEX or check/EFT): </span><input type="text" name="Additional_reimbursement" placeholder="Enter preferred method of reimbursement" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Participating Technology Partner(s) (VMware, Microsoft, etc.): </span><input type="text" name="Additional-participating" placeholder="Enter participating Technology Partner(s)" required>
+                        <span>Participating Technology Partner(s) (VMware, Microsoft, etc.): </span><input type="text" name="Additional_participating" placeholder="Enter participating Technology Partner(s)" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Total Technology Partner(s) MDF contribution: </span><input type="text" name="Additional-contribution" placeholder="Enter total technology partner(s) MDF contribution" required>
+                        <span>Total Technology Partner(s) MDF contribution: </span><input type="text" name="Additional_contribution" placeholder="Enter total technology partner(s) MDF contribution" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Estimated # of opportunities (deals registered through Dell Deal Registration): </span><input type="text" name="Additional-opportunities" placeholder="Enter estimated # of opportunities" required>
+                        <span>Estimated # of opportunities (deals registered through Dell Deal Registration): </span><input type="text" name="Additional_opportunities" placeholder="Enter estimated # of opportunities" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Estimated revenue from program: </span><input type="text" name="Additional-revenue" placeholder="Enter estimated revenue from program" required>
+                        <span>Estimated revenue from program: </span><input type="text" name="Additional_revenue" placeholder="Enter estimated revenue from program" required>
                     </div>
                     <div class="col-md-12"
                          <br/>
