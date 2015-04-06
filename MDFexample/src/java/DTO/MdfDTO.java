@@ -61,7 +61,20 @@ public class MdfDTO {
     private String Additional_opportunities;
     private String Additional_revenue;
 
-    public MdfDTO(String Submission_date, String Company_address, String Contact_name, String Contact_email, String Company_name, String Contact_phone, String Program_date, String Estimated_attendees, String Start_time, String Venue_name, String End_time, String Venue_address, String face_to_face, String Tradeshows, String Mutli_touch_campaign, String Door_opener_campaign, String Third_party_campaign, String Direct_mail, String Blitz_campaign, String description_agenda, String Diss_Storage_1, String Diss_Storage_2, String Diss_Storage_3, String Diss_Storage_4, String Diss_Storage_5, String Diss_Storage_6, String Diss_Server_1, String Diss_Server_2, String Diss_Server_3, String Diss_Server_4, String Diss_Network_1, String Diss_Network_2, String Diss_Solutions_1, String Diss_Solutions_2, String Diss_Solutions_3, String Diss_Solutions_4, String Diss_Solutions_5, String Diss_Solutions_6, String Diss_text, String Target_1, String Target_2, String Target_3, String Additional_totalcost, String Additional_totalmdf, String Additional_reimbursement, String Additional_participating, String Additional_contribution, String Additional_opportunities, String Additional_revenue) {
+    public MdfDTO(String Submission_date, String Company_address, String Contact_name, 
+            String Contact_email, String Company_name, String Contact_phone, String Program_date, 
+            String Estimated_attendees, String Start_time, String Venue_name, String End_time, 
+            String Venue_address, String face_to_face, String Tradeshows, String Mutli_touch_campaign, 
+            String Door_opener_campaign, String Third_party_campaign, String Direct_mail, 
+            String Blitz_campaign, String description_agenda, String Diss_Storage_1, 
+            String Diss_Storage_2, String Diss_Storage_3, String Diss_Storage_4, String Diss_Storage_5, 
+            String Diss_Storage_6, String Diss_Server_1, String Diss_Server_2, String Diss_Server_3, 
+            String Diss_Server_4, String Diss_Network_1, String Diss_Network_2, String Diss_Solutions_1, 
+            String Diss_Solutions_2, String Diss_Solutions_3, String Diss_Solutions_4, 
+            String Diss_Solutions_5, String Diss_Solutions_6, String Diss_text, String Target_1, 
+            String Target_2, String Target_3, String Additional_totalcost, String Additional_totalmdf, 
+            String Additional_reimbursement, String Additional_participating, 
+            String Additional_contribution, String Additional_opportunities, String Additional_revenue) {
         this.Submission_date = Submission_date;
         this.Company_address = Company_address;
         this.Contact_name = Contact_name;
@@ -512,7 +525,26 @@ public class MdfDTO {
 
     @Override
     public String toString() {
-        return "MdfDTO{" + "Submission_date=" + Submission_date + ", Company_address=" + Company_address + ", Contact_name=" + Contact_name + ", Contact_email=" + Contact_email + ", Company_name=" + Company_name + ", Contact_phone=" + Contact_phone + ", Program_date=" + Program_date + ", Estimated_attendees=" + Estimated_attendees + ", Start_time=" + Start_time + ", Venue_name=" + Venue_name + ", End_time=" + End_time + ", Venue_address=" + Venue_address + ", face_to_face=" + face_to_face + ", Tradeshows=" + Tradeshows + ", Mutli_touch_campaign=" + Mutli_touch_campaign + ", Door_opener_campaign=" + Door_opener_campaign + ", Third_party_campaign=" + Third_party_campaign + ", Direct_mail=" + Direct_mail + ", Blitz_campaign=" + Blitz_campaign + ", description_agenda=" + description_agenda + ", Diss_Storage_1=" + Diss_Storage_1 + ", Diss_Storage_2=" + Diss_Storage_2 + ", Diss_Storage_3=" + Diss_Storage_3 + ", Diss_Storage_4=" + Diss_Storage_4 + ", Diss_Storage_5=" + Diss_Storage_5 + ", Diss_Storage_6=" + Diss_Storage_6 + ", Diss_Server_1=" + Diss_Server_1 + ", Diss_Server_2=" + Diss_Server_2 + ", Diss_Server_3=" + Diss_Server_3 + ", Diss_Server_4=" + Diss_Server_4 + ", Diss_Network_1=" + Diss_Network_1 + ", Diss_Network_2=" + Diss_Network_2 + ", Diss_Solutions_1=" + Diss_Solutions_1 + ", Diss_Solutions_2=" + Diss_Solutions_2 + ", Diss_Solutions_3=" + Diss_Solutions_3 + ", Diss_Solutions_4=" + Diss_Solutions_4 + ", Diss_Solutions_5=" + Diss_Solutions_5 + ", Diss_Solutions_6=" + Diss_Solutions_6 + ", Diss_text=" + Diss_text + ", Target_1=" + Target_1 + ", Target_2=" + Target_2 + ", Target_3=" + Target_3 + ", Additional_totalcost=" + Additional_totalcost + ", Additional_totalmdf=" + Additional_totalmdf + ", Additional_reimbursement=" + Additional_reimbursement + ", Additional_participating=" + Additional_participating + ", Additional_contribution=" + Additional_contribution + ", Additional_opportunities=" + Additional_opportunities + ", Additional_revenue=" + Additional_revenue + '}';
+        return "MdfDTO{" + "Submission_date=" + Submission_date + ", Company_address=" + Company_address + 
+                ", Contact_name=" + Contact_name + ", Contact_email=" + Contact_email + ", Company_name=" + Company_name + 
+                ", Contact_phone=" + Contact_phone + ", Program_date=" + Program_date + 
+                ", Estimated_attendees=" + Estimated_attendees + ", Start_time=" + Start_time + 
+                ", Venue_name=" + Venue_name + ", End_time=" + End_time + ", Venue_address=" + Venue_address + 
+                ", face_to_face=" + face_to_face + ", Tradeshows=" + Tradeshows + ", Mutli_touch_campaign=" + Mutli_touch_campaign + 
+                ", Door_opener_campaign=" + Door_opener_campaign + ", Third_party_campaign=" + Third_party_campaign + 
+                ", Direct_mail=" + Direct_mail + ", Blitz_campaign=" + Blitz_campaign + ", description_agenda=" + description_agenda + 
+                ", Diss_Storage_1=" + Diss_Storage_1 + ", Diss_Storage_2=" + Diss_Storage_2 + ", Diss_Storage_3=" + Diss_Storage_3 + 
+                ", Diss_Storage_4=" + Diss_Storage_4 + ", Diss_Storage_5=" + Diss_Storage_5 + ", Diss_Storage_6=" + Diss_Storage_6 + 
+                ", Diss_Server_1=" + Diss_Server_1 + ", Diss_Server_2=" + Diss_Server_2 + ", Diss_Server_3=" + Diss_Server_3 + 
+                ", Diss_Server_4=" + Diss_Server_4 + ", Diss_Network_1=" + Diss_Network_1 + ", Diss_Network_2=" + Diss_Network_2 + 
+                ", Diss_Solutions_1=" + Diss_Solutions_1 + ", Diss_Solutions_2=" + Diss_Solutions_2 + 
+                ", Diss_Solutions_3=" + Diss_Solutions_3 + ", Diss_Solutions_4=" + Diss_Solutions_4 + 
+                ", Diss_Solutions_5=" + Diss_Solutions_5 + ", Diss_Solutions_6=" + Diss_Solutions_6 + 
+                ", Diss_text=" + Diss_text + ", Target_1=" + Target_1 + ", Target_2=" + Target_2 + ", Target_3=" + Target_3 + 
+                ", Additional_totalcost=" + Additional_totalcost + ", Additional_totalmdf=" + Additional_totalmdf + 
+                ", Additional_reimbursement=" + Additional_reimbursement + ", Additional_participating=" + Additional_participating + 
+                ", Additional_contribution=" + Additional_contribution + ", Additional_opportunities=" + Additional_opportunities + 
+                ", Additional_revenue=" + Additional_revenue + '}';
     }
 
     
