@@ -20,7 +20,7 @@
 
     </head>
     <body>
-        <form>
+        <form action="mdfServlets">
             <div class="container">
                 <header>
                     <h1>Enterprise Field Marketing:</h1>
@@ -230,7 +230,7 @@
                     </div>
                 </div>
                 <div class="col-md-12">
-                    <button class="btn btn-primary pull-right" id="Accept" disabled><a href="submitted.jsp" style="text-decoration: none; color: white;">Submit</a></button>
+                    <button class="btn btn-primary pull-right" id="Accept" style="text-decoration: none; color: white;" disabled>Submit</button>
                 </div>
                 <div class="col-md-12 pull-right" style="text-align: right">
                     <input type="checkbox" name="read-licens" onClick="EnableSubmit(this)"> <span>I have read and agree with the </span><a href="toa.jsp" target="_blank">terms and conditions</a>
