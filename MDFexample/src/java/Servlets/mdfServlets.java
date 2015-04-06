@@ -5,13 +5,16 @@
  */
 package Servlets;
 
+import DTO.MdfDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -31,19 +34,64 @@ public class mdfServlets extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet mdfServlets</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet mdfServlets at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        MdfDTO mdf = new MdfDTO(request.getParameter("Submission_date"),
+        request.getParameter("Company_address"),
+        request.getParameter("Contact_name"),
+        request.getParameter("Contact_email"),
+        request.getParameter("Company_name"),
+        request.getParameter("Contact_phone"),
+        request.getParameter("Program_date"),
+        request.getParameter("Estimated_attendees"),
+        request.getParameter("Start_time"),
+        request.getParameter("Venue_name"),
+        request.getParameter("End_time"),
+        request.getParameter("Venue_address"),
+        request.getParameter("face_to_face"),
+        request.getParameter("Tradeshows"),
+        request.getParameter("Mutli_touch_campaign"),
+        request.getParameter("Door_opener_campaign"),
+        request.getParameter("Third_party_campaign"),
+        request.getParameter("Direct_mail"),
+        request.getParameter("Blitz_campaign"),
+        request.getParameter("description_agenda"),
+        request.getParameter("Diss_Storage_1"),
+        request.getParameter("Diss_Storage_2"),
+        request.getParameter("Diss_Storage_3"),
+        request.getParameter("Diss_Storage_4"),
+        request.getParameter("Diss_Storage_5"),
+        request.getParameter("Diss_Storage_6"),
+        request.getParameter("Diss_Server_1"),
+        request.getParameter("Diss_Server_2"),
+        request.getParameter("Diss_Server_3"),
+        request.getParameter("Diss_Server_4"),
+        request.getParameter("Diss_Network_1"),
+        request.getParameter("Diss_Network_2"),
+        request.getParameter("Diss_Solutions_1"),
+        request.getParameter("Diss_Solutions_2"),
+        request.getParameter("Diss_Solutions_3"),
+        request.getParameter("Diss_Solutions_4"),
+        request.getParameter("Diss_Solutions_5"),
+        request.getParameter("Diss_Solutions_6"),
+        request.getParameter("Diss_text"),
+        request.getParameter("Target_1"),
+        request.getParameter("Target_2"),
+        request.getParameter("Target_3"),
+        request.getParameter("Additional_totalcost"),
+        request.getParameter("Additional_totalmdf"),
+        request.getParameter("Additional_reimbursement"),
+        request.getParameter("Additional_participating"),
+        request.getParameter("Additional_contribution"),
+        request.getParameter("Additional_opportunities"),
+        request.getParameter("Additional_revenue"));
+        
+        
+//        HttpSession session = request.getSession();
+//
+//        session.setAttribute("person", p);
+//        session.setAttribute("productList", productList);
+
+        RequestDispatcher disp = request.getRequestDispatcher("store.jsp");
+        disp.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
