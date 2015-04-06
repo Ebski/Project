@@ -1,0 +1,277 @@
+package org.apache.jsp;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.jsp.*;
+
+public final class toa_jsp extends org.apache.jasper.runtime.HttpJspBase
+    implements org.apache.jasper.runtime.JspSourceDependent {
+
+  private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
+
+  private static java.util.List<String> _jspx_dependants;
+
+  private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
+
+  public java.util.List<String> getDependants() {
+    return _jspx_dependants;
+  }
+
+  public void _jspService(HttpServletRequest request, HttpServletResponse response)
+        throws java.io.IOException, ServletException {
+
+    PageContext pageContext = null;
+    HttpSession session = null;
+    ServletContext application = null;
+    ServletConfig config = null;
+    JspWriter out = null;
+    Object page = this;
+    JspWriter _jspx_out = null;
+    PageContext _jspx_page_context = null;
+
+    try {
+      response.setContentType("text/html;charset=UTF-8");
+      pageContext = _jspxFactory.getPageContext(this, request, response,
+      			null, true, 8192, true);
+      _jspx_page_context = pageContext;
+      application = pageContext.getServletContext();
+      config = pageContext.getServletConfig();
+      session = pageContext.getSession();
+      out = pageContext.getOut();
+      _jspx_out = out;
+      _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
+
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("<!DOCTYPE html>\n");
+      out.write("<html>\n");
+      out.write("    <head>\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
+      out.write("        <title>Marketing Development Fund - Terms of condition</title>\n");
+      out.write("        \n");
+      out.write("        <!--Stylesheets-->\n");
+      out.write("        <link href=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <link href=\"css/font-awesome.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>\n");
+      out.write("        <link href=\"css/custom.css\" rel=\"stylesheet\" type=\"text/css\"/>\n");
+      out.write("        \n");
+      out.write("    </head>\n");
+      out.write("    <body>\n");
+      out.write("        <h2>Dell MDF Program Process, Terms and Conditions</h2>\n");
+      out.write("        <p>Dell is pleased to provide this Field Marketing Program (“Program”) to Dell PartnerDirect Partners in the United States.<br>\n");
+      out.write("            The purpose of this Program is to provide certain marketing development funds, as further described herein, (“Funds”)\n");
+      out.write("            to Dell PartnerDirect Partners for Partners’ promotion of Dell products and services and to generate marketing leads\n");
+      out.write("            for Dell products and services (each such promotional activity an “Activity”).<br>\n");
+      out.write("            Funds are provided on a first-come, first-serve basis, and approval of Fund proposals is subject to the following criteria:</p>\n");
+      out.write("        <p> • Partner must hold one or more active competencies within Enterprise (Storage, Server, and/or Networking) and\n");
+      out.write("            maintain a Preferred or Premier Partner status<br>\n");
+      out.write("            • Submission of a clearly defined outline of the proposed marketing activity<br>\n");
+      out.write("            • Review of Partner’s frequency of previous promotional funding requests<br>\n");
+      out.write("            • Discussion with Partner’s designated field marketing manager of Partner’s customer end-user leads database prior\n");
+      out.write("            to the proposed marketing activity<br>\n");
+      out.write("            • Verification of Partner’s relationship with local System Engineer (“SE”), Solutions Specialist (“SS”) and/or a Channel\n");
+      out.write("            Account Manager (“CAM”)<br>\n");
+      out.write("            • Whether proposed marketing activity topic is appropriate to Partner’s location and region<br>\n");
+      out.write("            • Whether any overlap exists between the proposed marketing activity and another Partner’s approved marketing\n");
+      out.write("            activity in the same location and region<br>\n");
+      out.write("            • Successfulness of prior Partner funded marketing activities<br>\n");
+      out.write("            • Whether marketing activity budget request is reasonable to type of activity requested<br>\n");
+      out.write("            • Any other requirement as deemed appropriate by Dell</p>\n");
+      out.write("        <p>It is in Dell’s sole discretion to determine which Activities will be funded.<br>\n");
+      out.write("            In order to receive Funds, Partner must submit a complete and accurate Dell Marketing/Demand Generation Request form via email to the Partner’s\n");
+      out.write("            pre-designated marketing manager forty-five (45) days prior to the target date of the Activity.<br>\n");
+      out.write("            Partners can determine who their appropriate field marketing contact is by contacting the Partner Resource Desk at certified_PRD@dell.\n");
+      out.write("            com), or by logging on to the Dell PartnerDirect Portal, going to the Demand Generation Center located under the\n");
+      out.write("            Marketing and Sales Tab, and under the Q&A section, clicking on the “Who is my Dedicated Field Marketing Manager?”\n");
+      out.write("            question. <br>\n");
+      out.write("            Partner will be notified via email within five to seven (5-7) business days of the submission date of Dell’s\n");
+      out.write("            acceptance or rejection of the proposal as well as, if the proposal is accepted, a Dell MDF Program Confirmation of\n");
+      out.write("            the Activity.<br>\n");
+      out.write("            All subsequent correspondence regarding this Activity must reference the MDF Approval Number found in\n");
+      out.write("            the Dell MDF Program Confirmation.<br>\n");
+      out.write("            Activity requirements outlined in the Dell MDF Program Confirmation, as well as\n");
+      out.write("            all requirements referenced herein must be met to qualify for the Funds. </p>\n");
+      out.write("\n");
+      out.write("        <p>Dell will fund up to fifty percent (50%) of the projected costs, based on actual costs incurred for an Activity.<br>\n");
+      out.write("            Funding will be proportionate to the number of Activity sponsors (i.e. - Dell and Partner: up to 50%; Dell, Channel Partner, and\n");
+      out.write("            Technology Partner: up to 33%).<br>\n");
+      out.write("            If a Dell approved Activity is cancelled or postponed, the Partner must notify Dell in\n");
+      out.write("            writing and every attempt must be made to provide cancellation notice at least fourteen (14) days prior to the Activity\n");
+      out.write("            date. </p>\n");
+      out.write("\n");
+      out.write("        <h4>Funds may be used for end user programs only. Examples of activities are:</h4>\n");
+      out.write("        <p>    • Face-to-face event<br>\n");
+      out.write("            • Direct mail<br>\n");
+      out.write("            • Tradeshow (local)<br>\n");
+      out.write("            • Webinar<br>\n");
+      out.write("            • Blitz day<br>\n");
+      out.write("            • Online advertising<br>\n");
+      out.write("            • Third party program<br>\n");
+      out.write("            • Or as otherwise previously approved by Dell<br>\n");
+      out.write("            • Door opener<br>\n");
+      out.write("        <h4>Funds are not applicable to the following:</h4>\n");
+      out.write("        <p>\n");
+      out.write("            • Sales Trainings<br>\n");
+      out.write("            • Networking events/meet and greets<br>\n");
+      out.write("            • National sales meetings<br>\n");
+      out.write("            • Demo equipment purchases<br>\n");
+      out.write("            • Travel<br>\n");
+      out.write("            • Or any other event that Dell deems not applicable<br>\n");
+      out.write("\n");
+      out.write("            The terms and conditions set forth herein (“Agreement”) shall apply to the program.<br>\n");
+      out.write("            By click-accepting these terms, requesting funds, or otherwise participating in the program, you (“You/Your”) agree to\n");
+      out.write("            be bound by the terms set forth in this agreement.</p>\n");
+      out.write("        <h3>Eligibility:</h3>\n");
+      out.write("        <p> You agree that You will be a Dell PartnerDirect Partner in good standing throughout the duration of the\n");
+      out.write("            Agreement, as determined by Dell.<br>\n");
+      out.write("            To be eligible for funds, You will have obtained, and shall maintain, storage, server,\n");
+      out.write("            and/or networking competencies and hold a Preferred or Premier Partner status during the period of the activities.<br>\n");
+      out.write("            You shall maintain a current registration profile, including yearly updates, and promptly notify Dell, in writing, of any\n");
+      out.write("            change(s) that may affect your participation.<br>\n");
+      out.write("            You shall meet all other reasonable criteria as required by Dell.<br>\n");
+      out.write("            Promotion of Dell products and services. You shall use funds exclusively to promote Dell products and services.</p><br>\n");
+      out.write("        <h3>Proof of Performance:</h3>\n");
+      out.write("        <p>  You shall provide Dell with Proof of Performance of activities, in the format request by Dell,\n");
+      out.write("            within thirty (30) days of the conclusion of the activities, including any additional detail requested by Dell (collectively,\n");
+      out.write("            the “Materials”).<br>\n");
+      out.write("            The leads generated by the demand generation activity must be uploaded into the Dell Partner Lead\n");
+      out.write("            Management tool within 48 hours of executing the activity. <br>\n");
+      out.write("            Your invoice, referencing Dell’s PO number if applicable, a\n");
+      out.write("            copy of the Dell MDF Program Confirmation, and any supporting documentation outlining the full cost of the Activity incurred by the Partner,\n");
+      out.write("            as well as any additional requirements as determined by Dell, including but not limited to\n");
+      out.write("            event photos.<br>\n");
+      out.write("            If customer leads are not submitted into the Partner Lead Management tool within two (2) weeks of the\n");
+      out.write("            activity’s completion, Dell reserves the right to deny payment of the funds in part or in full.\n");
+      out.write("            Any proof of performance not submitted to Dell within the requested time period will result in your forfeiture of rights in the Funds.\n");
+      out.write("            You agree to provide accurate and complete information.</p>\n");
+      out.write("        <h3>Disbursement of Funds:</h3>\n");
+      out.write("        <p> You will be paid the applicable funds, in United States Dollars, upon completion of an\n");
+      out.write("            Activity, provided that all appropriate Materials and tax documentation (as outlined below) have been provided to Dell\n");
+      out.write("            within the time period required.<br>\n");
+      out.write("            Dell shall not be responsible to provide You with any funds for any activities that have\n");
+      out.write("            not been approved and agreed to in writing by Dell in advance of your undertaking the Activities.<br>\n");
+      out.write("            Dell shall not be responsible to pay You for any amounts above and beyond those agreed to in writing by Dell.<br>\n");
+      out.write("            In the event that you receive incentives related to blitz day activities, You shall distribute such amounts to Your sales\n");
+      out.write("            representatives that both booked and/or closed the sale of the associated qualifying products and/or services\n");
+      out.write("            accordingly.<br>\n");
+      out.write("            You shall be responsible for all charges and applicable taxes associated with such payments.<br>\n");
+      out.write("            Notwithstanding the foregoing, You may withhold from distribution any applicable processing fees that You incurred in\n");
+      out.write("            connection with your internal administration of, and payments to be made to Your sales representatives in connection\n");
+      out.write("            with, a blitz day activity. </p>\n");
+      out.write("        <h3>License:</h3>\n");
+      out.write("        <p> You shall provide Dell with a license to use any Materials as Dell required in order to fulfill its obligations set\n");
+      out.write("            forth in this Agreement.<br>\n");
+      out.write("            In addition, You grant Dell a worldwide right and license to use the Materials for its marketing\n");
+      out.write("            purposes.<br>\n");
+      out.write("            You represent and warrant that You have obtained all necessary rights and consents to provide the license\n");
+      out.write("            rights set forth in this section to Dell.</p>\n");
+      out.write("        <h3>Return of Funds:</h3>\n");
+      out.write("        <p> If Dell has provided any funds, including funds provided in advance of receiving adequate Proof of\n");
+      out.write("            Performance, (a) that are in excess of the amounts spent by You for the Activities or (b) for which Dell does not\n");
+      out.write("            subsequently receive adequate Proof of Performance for Activities in a timely manner, as required in this Agreement,\n");
+      out.write("            You forfeit any rights to such amounts (“Unearned Amounts”) and agree to return promptly to Dell any Unearned\n");
+      out.write("            Amounts that have been disbursed by Dell. </p>\n");
+      out.write("        <h3>Records:</h3>\n");
+      out.write("        <p> Dell’s records and systems shall be authoritative and conclusive for purposes of determining all compliance\n");
+      out.write("            under the Program and performing any computation or calculation regarding the Program.<br>\n");
+      out.write("            All decisions made by Dell are final.</p>\n");
+      out.write("        <h3>Audit:</h3>\n");
+      out.write("        <p>Dell reserves the right to audit or request verification of any claims submitted.</p>\n");
+      out.write("        <h3>Tax Liability:</h3>\n");
+      out.write("        <p>Taxes on Funds are the sole responsibility of You.<br>\n");
+      out.write("            All federal, state, and local laws and regulations apply.<br>\n");
+      out.write("            You may be required to provide relevant tax information to Dell for tax reporting purposes.<br>\n");
+      out.write("            Failure to provide requested tax information to Dell within thirty (30) days after Your acceptance of this Agreement will result in forfeiture\n");
+      out.write("            by You of the Funds.</p>\n");
+      out.write("        <h3>Independent Contractors:</h3>\n");
+      out.write("        <p> Dell and You are independent contractors.<br>\n");
+      out.write("            Neither party will state, imply, nor knowingly permit anyone to finder that any other relationship exists between the parties.</p>\n");
+      out.write("        <h3>Legal Compliance:</h3>\n");
+      out.write("        <p> You shall be responsible for compliance with all laws, including, but not limited to, the U.S.\n");
+      out.write("            CAN-SPAM law and related privacy laws and regulations. <br>\n");
+      out.write("            You will not misappropriate, violate, or infringe any third party’s rights (including any right to privacy), or otherwise breach any obligation to end users (including any obligation\n");
+      out.write("            to not disclose personal information to third parties for direct marketing purposes).<br>\n");
+      out.write("            Your participation in the Program is voluntary.<br>\n");
+      out.write("            Dell may provide access to You to vendors for the purposes of facilitating Activities.<br>\n");
+      out.write("            Provided, however, You will remain responsible for all legal compliance associated with Activities.</p>\n");
+      out.write("        <h3>Public Disclosure Requirement:</h3>\n");
+      out.write("        <p> All Activity invitations, registration forms, and Activity signage must prominently\n");
+      out.write("            display notice to all public entity participants an estimate in United States Dollars of all itemized products and/or\n");
+      out.write("            services that are available to all attendees at no cost. <br>\n");
+      out.write("            It is Your responsibility to make sure all public disclosure requirements are met and to certify with Your attendees that by registering or attending this Activity, the attendees\n");
+      out.write("            have verified with their ethics counsel on their ability to accept gifts or other things of value as listed in the invitations,\n");
+      out.write("            registration forms and signage, or else they will make a payment to You for the items listed if required by law.<br>\n");
+      out.write("            Additionally, You must be prepared to accept payment in advance or at the Activity itself for those public entity\n");
+      out.write("            participants. </p>\n");
+      out.write("        <h3>Publicity:</h3>\n");
+      out.write("        <p> You agree not to issue or release any articles, advertising, publicity or other matters mentioning or implying\n");
+      out.write("            the name of Dell without obtaining prior consent from Dell, unless You have been granted such usage rights under the\n");
+      out.write("            Dell PartnerDirect Program. <br>\n");
+      out.write("            All potential uses must be submitted via email to Your appropriate field marketing\n");
+      out.write("            manager four to six (4-6) weeks in advance of Your Activity date.<br>\n");
+      out.write("            You will be notified via email whether or not Your proposed use is accepted, denied, or requires any modifications.<br>\n");
+      out.write("            If You are notified that Your materials require any form of alteration, You certify that You will comply with all change requests before distributing Your materials. </p>\n");
+      out.write("        <h3>Third Party Vendors:</h3>\n");
+      out.write("        <p> Dell may introduce you to third party vendors (“Vendors”) that may be available to assist a\n");
+      out.write("            Partner with an Activity.<br>\n");
+      out.write("            This introduction is provided to you as a courtesy, and your use thereof is voluntary.<br>\n");
+      out.write("            You are responsible for complying with all applicable laws, including but not limited to CAN-SPAM and your privacy policy.<br>\n");
+      out.write("            Under no circumstances shall Dell be liable for any direct, indirect, consequential, incidental or special damages\n");
+      out.write("            arising out of or relating in any way to a Partner’s purchase and/or use of any such Vendor’s products and/or services. </p>\n");
+      out.write("        <h3>Administration:</h3>\n");
+      out.write("        <p> The terms and conditions of the Program and Your eligibility to participate therein are at Dell’s sole\n");
+      out.write("            discretion.<br>\n");
+      out.write("            All decisions made by Dell are final.<br>\n");
+      out.write("            Dell reserves the right to modify or cancel the Program, or participation by You therein, at any time and without prior notice.<br>\n");
+      out.write("            If any modification is unacceptable to You, Your sole recourse is to terminate Your participation in the Program.<br>\n");
+      out.write("            If You continue to participate in the Program, that participation will constitute Your binding acceptance of the modification.\n");
+      out.write("            Approval of Activities and disbursement of Funds is in Dell’s sole discretion.</p>\n");
+      out.write("        <h3>Confidentiality</h3>\n");
+      out.write("        <p> This Agreement and the terms hereof are Dell confidential information, and You shall maintain such\n");
+      out.write("            information as confidential and shall not disclose such information to any third party, even after termination of this\n");
+      out.write("            Agreement, unless required by law. </p>\n");
+      out.write("        <h3>Indemnification:</h3>\n");
+      out.write("        <p> To the fullest extent permitted by law, You shall indemnify, defend, and hold harmless Dell and its\n");
+      out.write("            subsidiaries, affiliates, parents, successors, and assigns, from and against any claim, demand, cause of action, debt,\n");
+      out.write("            or liability (including reasonable attorney or legal fees, expenses and court costs) based upon, arising from, or related\n");
+      out.write("            to Your failure to comply with all obligations under this Agreement.<br>\n");
+      out.write("            Dell reserves the right to not pay such Funds in certain circumstances, including, without limitation, if You have failed to comply with or certify to Dell all of the terms\n");
+      out.write("            and conditions of this Agreement, including all obligations set forth in the Legal Compliance and Public Disclosure\n");
+      out.write("            Requirement sections.</p>\n");
+      out.write("        <h3>Miscellaneous</h3>\n");
+      out.write("        <p> Your participation and use of this Program are subject to and governed by the Dell PartnerDirect\n");
+      out.write("            Program Terms and Conditions.<br>\n");
+      out.write("            The PartnerDirect Program Terms and Conditions are incorporated herein by reference.<br>\n");
+      out.write("            This Agreement constitutes the entire agreement between Dell and You with respect to the subject matter\n");
+      out.write("            hereof and supersedes any and all prior agreements and understandings regarding the same subject matter, whether\n");
+      out.write("            established by custom, practice, procedure, or precedent.<br>\n");
+      out.write("            This Agreement shall be governed by and subject to Texas law, without reference to its conflict of laws principles.<br>\n");
+      out.write("            Dell and You are independent contractors.<br>\n");
+      out.write("            Neither party is hereby granted any right or authority to assume, create or incur and obligation, liability, or responsibility of any kind,\n");
+      out.write("            whether express or implied, against, or in the name of, or on behalf of, another party.<br>\n");
+      out.write("            This Agreement may be executed in any number of counterparts and any party hereto may execute any such counterpart, each of which\n");
+      out.write("            when executed and delivered shall be deemed to be an original and all of which counterparts taken together shall\n");
+      out.write("            constitute but one and the same instrument.<br>\n");
+      out.write("            A facsimile of an executed counterpart of this Agreement shall be sufficient to evidence the binding agreement of each party to the terms hereof.<br>\n");
+      out.write("            You may not assign this Agreement or any amount due under this Agreement, to any third party without the express written consent of Dell. If any provision\n");
+      out.write("            of this Agreement is void or unenforceable, the parties agree to delete it and agree that the remainder will continue to\n");
+      out.write("            be in effect. </p>\n");
+      out.write("        \n");
+      out.write("        <!--Javascript-->\n");
+      out.write("        <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js\" type=\"text/javascript\"></script>\n");
+      out.write("    </body>\n");
+      out.write("</html>\n");
+    } catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    } finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
+  }
+}
