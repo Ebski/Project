@@ -81,6 +81,8 @@ public class mdfServlets extends HttpServlet {
         request.getParameter("Additional_opportunities"),
         request.getParameter("Additional_revenue"));
         
+        
+        
         try {
             query.addMdfRequestToDatabase(mdf);
         } catch (SQLException ex) {
@@ -93,7 +95,7 @@ public class mdfServlets extends HttpServlet {
 //        session.setAttribute("person", p);
 //        session.setAttribute("productList", productList);
 
-        RequestDispatcher disp = request.getRequestDispatcher("store.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("submitted.jsp");
         disp.forward(request, response);
     }
 

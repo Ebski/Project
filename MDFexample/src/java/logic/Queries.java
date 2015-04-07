@@ -22,16 +22,16 @@ public class Queries {
 
     Statement stmt = null;
     ResultSet rs = null;
-
-    private void connectToDatabase(String query) throws SQLException {
+    
+    
+    public void connectToDatabase(String query) throws SQLException {
         try(Connection con = DriverManager.getConnection(DB.URL, DB.user, DB.password)) {
 
             Class.forName(DB.driver);
 
-
             stmt = con.createStatement();
 
-            con.prepareStatement(query);
+            stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
@@ -41,8 +41,8 @@ public class Queries {
 
     public void addMdfRequestToDatabase(MdfDTO mdf) throws SQLException {
         String query = "INSERT INTO MDF VALUES('" + mdf.getSubmission_date()
-                + "','" + mdf.getCompany_address() + "','"
-                + mdf.getContact_name()
+                + "','" + mdf.getCompany_address()
+                + "','" + mdf.getContact_name()
                 + "','" + mdf.getContact_email()
                 + "','" + mdf.getCompany_name()
                 + "','" + mdf.getContact_phone()
@@ -52,39 +52,43 @@ public class Queries {
                 + "','" + mdf.getVenue_name()
                 + "','" + mdf.getEnd_time()
                 + "','" + mdf.getVenue_address()
-                + "'," + mdf.getFace_to_face()
-                + "," + mdf.getTradeshows()
-                + "," + mdf.getMutli_touch_campaign()
-                + "," + mdf.getDoor_opener_campaign()
-                + "," + mdf.getThird_party_campaign()
-                + "," + mdf.getDirect_mail()
-                + "," + mdf.getBlitz_campaign()
-                + ",'" + mdf.getDescription_agenda()
-                + "'," + mdf.getDiss_Storage_1()
-                + "," + mdf.getDiss_Storage_2()
-                + "," + mdf.getDiss_Storage_3()
-                + "," + mdf.getDiss_Storage_4()
-                + "," + mdf.getDiss_Storage_5()
-                + "," + mdf.getDiss_Storage_6()
-                + "," + mdf.getDiss_Server_1()
-                + "," + mdf.getDiss_Server_2()
-                + "," + mdf.getDiss_Server_3()
-                + "," + mdf.getDiss_Server_4()
-                + "," + mdf.getDiss_Network_1()
-                + "," + mdf.getDiss_Network_2()
-                + "," + mdf.getDiss_Solutions_1()
-                + "," + mdf.getDiss_Solutions_2()
-                + "," + mdf.getDiss_Solutions_3()
-                + "," + mdf.getDiss_Solutions_4()
-                + "," + mdf.getDiss_Solutions_5()
-                + "," + mdf.getDiss_Solutions_6()
-                + ",'" + mdf.getDiss_text()
+                + "','" + mdf.getFace_to_face()
+                + "','" + mdf.getTradeshows()
+                + "','" + mdf.getMutli_touch_campaign()
+                + "','" + mdf.getDoor_opener_campaign()
+                + "','" + mdf.getThird_party_campaign()
+                + "','" + mdf.getDirect_mail()
+                + "','" + mdf.getBlitz_campaign()
+                + "','" + mdf.getDescription_agenda()
+                + "','" + mdf.getDiss_Storage_1()
+                + "','" + mdf.getDiss_Storage_2()
+                + "','" + mdf.getDiss_Storage_3()
+                + "','" + mdf.getDiss_Storage_4()
+                + "','" + mdf.getDiss_Storage_5()
+                + "','" + mdf.getDiss_Storage_6()
+                + "','" + mdf.getDiss_Server_1()
+                + "','" + mdf.getDiss_Server_2()
+                + "','" + mdf.getDiss_Server_3()
+                + "','" + mdf.getDiss_Server_4()
+                + "','" + mdf.getDiss_Network_1()
+                + "','" + mdf.getDiss_Network_2()
+                + "','" + mdf.getDiss_Solutions_1()
+                + "','" + mdf.getDiss_Solutions_2()
+                + "','" + mdf.getDiss_Solutions_3()
+                + "','" + mdf.getDiss_Solutions_4()
+                + "','" + mdf.getDiss_Solutions_5()
+                + "','" + mdf.getDiss_Solutions_6()
+                + "','" + mdf.getDiss_text()
+                + "','" + mdf.getTarget_1()
+                + "','" + mdf.getTarget_2()
+                + "','" + mdf.getTarget_3()
                 + "'," + mdf.getAdditional_totalcost()
                 + "," + mdf.getAdditional_totalmdf()
                 + ",'" + mdf.getAdditional_reimbursement()
-                + "','" + mdf.getAdditional_contribution()
-                + "','" + mdf.getAdditional_opportunities()
-                + "','" + mdf.getAdditional_revenue() + ");";
+                + "','" + mdf.getAdditional_participating()
+                + "'," + mdf.getAdditional_contribution()
+                + "," + mdf.getAdditional_opportunities()
+                + "," + mdf.getAdditional_revenue() + ")";
 
         connectToDatabase(query);
     }
