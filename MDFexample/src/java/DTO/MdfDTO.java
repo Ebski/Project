@@ -25,7 +25,7 @@ public class MdfDTO {
     private String Venue_address;
     private String face_to_face;
     private String Tradeshows;
-    private String Mutli_touch_campaign;
+    private String Multi_touch_campaign;
     private String Door_opener_campaign;
     private String Third_party_campaign;
     private String Direct_mail;
@@ -64,7 +64,7 @@ public class MdfDTO {
     public MdfDTO(String Submission_date, String Company_address, String Contact_name, 
             String Contact_email, String Company_name, String Contact_phone, String Program_date, 
             String Estimated_attendees, String Start_time, String Venue_name, String End_time, 
-            String Venue_address, String face_to_face, String Tradeshows, String Mutli_touch_campaign, 
+            String Venue_address, String face_to_face, String Tradeshows, String Multi_touch_campaign, 
             String Door_opener_campaign, String Third_party_campaign, String Direct_mail, 
             String Blitz_campaign, String description_agenda, String Diss_Storage_1, 
             String Diss_Storage_2, String Diss_Storage_3, String Diss_Storage_4, String Diss_Storage_5, 
@@ -89,7 +89,7 @@ public class MdfDTO {
         this.Venue_address = Venue_address;
         this.face_to_face = face_to_face;
         this.Tradeshows = Tradeshows;
-        this.Mutli_touch_campaign = Mutli_touch_campaign;
+        this.Multi_touch_campaign = Multi_touch_campaign;
         this.Door_opener_campaign = Door_opener_campaign;
         this.Third_party_campaign = Third_party_campaign;
         this.Direct_mail = Direct_mail;
@@ -243,12 +243,12 @@ public class MdfDTO {
         this.Tradeshows = Tradeshows;
     }
 
-    public String getMutli_touch_campaign() {
-        return Mutli_touch_campaign;
+    public String getMulti_touch_campaign() {
+        return Multi_touch_campaign;
     }
 
-    public void setMutli_touch_campaign(String Mutli_touch_campaign) {
-        this.Mutli_touch_campaign = Mutli_touch_campaign;
+    public void setMulti_touch_campaign(String Multi_touch_campaign) {
+        this.Multi_touch_campaign = Multi_touch_campaign;
     }
 
     public String getDoor_opener_campaign() {
@@ -530,7 +530,7 @@ public class MdfDTO {
                 ", Contact_phone=" + Contact_phone + ", Program_date=" + Program_date + 
                 ", Estimated_attendees=" + Estimated_attendees + ", Start_time=" + Start_time + 
                 ", Venue_name=" + Venue_name + ", End_time=" + End_time + ", Venue_address=" + Venue_address + 
-                ", face_to_face=" + face_to_face + ", Tradeshows=" + Tradeshows + ", Mutli_touch_campaign=" + Mutli_touch_campaign + 
+                ", face_to_face=" + face_to_face + ", Tradeshows=" + Tradeshows + ", Multi_touch_campaign=" + Multi_touch_campaign + 
                 ", Door_opener_campaign=" + Door_opener_campaign + ", Third_party_campaign=" + Third_party_campaign + 
                 ", Direct_mail=" + Direct_mail + ", Blitz_campaign=" + Blitz_campaign + ", description_agenda=" + description_agenda + 
                 ", Diss_Storage_1=" + Diss_Storage_1 + ", Diss_Storage_2=" + Diss_Storage_2 + ", Diss_Storage_3=" + Diss_Storage_3 + 
