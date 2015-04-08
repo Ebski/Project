@@ -10,8 +10,8 @@ package logic;
  * @author Dennis
  */
 public class DB {
-    public static String driver = "oracle.jdbc.driver.OracleDriver";
-    public static String URL = "jdbc:oracle:thin:@datdb.cphbusiness.dk:1521:dat";
-    public static String user = "cphda68";
-    public static String password = "cphda68";
+    public static final String driver = "oracle.jdbc.driver.OracleDriver";
+    public static final String URL = "jdbc:oracle:thin:@datdb.cphbusiness.dk:1521:dat";
+    public static final String user = "cphen73";
+    public static final String password = "cphen73";
 }

@@ -107,7 +107,7 @@
                         <input type="checkbox" name="Tradeshows"><span> Tradeshows</span>
                     </div>
                     <div class="col-md-4">
-                        <input type="checkbox" name="Mutli_touch_campaign"><span> Multi-touch campaign</span><br>
+                        <input type="checkbox" name="Multi_touch_campaign"><span> Multi-touch campaign</span><br>
                     </div>
                     <div class="col-md-4">
                         <input type="checkbox" name="Door_opener_campaign"><span> Door opener campaign</span><br>

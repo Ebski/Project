@@ -45,7 +45,7 @@ public class mdfServlets extends HttpServlet {
         request.getParameter("Venue_address"),
         request.getParameter("face_to_face"),
         request.getParameter("Tradeshows"),
-        request.getParameter("Mutli_touch_campaign"),
+        request.getParameter("Multi_touch_campaign"),
         request.getParameter("Door_opener_campaign"),
         request.getParameter("Third_party_campaign"),
         request.getParameter("Direct_mail"),

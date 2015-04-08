@@ -21,7 +21,6 @@ import java.util.logging.Logger;
  */
 public class Queries {
 
-    PreparedStatement stmt = null;
     ResultSet rs = null;
 
     public void connectToDatabase(PreparedStatement pstmt) throws SQLException {
@@ -29,7 +28,7 @@ public class Queries {
 
             Class.forName(DB.driver);
 
-            stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
+          //  stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
@@ -39,13 +38,16 @@ public class Queries {
 
     public void addMdfRequestToDatabase(MdfDTO mdf) throws SQLException {
 
-        try (Connection con = DriverManager.getConnection(DB.URL, DB.user, DB.password)) {
+        Connection con = null;
+        PreparedStatement stmt = null;
 
+        try {
             Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
             String sql = "INSERT INTO MDF (Submission_date, Company_address, Contact_name, Contact_email, Company_name, "
                     + "Contact_phone, Program_date, Estimated_attendees, Start_time, Venue_name, End_time, Venue_address, "
-                    + "face_to_face, Tradeshows, Mutli_touch_campaign, Door_opener_campaign, Third_party_campaign, Direct_mail, "
+                    + "face_to_face, Tradeshows, Multi_touch_campaign, Door_opener_campaign, Third_party_campaign, Direct_mail, "
                     + "Blitz_campaign, description_agenda, Diss_Storage_1, Diss_Storage_2, Diss_Storage_3, Diss_Storage_4, "
                     + "Diss_Storage_5, Diss_Storage_6, Diss_Server_1, Diss_Server_2, Diss_Server_3, Diss_Server_4, Diss_Network_1, "
                     + "Diss_Network_2, Diss_Solutions_1, Diss_Solutions_2, Diss_Solutions_3, Diss_Solutions_4, Diss_Solutions_5, "
@@ -70,7 +72,7 @@ public class Queries {
             stmt.setString(12, mdf.getVenue_address());
             stmt.setString(13, mdf.getFace_to_face());
             stmt.setString(14, mdf.getTradeshows());
-            stmt.setString(15, mdf.getMutli_touch_campaign());
+            stmt.setString(15, mdf.getMulti_touch_campaign());
             stmt.setString(16, mdf.getDoor_opener_campaign());
             stmt.setString(17, mdf.getThird_party_campaign());
             stmt.setString(18, mdf.getDirect_mail());
@@ -108,10 +110,13 @@ public class Queries {
 
             stmt.executeQuery();
 
-        } catch (SQLException ex) {
         } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
         }
-        
+
     }
 
 }
