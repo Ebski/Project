@@ -6,6 +6,7 @@
 package logic;
 
 import DTO.MdfDTO;
+import DTO.PoEDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,8 +29,7 @@ public class Queries {
 
             Class.forName(DB.driver);
 
-          //  stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
-
+            //  stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -119,4 +119,36 @@ public class Queries {
 
     }
 
+    public void addPoERequestToDatabase(PoEDTO poe) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+            
+            String sql = "INSERT INTO POE (ID_POE, campaign_type, activity, date, recipients, unique_opens_hits,"
+                    + " unique_clicks, additional_information) VALUES (SEQ_POE.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
+            
+            stmt = con.prepareStatement(sql);
+            
+            stmt.setString(1, poe.getCampaign_type());
+            stmt.setString(2, poe.getActivity());
+            stmt.setString(3, poe.getDate());
+            stmt.setString(4, poe.getRecipients());
+            stmt.setString(5, poe.getUnique_opens_hits());
+            stmt.setString(6, poe.getUnique_clicks());
+            stmt.setString(7, poe.getAdditional_information());
+            
+            stmt.executeQuery();
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+        
+    }
 }
