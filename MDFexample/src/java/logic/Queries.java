@@ -45,7 +45,7 @@ public class Queries {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "INSERT INTO MDF (Submission_date, Company_address, Contact_name, Contact_email, Company_name, "
+            String sql = "INSERT INTO MDF (ID_MDF, Submission_date, Company_address, Contact_name, Contact_email, Company_name, "
                     + "Contact_phone, Program_date, Estimated_attendees, Start_time, Venue_name, End_time, Venue_address, "
                     + "face_to_face, Tradeshows, Multi_touch_campaign, Door_opener_campaign, Third_party_campaign, Direct_mail, "
                     + "Blitz_campaign, description_agenda, Diss_Storage_1, Diss_Storage_2, Diss_Storage_3, Diss_Storage_4, "
@@ -53,7 +53,7 @@ public class Queries {
                     + "Diss_Network_2, Diss_Solutions_1, Diss_Solutions_2, Diss_Solutions_3, Diss_Solutions_4, Diss_Solutions_5, "
                     + "Diss_Solutions_6, Diss_text, Target_1, Target_2, Target_3, Additional_totalcost, Additional_totalmdf, "
                     + "Additional_reimbursement, Additional_participating, Additional_contribution, Additional_opportunities, "
-                    + "Additional_revenue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                    + "Additional_revenue) VALUES (SEQ_MDF.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             stmt = con.prepareStatement(sql);
