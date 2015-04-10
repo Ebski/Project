@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -40,6 +41,10 @@ public class Queries {
 
         Connection con = null;
         PreparedStatement stmt = null;
+        PreparedStatement stmt2 = null;
+        Long campaign_no = UUID.randomUUID().getMostSignificantBits();
+        Long id_mdf = UUID.randomUUID().getMostSignificantBits();
+        Long id_poe = UUID.randomUUID().getMostSignificantBits();
 
         try {
             Class.forName(DB.driver);
@@ -53,68 +58,79 @@ public class Queries {
                     + "Diss_Network_2, Diss_Solutions_1, Diss_Solutions_2, Diss_Solutions_3, Diss_Solutions_4, Diss_Solutions_5, "
                     + "Diss_Solutions_6, Diss_text, Target_1, Target_2, Target_3, Additional_totalcost, Additional_totalmdf, "
                     + "Additional_reimbursement, Additional_participating, Additional_contribution, Additional_opportunities, "
-                    + "Additional_revenue) VALUES (SEQ_MDF.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                    + "Additional_revenue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            stmt = con.prepareStatement(sql);
+            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, PARTNER_NO, ID_MDF, ID_POE) VALUES (?, ?, ?, ?)";
 
-            stmt.setString(1, mdf.getSubmission_date());
-            stmt.setString(2, mdf.getCompany_address());
-            stmt.setString(3, mdf.getContact_name());
-            stmt.setString(4, mdf.getContact_email());
-            stmt.setString(5, mdf.getCompany_name());
-            stmt.setString(6, mdf.getContact_phone());
-            stmt.setString(7, mdf.getProgram_date());
-            stmt.setString(8, mdf.getEstimated_attendees());
-            stmt.setString(9, mdf.getStart_time());
-            stmt.setString(10, mdf.getVenue_name());
-            stmt.setString(11, mdf.getEnd_time());
-            stmt.setString(12, mdf.getVenue_address());
-            stmt.setString(13, mdf.getFace_to_face());
-            stmt.setString(14, mdf.getTradeshows());
-            stmt.setString(15, mdf.getMulti_touch_campaign());
-            stmt.setString(16, mdf.getDoor_opener_campaign());
-            stmt.setString(17, mdf.getThird_party_campaign());
-            stmt.setString(18, mdf.getDirect_mail());
-            stmt.setString(19, mdf.getBlitz_campaign());
-            stmt.setString(20, mdf.getDescription_agenda());
-            stmt.setString(21, mdf.getDiss_Storage_1());
-            stmt.setString(22, mdf.getDiss_Storage_2());
-            stmt.setString(23, mdf.getDiss_Storage_3());
-            stmt.setString(24, mdf.getDiss_Storage_4());
-            stmt.setString(25, mdf.getDiss_Storage_5());
-            stmt.setString(26, mdf.getDiss_Storage_6());
-            stmt.setString(27, mdf.getDiss_Server_1());
-            stmt.setString(28, mdf.getDiss_Server_2());
-            stmt.setString(29, mdf.getDiss_Server_3());
-            stmt.setString(30, mdf.getDiss_Server_4());
-            stmt.setString(31, mdf.getDiss_Network_1());
-            stmt.setString(32, mdf.getDiss_Network_2());
-            stmt.setString(33, mdf.getDiss_Solutions_1());
-            stmt.setString(34, mdf.getDiss_Solutions_2());
-            stmt.setString(35, mdf.getDiss_Solutions_3());
-            stmt.setString(36, mdf.getDiss_Solutions_4());
-            stmt.setString(37, mdf.getDiss_Solutions_5());
-            stmt.setString(38, mdf.getDiss_Solutions_6());
-            stmt.setString(39, mdf.getDiss_text());
-            stmt.setString(40, mdf.getTarget_1());
-            stmt.setString(41, mdf.getTarget_2());
-            stmt.setString(42, mdf.getTarget_3());
-            stmt.setString(43, mdf.getAdditional_totalcost());
-            stmt.setString(44, mdf.getAdditional_totalmdf());
-            stmt.setString(45, mdf.getAdditional_reimbursement());
-            stmt.setString(46, mdf.getAdditional_participating());
-            stmt.setString(47, mdf.getAdditional_contribution());
-            stmt.setString(48, mdf.getAdditional_opportunities());
-            stmt.setString(49, mdf.getAdditional_revenue());
+            stmt = con.prepareStatement(sql);
+            stmt2 = con.prepareStatement(sql2);
+
+            stmt2.setString(1, campaign_no.toString());
+            stmt2.setString(2, "Ebbe");
+            stmt2.setString(3, id_mdf.toString());
+            stmt2.setString(4, id_poe.toString());
+
+            stmt.setString(1, id_mdf.toString());
+            stmt.setString(2, mdf.getSubmission_date());
+            stmt.setString(3, mdf.getCompany_address());
+            stmt.setString(4, mdf.getContact_name());
+            stmt.setString(5, mdf.getContact_email());
+            stmt.setString(6, mdf.getCompany_name());
+            stmt.setString(7, mdf.getContact_phone());
+            stmt.setString(8, mdf.getProgram_date());
+            stmt.setString(9, mdf.getEstimated_attendees());
+            stmt.setString(10, mdf.getStart_time());
+            stmt.setString(11, mdf.getVenue_name());
+            stmt.setString(12, mdf.getEnd_time());
+            stmt.setString(13, mdf.getVenue_address());
+            stmt.setString(14, mdf.getFace_to_face());
+            stmt.setString(15, mdf.getTradeshows());
+            stmt.setString(16, mdf.getMulti_touch_campaign());
+            stmt.setString(17, mdf.getDoor_opener_campaign());
+            stmt.setString(18, mdf.getThird_party_campaign());
+            stmt.setString(19, mdf.getDirect_mail());
+            stmt.setString(20, mdf.getBlitz_campaign());
+            stmt.setString(21, mdf.getDescription_agenda());
+            stmt.setString(22, mdf.getDiss_Storage_1());
+            stmt.setString(23, mdf.getDiss_Storage_2());
+            stmt.setString(24, mdf.getDiss_Storage_3());
+            stmt.setString(25, mdf.getDiss_Storage_4());
+            stmt.setString(26, mdf.getDiss_Storage_5());
+            stmt.setString(27, mdf.getDiss_Storage_6());
+            stmt.setString(28, mdf.getDiss_Server_1());
+            stmt.setString(29, mdf.getDiss_Server_2());
+            stmt.setString(30, mdf.getDiss_Server_3());
+            stmt.setString(31, mdf.getDiss_Server_4());
+            stmt.setString(32, mdf.getDiss_Network_1());
+            stmt.setString(33, mdf.getDiss_Network_2());
+            stmt.setString(34, mdf.getDiss_Solutions_1());
+            stmt.setString(35, mdf.getDiss_Solutions_2());
+            stmt.setString(36, mdf.getDiss_Solutions_3());
+            stmt.setString(37, mdf.getDiss_Solutions_4());
+            stmt.setString(38, mdf.getDiss_Solutions_5());
+            stmt.setString(39, mdf.getDiss_Solutions_6());
+            stmt.setString(40, mdf.getDiss_text());
+            stmt.setString(41, mdf.getTarget_1());
+            stmt.setString(42, mdf.getTarget_2());
+            stmt.setString(43, mdf.getTarget_3());
+            stmt.setString(44, mdf.getAdditional_totalcost());
+            stmt.setString(45, mdf.getAdditional_totalmdf());
+            stmt.setString(46, mdf.getAdditional_reimbursement());
+            stmt.setString(47, mdf.getAdditional_participating());
+            stmt.setString(48, mdf.getAdditional_contribution());
+            stmt.setString(49, mdf.getAdditional_opportunities());
+            stmt.setString(50, mdf.getAdditional_revenue());
 
             stmt.executeQuery();
+            stmt2.executeQuery();
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
+            stmt2.close();
         }
 
     }
@@ -126,12 +142,12 @@ public class Queries {
         try {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
-            
+
             String sql = "INSERT INTO POE (ID_POE, campaign_type, activity, date, recipients, unique_opens_hits,"
                     + " unique_clicks, additional_information) VALUES (SEQ_POE.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
-            
+
             stmt = con.prepareStatement(sql);
-            
+
             stmt.setString(1, poe.getCampaign_type());
             stmt.setString(2, poe.getActivity());
             stmt.setString(3, poe.getDate());
@@ -139,16 +155,15 @@ public class Queries {
             stmt.setString(5, poe.getUnique_opens_hits());
             stmt.setString(6, poe.getUnique_clicks());
             stmt.setString(7, poe.getAdditional_information());
-            
+
             stmt.executeQuery();
-            
-            
+
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
         }
-        
+
     }
 }
