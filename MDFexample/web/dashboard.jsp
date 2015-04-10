@@ -4,6 +4,7 @@
     Author     : Dennis
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,10 +37,146 @@
             <div class='signout'>
                 <a href='index.jsp'><p>Sign out!</p></a>
             </div>
-        </div>
 
-        <!--Javascript-->
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/custom.js" type="text/javascript"></script>
+
+            <!--TABLE DATA-->
+            
+            <!--pending-->
+
+            <div class="method pending-table">
+                <p><strong>Pending campaigns</strong></p>
+                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                    <div class="col-md-1"><div class="header">ID</div></div>
+                    <div class="col-md-3"><div class="header">Name</div></div>
+                    <div class="col-md-2"><div class="header">Start</div></div>
+                    <div class="col-md-2"><div class="header">End</div></div>
+                    <div class="col-md-2"><div class="header">Deadline</div></div>
+                    <div class="col-md-2"><div class="header">Status</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+
+            </div>
+            
+            <br>
+            <br>
+            
+            <!--active-->
+
+            <div class="method active-table">
+                <p><strong>Active campaigns</strong></p>
+                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                    <div class="col-md-1"><div class="header">ID</div></div>
+                    <div class="col-md-3"><div class="header">Name</div></div>
+                    <div class="col-md-2"><div class="header">Start</div></div>
+                    <div class="col-md-2"><div class="header">End</div></div>
+                    <div class="col-md-2"><div class="header">Deadline</div></div>
+                    <div class="col-md-2"><div class="header">Status</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+
+            </div>
+            
+            <br>
+            <br>
+            
+            <!--old-->
+
+            <div class="method old-table">
+                <p><strong>Old campaigns</strong></p>
+                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                    <div class="col-md-1"><div class="header">ID</div></div>
+                    <div class="col-md-3"><div class="header">Name</div></div>
+                    <div class="col-md-2"><div class="header">Start</div></div>
+                    <div class="col-md-2"><div class="header">End</div></div>
+                    <div class="col-md-2"><div class="header">Deadline</div></div>
+                    <div class="col-md-2"><div class="header">Status</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+                
+                <div class="row margin-0">
+                    <div class="col-md-1"><div class="cell">Test</div></div>
+                    <div class="col-md-3"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                    <div class="col-md-2"><div class="cell">Test</div></div>
+                </div>
+
+            </div>
+            
+            <!--END OF TABLE DATA-->
+
+            <!--Javascript-->
+            <script src="js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="js/custom.js" type="text/javascript"></script>
     </body>
 </html>
