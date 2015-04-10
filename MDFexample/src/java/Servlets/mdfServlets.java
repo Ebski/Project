@@ -5,10 +5,12 @@
  */
 package Servlets;
 
+import DTO.CampaignDTO;
 import DTO.MdfDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -81,19 +83,32 @@ public class mdfServlets extends HttpServlet {
         request.getParameter("Additional_opportunities"),
         request.getParameter("Additional_revenue"));
         
+        CampaignDTO camp = new CampaignDTO(request.getParameter("Campaign_name"));
         
         
         try {
-            query.addMdfRequestToDatabase(mdf);
+            query.addMdfRequestToDatabase(mdf, camp);
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         
-//        HttpSession session = request.getSession();
-//
-//        session.setAttribute("person", p);
-//        session.setAttribute("productList", productList);
+//        FETCH CAMPAIGNS FROM DATABASE
+        
+        String user = "Ebbe";
+        ArrayList<CampaignDTO> result = null;
+        
+        try {
+            result = query.fetchPendingCampaigns(user);
+        } catch (SQLException ex) {
+            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        HttpSession session = request.getSession();
+
+        session.setAttribute("Campaigns", result);
+        
+//        END OF FETCH
 
         RequestDispatcher disp = request.getRequestDispatcher("submitted.jsp");
         disp.forward(request, response);

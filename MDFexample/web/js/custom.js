@@ -2,7 +2,7 @@
 
 //Submitbutton enabled by checked 'read terms of condition'
 
-EnableSubmit = function(val)
+EnableSubmit = function (val)
 {
     var sbmt = document.getElementById("Accept");
 
@@ -20,18 +20,21 @@ EnableSubmit = function(val)
 
 function countdown() {
     var i = document.getElementById('counter');
-    if (parseInt(i.innerHTML)<=1) {
+    if (parseInt(i.innerHTML) <= 1) {
         location.href = 'dashboard.jsp';
     }
-    i.innerHTML = parseInt(i.innerHTML)-1;
+    i.innerHTML = parseInt(i.innerHTML) - 1;
 }
-setInterval(function(){ countdown(); },1000);
+setInterval(function () {
+    countdown();
+}, 1000);
 
 //Dropdown funcion for login
 
-$(document).ready(function(){
+$(document).ready(function () {
     //Handles menu drop down
     $('.dropdown-menu').find('form').click(function (e) {
         e.stopPropagation();
     });
 });
+

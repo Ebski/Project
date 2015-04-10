@@ -5,6 +5,7 @@
  */
 package logic;
 
+import DTO.CampaignDTO;
 import DTO.MdfDTO;
 import DTO.PoEDTO;
 import java.sql.Connection;
@@ -13,6 +14,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,7 +39,7 @@ public class Queries {
 
     }
 
-    public void addMdfRequestToDatabase(MdfDTO mdf) throws SQLException {
+    public void addMdfRequestToDatabase(MdfDTO mdf, CampaignDTO camp) throws SQLException {
 
         Connection con = null;
         PreparedStatement stmt = null;
@@ -61,15 +63,16 @@ public class Queries {
                     + "Additional_revenue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, PARTNER_NO, ID_MDF, ID_POE) VALUES (?, ?, ?, ?)";
+            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE) VALUES (?, ?, ?, ?, ?)";
 
             stmt = con.prepareStatement(sql);
             stmt2 = con.prepareStatement(sql2);
 
             stmt2.setString(1, campaign_no.toString());
-            stmt2.setString(2, "Ebbe");
-            stmt2.setString(3, id_mdf.toString());
-            stmt2.setString(4, id_poe.toString());
+            stmt2.setString(2, camp.getCampaign_Name());
+            stmt2.setString(3, "Ebbe");
+            stmt2.setString(4, id_mdf.toString());
+            stmt2.setString(5, id_poe.toString());
 
             stmt.setString(1, id_mdf.toString());
             stmt.setString(2, mdf.getSubmission_date());
@@ -166,4 +169,37 @@ public class Queries {
         }
 
     }
+    
+    public ArrayList<CampaignDTO> fetchPendingCampaigns(String partner) throws SQLException {
+        ArrayList<CampaignDTO> fpc = new ArrayList();
+        
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+        
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "SELECT * FROM CAMPAIGN";
+
+            stmt = con.createStatement();
+            
+            rs = stmt.executeQuery(sql);
+            
+            while(rs.next()) {
+                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE")));
+            }
+
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+        
+        return fpc;
+    }
+    
 }

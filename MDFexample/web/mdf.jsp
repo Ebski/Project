@@ -28,6 +28,15 @@
                     <img src="img/Dell_Logo.png" alt="Dell-logo" class="img-responsive logo visible-lg"/>
                 </header>
                 <div class="row">
+                    <div class="col-md-12">
+                        <br/>
+                        <p>Campaign name:</p>
+                        <input type="text" name="Campaign_name" placeholder="Enter campaign name" class="inputfield" required>
+                        <br/>
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-4">
                         <br/>
                         <p>Submission date:</p>

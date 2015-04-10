@@ -33,14 +33,14 @@
 
 
             <div class="login">
-                <form class="navbar-form navbar-right" role="login" method="get">
+                <form class="navbar-form navbar-right" role="login" method="get" action="loginServlet">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="username" placeholder="Username" required>
+                        <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Password" required>
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                     </div>
-                    <a href="dashboard.jsp" type="submit" class="btn btn-default"><i class="fa fa-sign-in" style='font-size: 22px!important; color: rgba(255,255,255,0.8);'></i></a>
+                    <button type="submit" class="btn btn-default"><i class="fa fa-sign-in" style='font-size: 22px!important; color: rgba(255,255,255,0.8);'></i></button>
                     <br/>
                     <p>- Forgot you password? <a href="#">click here.</a> </p>
                 </form>
