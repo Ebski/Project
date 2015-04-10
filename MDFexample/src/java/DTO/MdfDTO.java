@@ -10,7 +10,8 @@ package DTO;
  * @author Ebbe
  */
 public class MdfDTO {
-
+    
+    private String ID_MDF;
     private String Submission_date;
     private String Company_address;
     private String Contact_name;
@@ -131,6 +132,14 @@ public class MdfDTO {
     
     //                              GETTERS AND SETTERS + TO_String
 
+    public String getID_MDF() {
+        return ID_MDF;
+    }
+    
+    public void setID_MDF(String ID_MDF) {
+        this.ID_MDF = ID_MDF;
+    }
+    
     public String getSubmission_date() {
         return Submission_date;
     }

@@ -6,6 +6,7 @@
 package logic;
 
 import DTO.MdfDTO;
+import DTO.PoEDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -28,8 +29,7 @@ public class Queries {
 
             Class.forName(DB.driver);
 
-          //  stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
-
+            //  stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -45,7 +45,7 @@ public class Queries {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "INSERT INTO MDF (Submission_date, Company_address, Contact_name, Contact_email, Company_name, "
+            String sql = "INSERT INTO MDF (ID_MDF, Submission_date, Company_address, Contact_name, Contact_email, Company_name, "
                     + "Contact_phone, Program_date, Estimated_attendees, Start_time, Venue_name, End_time, Venue_address, "
                     + "face_to_face, Tradeshows, Multi_touch_campaign, Door_opener_campaign, Third_party_campaign, Direct_mail, "
                     + "Blitz_campaign, description_agenda, Diss_Storage_1, Diss_Storage_2, Diss_Storage_3, Diss_Storage_4, "
@@ -53,7 +53,7 @@ public class Queries {
                     + "Diss_Network_2, Diss_Solutions_1, Diss_Solutions_2, Diss_Solutions_3, Diss_Solutions_4, Diss_Solutions_5, "
                     + "Diss_Solutions_6, Diss_text, Target_1, Target_2, Target_3, Additional_totalcost, Additional_totalmdf, "
                     + "Additional_reimbursement, Additional_participating, Additional_contribution, Additional_opportunities, "
-                    + "Additional_revenue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
+                    + "Additional_revenue) VALUES (SEQ_MDF.NEXTVAL, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
                     + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             stmt = con.prepareStatement(sql);
@@ -119,4 +119,36 @@ public class Queries {
 
     }
 
+    public void addPoERequestToDatabase(PoEDTO poe) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+            
+            String sql = "INSERT INTO POE (ID_POE, campaign_type, activity, date, recipients, unique_opens_hits,"
+                    + " unique_clicks, additional_information) VALUES (SEQ_POE.NEXTVAL, ?, ?, ?, ?, ?, ?, ?)";
+            
+            stmt = con.prepareStatement(sql);
+            
+            stmt.setString(1, poe.getCampaign_type());
+            stmt.setString(2, poe.getActivity());
+            stmt.setString(3, poe.getDate());
+            stmt.setString(4, poe.getRecipients());
+            stmt.setString(5, poe.getUnique_opens_hits());
+            stmt.setString(6, poe.getUnique_clicks());
+            stmt.setString(7, poe.getAdditional_information());
+            
+            stmt.executeQuery();
+            
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+        
+    }
 }
