@@ -6,9 +6,6 @@
 package Servlets;
 
 import DTO.PoEDTO;
-import com.dropbox.core.DbxAppInfo;
-import com.dropbox.core.DbxRequestConfig;
-import com.dropbox.core.DbxWebAuthNoRedirect;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
