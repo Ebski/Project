@@ -29,7 +29,7 @@
             <div class='menu-left'>
                 <div class='menu-content'
                      <ul>
-                         <li><a href="mdf.jsp">New campaign</a></li>
+                        <li><a href="mdf.jsp">New campaign</a></li>
                         <li>Link</li>
                         <li>Link</li>
                         <li>Link</li>
@@ -95,16 +95,21 @@
                 <div class="row margin-0 list-header hidden-sm hidden-xs">
                     <div class="col-md-3"><div class="header">Campaign Name</div></div>
                     <div class="col-md-3"><div class="header">Partner No.</div></div>
-                    <div class="col-md-3"><div class="header">MDF ID</div></div>
-                    <div class="col-md-3"><div class="header">POE ID</div></div>
+                    <div class="col-md-2"><div class="header">MDF ID</div></div>
+                    <div class="col-md-2"><div class="header">POE ID</div></div>
+                    <div class="col-md-2"><div class="header">Upload POE</div></div>
                 </div>
 
                 <c:forEach var="camp" items="${Campaigns}">
                     <div class="row margin-0">
-                        <div class="col-md-3"><div class="cell">${camp.campaign_Name}</div></div>
-                        <div class="col-md-3"><div class="cell">${camp.partner_No}</div></div>
-                        <div class="col-md-3"><div class="cell">${camp.id_MDF}</div></div>
-                        <div class="col-md-3"><div class="cell">${camp.id_POE}</div></div>
+                        <form action="poe.jsp" type="post">
+                            <div class="col-md-3"><div class="cell">${camp.campaign_Name}</div></div>
+                            <div class="col-md-3"><div class="cell">${camp.partner_No}</div></div>
+                            <div class="col-md-2"><div class="cell">${camp.id_MDF}</div></div>
+                            <div class="col-md-2"><div class="cell">${camp.id_POE}</div></div>
+                            <!--GIVES POE_ID AS VALUE TO BUTTON TO BE ABLE TO FORWARD NUMBER TO POE PAGE AUTOMATICALLY-->
+                            <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
+                        </form>
                     </div>
                 </c:forEach>
 

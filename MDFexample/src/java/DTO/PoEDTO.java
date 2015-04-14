@@ -11,6 +11,7 @@ package DTO;
  */
 public class PoEDTO {
     
+    private String poe_ID;
     private String campaign_type;
     private String activity;
     private String date;
@@ -18,8 +19,10 @@ public class PoEDTO {
     private String unique_opens_hits;
     private String unique_clicks;
     private String additional_information;
+    private String filepath;
 
-    public PoEDTO(String campaign_type, String activity, String date, String recipients, String unique_opens_hits, String unique_clicks, String additional_information) {
+    public PoEDTO(String poe_ID, String campaign_type, String activity, String date, String recipients, String unique_opens_hits, String unique_clicks, String additional_information, String filepath) {
+        this.poe_ID = poe_ID;
         this.campaign_type = campaign_type;
         this.activity = activity;
         this.date = date;
@@ -27,6 +30,15 @@ public class PoEDTO {
         this.unique_opens_hits = unique_opens_hits;
         this.unique_clicks = unique_clicks;
         this.additional_information = additional_information;
+        this.filepath = filepath;
+    }
+
+    public String getPoe_ID() {
+        return poe_ID;
+    }
+
+    public void setPoe_ID(String poe_ID) {
+        this.poe_ID = poe_ID;
     }
 
     public String getCampaign_type() {
@@ -85,13 +97,20 @@ public class PoEDTO {
         this.additional_information = additional_information;
     }
 
+    public String getFilepath() {
+        return filepath;
+    }
+
+    public void setFilepath(String filepath) {
+        this.filepath = filepath;
+    }
+
     @Override
     public String toString() {
-        return "PoEDTO{" + "campaign_type=" + campaign_type + ", activity=" + activity + ", date=" + date + 
-                ", recipients=" + recipients + ", unique_opens_hits=" + unique_opens_hits + 
-                ", unique_clicks=" + unique_clicks + ", additional_information=" + additional_information + '}';
+        return "PoEDTO{" + "poe_ID=" + poe_ID + ", campaign_type=" + campaign_type + ", activity=" + activity + ", date=" + date + ", recipients=" + recipients + ", unique_opens_hits=" + unique_opens_hits + ", unique_clicks=" + unique_clicks + ", additional_information=" + additional_information + ", filepath=" + filepath + '}';
     }
+
     
-    
+
     
 }

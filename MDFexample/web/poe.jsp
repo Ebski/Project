@@ -4,6 +4,7 @@
     Author     : Dennis
 --%>
 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,13 +21,22 @@
 
     </head>
     <body>
-        <form action="mdfServlets" method="GET">
+        <form action="poeServlet" method="GET">
             <div class="container">
                 <header>
                     <h1>Point of Execution:</h1>
                     <img src="img/Dell_Logo.png" alt="Dell-logo" class="img-responsive logo visible-lg"/>
                 </header>
                 <div class="row">
+                    <div class="col-md-12">
+                        <!--FORWARDED POE NO-->
+                        <input type="hidden" name="poe_ID" value="<%
+                        String b=request.getParameter("upload_poe");
+                        out.print(b);
+                        %>">
+                        
+                        </input>
+                    </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Campaign type:</p>
@@ -68,15 +78,13 @@
                 </div>
                 <hr>
                 <div class="row">
-                    <div class="col-md-6">
-                        <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
-                        <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
+                    <div class="col-md-12">
                         <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
                     </div>
-                    <div class="col-md-6">
-                        <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
-                        <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
-                        <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary" type="submit">Submit</button>
                     </div>
                 </div>
                 <hr>
