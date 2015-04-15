@@ -88,6 +88,7 @@ public class mdfServlets extends HttpServlet {
         
         try {
             query.addMdfRequestToDatabase(mdf, camp);
+            query.addCampaignToDatabase(mdf, camp);
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }

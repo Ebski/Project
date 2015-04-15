@@ -39,96 +39,80 @@ public class Queries {
 
     }
 
+    private ArrayList<String> mdfArrayList() {
+        ArrayList al = new ArrayList();
+        al.add("ID_MDF");
+        al.add("Submission_date");
+        al.add("Company_address");
+        al.add("Contact_name");
+        al.add("Contact_email");
+        al.add("Company_name");
+        al.add("Contact_phone");
+        al.add("Program_date");
+        al.add("Estimated_attendees");
+        al.add("Start_time");
+        al.add("Venue_name");
+        al.add("End_time");
+        al.add("Venue_address");
+        al.add("face_to_face");
+        al.add("Tradeshows");
+        al.add("Multi_touch_campaign");
+        al.add("Door_opener_campaign");
+        al.add("Third_party_campaign");
+        al.add("Direct_mail");
+        al.add("Blitz_campaign");
+        al.add("description_agenda");
+        al.add("Diss_Storage_1");
+        al.add("Diss_Storage_2");
+        al.add("Diss_Storage_3");
+        al.add("Diss_Storage_4");
+        al.add("Diss_Storage_5");
+        al.add("Diss_Storage_6");
+        al.add("Diss_Server_1");
+        al.add("Diss_Server_2");
+        al.add("Diss_Server_3");
+        al.add("Diss_Server_4");
+        al.add("Diss_Network_1");
+        al.add("Diss_Network_2");
+        al.add("Diss_Solutions_1");
+        al.add("Diss_Solutions_2");
+        al.add("Diss_Solutions_3");
+        al.add("Diss_Solutions_4");
+        al.add("Diss_Solutions_5");
+        al.add("Diss_Solutions_6");
+        al.add("Diss_text");
+        al.add("Target_1");
+        al.add("Target_2");
+        al.add("Target_3");
+        al.add("Additional_totalcost");
+        al.add("Additional_totalmdf");
+        al.add("Additional_reimbursement");
+        al.add("Additional_participating");
+        al.add("Additional_contribution");
+        al.add("Additional_opportunities");
+        al.add("Additional_revenue");
+
+        return al;
+    }
+
     public void addMdfRequestToDatabase(MdfDTO mdf, CampaignDTO camp) throws SQLException {
 
         Connection con = null;
         PreparedStatement stmt = null;
-        PreparedStatement stmt2 = null;
-        PreparedStatement stmt3 = null;
+
         Long campaign_no = UUID.randomUUID().getMostSignificantBits();
         Long id_mdf = UUID.randomUUID().getMostSignificantBits();
-        Long id_poe = UUID.randomUUID().getMostSignificantBits();
 
         try {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            ArrayList al = new ArrayList();
-            al.add("ID_MDF");
-            al.add("Submission_date");
-            al.add("Company_address");
-            al.add("Contact_name");
-            al.add("Contact_email");
-            al.add("Company_name");
-            al.add("Contact_phone");
-            al.add("Program_date");
-            al.add("Estimated_attendees");
-            al.add("Start_time");
-            al.add("Venue_name");
-            al.add("End_time");
-            al.add("Venue_address");
-            al.add("face_to_face");
-            al.add("Tradeshows");
-            al.add("Multi_touch_campaign");
-            al.add("Door_opener_campaign");
-            al.add("Third_party_campaign");
-            al.add("Direct_mail");
-            al.add("Blitz_campaign");
-            al.add("description_agenda");
-            al.add("Diss_Storage_1");
-            al.add("Diss_Storage_2");
-            al.add("Diss_Storage_3");
-            al.add("Diss_Storage_4");
-            al.add("Diss_Storage_5");
-            al.add("Diss_Storage_6");
-            al.add("Diss_Server_1");
-            al.add("Diss_Server_2");
-            al.add("Diss_Server_3");
-            al.add("Diss_Server_4");
-            al.add("Diss_Network_1");
-            al.add("Diss_Network_2");
-            al.add("Diss_Solutions_1");
-            al.add("Diss_Solutions_2");
-            al.add("Diss_Solutions_3");
-            al.add("Diss_Solutions_4");
-            al.add("Diss_Solutions_5");
-            al.add("Diss_Solutions_6");
-            al.add("Diss_text");
-            al.add("Target_1");
-            al.add("Target_2");
-            al.add("Target_3");
-            al.add("Additional_totalcost");
-            al.add("Additional_totalmdf");
-            al.add("Additional_reimbursement");
-            al.add("Additional_participating");
-            al.add("Additional_contribution");
-            al.add("Additional_opportunities");
-            al.add("Additional_revenue");
-
-            String sql = makeSqlInsertString(al);
-
-//            String sql = "INSERT INTO MDF (ID_MDF, Submission_date, Company_address, Contact_name, Contact_email, Company_name, "
-//                    + "Contact_phone, Program_date, Estimated_attendees, Start_time, Venue_name, End_time, Venue_address, "
-//                    + "face_to_face, Tradeshows, Multi_touch_campaign, Door_opener_campaign, Third_party_campaign, Direct_mail, "
-//                    + "Blitz_campaign, description_agenda, Diss_Storage_1, Diss_Storage_2, Diss_Storage_3, Diss_Storage_4, "
-//                    + "Diss_Storage_5, Diss_Storage_6, Diss_Server_1, Diss_Server_2, Diss_Server_3, Diss_Server_4, Diss_Network_1, "
-//                    + "Diss_Network_2, Diss_Solutions_1, Diss_Solutions_2, Diss_Solutions_3, Diss_Solutions_4, Diss_Solutions_5, "
-//                    + "Diss_Solutions_6, Diss_text, Target_1, Target_2, Target_3, Additional_totalcost, Additional_totalmdf, "
-//                    + "Additional_reimbursement, Additional_participating, Additional_contribution, Additional_opportunities, "
-//                    + "Additional_revenue) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, "
-//                    + "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE) VALUES (?, ?, ?, ?, ?)";
-            String sql3 = "INSERT INTO POE (ID_POE) VALUES (?)";
+            String sql = makeSqlInsertString(mdfArrayList());
 
             stmt = con.prepareStatement(sql);
-            stmt2 = con.prepareStatement(sql2);
-            stmt3 = con.prepareStatement(sql3);
 
-            stmt2.setString(1, campaign_no.toString());
-            stmt2.setString(2, camp.getCampaign_Name());
-            stmt2.setString(3, "Ebbe");
-            stmt2.setString(4, id_mdf.toString());
-            stmt2.setString(5, id_poe.toString());
+            camp.setCampaign_No(campaign_no.toString());
+            mdf.setID_MDF(id_mdf.toString());
 
             stmt.setString(1, id_mdf.toString());
             stmt.setString(2, mdf.getSubmission_date());
@@ -181,10 +165,42 @@ public class Queries {
             stmt.setString(49, mdf.getAdditional_opportunities());
             stmt.setString(50, mdf.getAdditional_revenue());
 
-            stmt3.setString(1, id_poe.toString());
+            stmt.executeQuery();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+
+    }
+
+    public void addCampaignToDatabase(MdfDTO mdf, CampaignDTO camp) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+        PreparedStatement stmt2 = null;
+        Long id_poe = UUID.randomUUID().getMostSignificantBits();
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "INSERT INTO POE (ID_POE) VALUES (?)";
+            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE) VALUES (?, ?, ?, ?, ?)";
+
+            stmt = con.prepareStatement(sql);
+            stmt2 = con.prepareStatement(sql2);
+
+            stmt.setString(1, id_poe.toString());
+
+            stmt2.setString(1, camp.getCampaign_No());
+            stmt2.setString(2, camp.getCampaign_Name());
+            stmt2.setString(3, "Ebbe");
+            stmt2.setString(4, mdf.getID_MDF());
+            stmt2.setString(5, id_poe.toString());
 
             stmt.executeQuery();
-            stmt3.executeQuery();
             stmt2.executeQuery();
 
         } catch (ClassNotFoundException ex) {
@@ -194,7 +210,6 @@ public class Queries {
             stmt.close();
             stmt2.close();
         }
-
     }
 
     public void addPoERequestToDatabase(PoEDTO poe) throws SQLException {
