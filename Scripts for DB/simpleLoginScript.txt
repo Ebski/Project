@@ -1,6 +1,8 @@
-insert into ADMIN_RANK values (1, 'Admin');
-insert into PARTNERRANK values (1, 'Admin');
-insert into EMPLOYEE_LIST values ('1', 'Employee', 'test@test.com', '12345678', 1, 'admin');
-insert into PARTNER values ('1', 'Partner', 'Admin', 'test@test.com', '12345678', 'Street 1', 1);
-insert into USERPASS_EMP VALUES ('emp', 'emp', '1');
-insert into USERPASS_PARTNER VALUES ('partner', 'partner', '1');
+create table USERPASS (
+	USERNAME VARCHAR2(80),
+	PASSWORD VARCHAR2(80),
+	USERTYPE VARCHAR2(80)
+);
+
+INSERT INTO USERPASS VALUES('emp', 'emp', '1');
+INSERT INTO USERPASS VALUES('partner', 'partner', '2');
