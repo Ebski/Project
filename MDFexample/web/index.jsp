@@ -33,7 +33,7 @@
 
 
             <div class="login">
-                <form class="navbar-form navbar-right" role="login" method="get" action="loginServlet">
+                <form class="navbar-form navbar-right" role="login" method="get" action="firstServlet">
                     <div class="form-group">
                         <input type="text" class="form-control" name="username" placeholder="Username">
                     </div>

@@ -37,6 +37,7 @@
                 </div>
             </div>
             <div class='signout'>
+                <p>Your logged in as ${user}</p>
                 <a href='index.jsp'><p>Sign out!</p></a>
             </div>
 
