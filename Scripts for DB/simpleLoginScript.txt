@@ -1,0 +1,6 @@
+insert into ADMIN_RANK values (1, 'Admin');
+insert into PARTNERRANK values (1, 'Admin');
+insert into EMPLOYEE_LIST values ('1', 'Employee', 'test@test.com', '12345678', 1, 'admin');
+insert into PARTNER values ('1', 'Partner', 'Admin', 'test@test.com', '12345678', 'Street 1', 1);
+insert into USERPASS_EMP VALUES ('emp', 'emp', '1');
+insert into USERPASS_PARTNER VALUES ('partner', 'partner', '1');
