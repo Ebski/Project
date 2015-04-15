@@ -12,6 +12,6 @@ package logic;
 public class DB {
     public static final String driver = "oracle.jdbc.driver.OracleDriver";
     public static final String URL = "jdbc:oracle:thin:@datdb.cphbusiness.dk:1521:dat";
-    public static final String user = "cphen73";
-    public static final String password = "cphen73";
+    public static final String user = "cphrz69";
+    public static final String password = "cphrz69";
 }
