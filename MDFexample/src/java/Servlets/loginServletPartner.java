@@ -23,17 +23,16 @@ public class loginServletPartner extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
 
-        String user = "Ebbe";
+        String user = (String) session.getAttribute("user");
         ArrayList<CampaignDTO> result = null;
 
         try {
-            result = FR.fetchPendingCampaignsForPartner(user);
+            result = FR.fetchPendingCampaignsForPartner(FR.fetchPartnerNo(user));
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        HttpSession session = request.getSession();
 
         session.setAttribute("Campaigns", result);
 

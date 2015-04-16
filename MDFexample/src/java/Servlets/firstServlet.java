@@ -37,12 +37,14 @@ public class firstServlet extends HttpServlet {
 
         loginSystem login = new loginSystem();
         String user;
+        String loginName;
 
         try {
             user = login.login(request.getParameter("username"), request.getParameter("password"));
+            loginName = request.getParameter("username");
             
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute("user", loginName);
 
             if (user.equals("1")) {
                 response.sendRedirect("loginServletEmployee");

@@ -82,4 +82,39 @@ public class FetchRequest {
 
         return fpc;
     }
+
+    public String fetchPartnerNo(String username) throws SQLException {
+        Connection con = null;
+        Statement stmt = null;
+        String out = null;
+        ResultSet rs = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "Select partner_no from partner where username = '" + username + "'";
+
+            stmt = con.createStatement();
+
+            rs = stmt.executeQuery(sql);
+
+            StringBuilder builder = new StringBuilder();
+            int columnCount = rs.getMetaData().getColumnCount();
+            while (rs.next()) {
+                for (int i = 0; i < columnCount; i++) {
+                    builder.append(rs.getString(i + 1));
+                }
+            }
+            
+            out = builder.toString();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(FetchRequest.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+        return out;
+    }
 }
