@@ -40,7 +40,7 @@ public class loginSystem {
             rs = stmt.executeQuery(sql);
             
             while(rs.next()) {
-                result = rs.getString(3);
+                result = rs.getString(3); //refere til status for login 1(medarbejder) eller 2(partner)
             }
             
             
