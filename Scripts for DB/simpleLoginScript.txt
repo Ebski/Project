@@ -1,3 +1,5 @@
+drop table USERPASS;
+
 create table USERPASS (
 	USERNAME VARCHAR2(80),
 	PASSWORD VARCHAR2(80),
@@ -6,3 +8,4 @@ create table USERPASS (
 
 INSERT INTO USERPASS VALUES('emp', 'emp', '1');
 INSERT INTO USERPASS VALUES('partner', 'partner', '2');
+INSERT INTO USERPASS VALUES('ebbe', 'ebbe', '1');
