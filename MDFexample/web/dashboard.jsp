@@ -1,8 +1,4 @@
-<%-- 
-    Document   : index
-    Created on : Mar 25, 2015, 9:13:05 PM
-    Author     : Dennis
---%>
+
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -44,83 +40,62 @@
 
             <!--TABLE DATA-->
 
-            <!--pending-->
 
-            <div class="method pending-table">
+            <br>
+            <br>
+
+            <!--PENDING CAMPAIGNS-->
+            <div class="method active-table">
                 <p><strong>Pending campaigns</strong></p>
                 <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-1"><div class="header">ID</div></div>
-                    <div class="col-md-3"><div class="header">Name</div></div>
-                    <div class="col-md-2"><div class="header">Start</div></div>
-                    <div class="col-md-2"><div class="header">End</div></div>
-                    <div class="col-md-2"><div class="header">Deadline</div></div>
+                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
+                    <div class="col-md-5"><div class="header">Status No.</div></div>
                     <div class="col-md-2"><div class="header">Status</div></div>
                 </div>
 
-                <div class="row margin-0">
-                    <div class="col-md-1"><div class="cell">Test</div></div>
-                    <div class="col-md-3"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                </div>
-
-                <div class="row margin-0">
-                    <div class="col-md-1"><div class="cell">Test</div></div>
-                    <div class="col-md-3"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                </div>
-
-                <div class="row margin-0">
-                    <div class="col-md-1"><div class="cell">Test</div></div>
-                    <div class="col-md-3"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                </div>
-
+                <c:forEach var="camp" items="${Campaigns}">
+                    <c:if test="${camp.c_Status eq '0'}">
+                        <div class="row margin-0">
+                            <form action="poe.jsp" type="post">
+                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                <div class="col-md-2"><div class="cell"><p style="color: red">Pending</p></div></div>
+                            </form>
+                        </div>
+                    </c:if>
+                </c:forEach>
             </div>
 
             <br>
             <br>
 
-            <!--active-->
-
+            <!--ACTIVE CAMPAIGNS-->
             <div class="method active-table">
                 <p><strong>Active campaigns</strong></p>
                 <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-3"><div class="header">Campaign Name</div></div>
-                    <div class="col-md-3"><div class="header">Partner No.</div></div>
-                    <div class="col-md-2"><div class="header">MDF ID</div></div>
-                    <div class="col-md-2"><div class="header">POE ID</div></div>
+                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
+                    <div class="col-md-5"><div class="header">Status</div></div>
                     <div class="col-md-2"><div class="header">Upload POE</div></div>
                 </div>
 
                 <c:forEach var="camp" items="${Campaigns}">
-                    <div class="row margin-0">
-                        <form action="poe.jsp" type="post">
-                            <div class="col-md-3"><div class="cell">${camp.campaign_Name}</div></div>
-                            <div class="col-md-3"><div class="cell">${camp.partner_No}</div></div>
-                            <div class="col-md-2"><div class="cell">${camp.id_MDF}</div></div>
-                            <div class="col-md-2"><div class="cell">${camp.id_POE}</div></div>
-                            <!--GIVES POE_ID AS VALUE TO BUTTON TO BE ABLE TO FORWARD NUMBER TO POE PAGE AUTOMATICALLY-->
-                            <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
-                        </form>
-                    </div>
+                    <c:if test="${camp.c_Status eq '1'}">
+                        <div class="row margin-0">
+                            <form action="poe.jsp" type="post">
+                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
+                            </form>
+                        </div>
+                    </c:if>
                 </c:forEach>
-
             </div>
 
+
             <br>
             <br>
 
-            <!--old-->
-
+            <!--OLD CAMPAIGNS-->
             <div class="method old-table">
                 <p><strong>Old campaigns</strong></p>
                 <div class="row margin-0 list-header hidden-sm hidden-xs">
@@ -160,6 +135,8 @@
                 </div>
 
             </div>
+
+
 
             <!--END OF TABLE DATA-->
 

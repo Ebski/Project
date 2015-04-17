@@ -265,7 +265,7 @@ public class Queries {
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE")));
+                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("c_Status")));
             }
 
         } catch (ClassNotFoundException ex) {
