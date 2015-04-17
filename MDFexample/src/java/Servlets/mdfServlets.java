@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.FetchRequest;
 import logic.Queries;
 
 /**
@@ -30,87 +31,83 @@ import logic.Queries;
 public class mdfServlets extends HttpServlet {
 
     Queries query = new Queries();
-    
+    FetchRequest FR = new FetchRequest();
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         MdfDTO mdf = new MdfDTO(request.getParameter("Submission_date"),
-        request.getParameter("Company_address"),
-        request.getParameter("Contact_name"),
-        request.getParameter("Contact_email"),
-        request.getParameter("Company_name"),
-        request.getParameter("Contact_phone"),
-        request.getParameter("Program_date"),
-        request.getParameter("Estimated_attendees"),
-        request.getParameter("Start_time"),
-        request.getParameter("Venue_name"),
-        request.getParameter("End_time"),
-        request.getParameter("Venue_address"),
-        request.getParameter("face_to_face"),
-        request.getParameter("Tradeshows"),
-        request.getParameter("Multi_touch_campaign"),
-        request.getParameter("Door_opener_campaign"),
-        request.getParameter("Third_party_campaign"),
-        request.getParameter("Direct_mail"),
-        request.getParameter("Blitz_campaign"),
-        request.getParameter("description_agenda"),
-        request.getParameter("Diss_Storage_1"),
-        request.getParameter("Diss_Storage_2"),
-        request.getParameter("Diss_Storage_3"),
-        request.getParameter("Diss_Storage_4"),
-        request.getParameter("Diss_Storage_5"),
-        request.getParameter("Diss_Storage_6"),
-        request.getParameter("Diss_Server_1"),
-        request.getParameter("Diss_Server_2"),
-        request.getParameter("Diss_Server_3"),
-        request.getParameter("Diss_Server_4"),
-        request.getParameter("Diss_Network_1"),
-        request.getParameter("Diss_Network_2"),
-        request.getParameter("Diss_Solutions_1"),
-        request.getParameter("Diss_Solutions_2"),
-        request.getParameter("Diss_Solutions_3"),
-        request.getParameter("Diss_Solutions_4"),
-        request.getParameter("Diss_Solutions_5"),
-        request.getParameter("Diss_Solutions_6"),
-        request.getParameter("Diss_text"),
-        request.getParameter("Target_1"),
-        request.getParameter("Target_2"),
-        request.getParameter("Target_3"),
-        request.getParameter("Additional_totalcost"),
-        request.getParameter("Additional_totalmdf"),
-        request.getParameter("Additional_reimbursement"),
-        request.getParameter("Additional_participating"),
-        request.getParameter("Additional_contribution"),
-        request.getParameter("Additional_opportunities"),
-        request.getParameter("Additional_revenue"));
-        
+                request.getParameter("Company_address"),
+                request.getParameter("Contact_name"),
+                request.getParameter("Contact_email"),
+                request.getParameter("Company_name"),
+                request.getParameter("Contact_phone"),
+                request.getParameter("Program_date"),
+                request.getParameter("Estimated_attendees"),
+                request.getParameter("Start_time"),
+                request.getParameter("Venue_name"),
+                request.getParameter("End_time"),
+                request.getParameter("Venue_address"),
+                request.getParameter("face_to_face"),
+                request.getParameter("Tradeshows"),
+                request.getParameter("Multi_touch_campaign"),
+                request.getParameter("Door_opener_campaign"),
+                request.getParameter("Third_party_campaign"),
+                request.getParameter("Direct_mail"),
+                request.getParameter("Blitz_campaign"),
+                request.getParameter("description_agenda"),
+                request.getParameter("Diss_Storage_1"),
+                request.getParameter("Diss_Storage_2"),
+                request.getParameter("Diss_Storage_3"),
+                request.getParameter("Diss_Storage_4"),
+                request.getParameter("Diss_Storage_5"),
+                request.getParameter("Diss_Storage_6"),
+                request.getParameter("Diss_Server_1"),
+                request.getParameter("Diss_Server_2"),
+                request.getParameter("Diss_Server_3"),
+                request.getParameter("Diss_Server_4"),
+                request.getParameter("Diss_Network_1"),
+                request.getParameter("Diss_Network_2"),
+                request.getParameter("Diss_Solutions_1"),
+                request.getParameter("Diss_Solutions_2"),
+                request.getParameter("Diss_Solutions_3"),
+                request.getParameter("Diss_Solutions_4"),
+                request.getParameter("Diss_Solutions_5"),
+                request.getParameter("Diss_Solutions_6"),
+                request.getParameter("Diss_text"),
+                request.getParameter("Target_1"),
+                request.getParameter("Target_2"),
+                request.getParameter("Target_3"),
+                request.getParameter("Additional_totalcost"),
+                request.getParameter("Additional_totalmdf"),
+                request.getParameter("Additional_reimbursement"),
+                request.getParameter("Additional_participating"),
+                request.getParameter("Additional_contribution"),
+                request.getParameter("Additional_opportunities"),
+                request.getParameter("Additional_revenue"));
+
         CampaignDTO camp = new CampaignDTO(request.getParameter("Campaign_name"));
-        
-        
+
         try {
             query.addMdfRequestToDatabase(mdf, camp);
             query.addCampaignToDatabase(mdf, camp);
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
 //        FETCH CAMPAIGNS FROM DATABASE
-        
-        String user = "Ebbe";
+        HttpSession session = request.getSession();
+        String user = (String) session.getAttribute("user");
         ArrayList<CampaignDTO> result = null;
-        
+
         try {
-            result = query.fetchPendingCampaigns(user);
+            result = FR.fetchPendingCampaignsForPartner(FR.fetchPartnerNo(user));
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        HttpSession session = request.getSession();
 
         session.setAttribute("Campaigns", result);
-        
-//        END OF FETCH
 
+//        END OF FETCH
         RequestDispatcher disp = request.getRequestDispatcher("submitted.jsp");
         disp.forward(request, response);
     }
