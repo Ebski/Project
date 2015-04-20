@@ -54,18 +54,20 @@
                     <div class="col-md-2"><div class="header">Status No.</div></div>
                     <div class="col-md-2"><div class="header">Status</div></div>
                 </div>
-
+                
+                
+                
                  <c:forEach var="camp" items="${Campaigns}">
                     <c:if test="${camp.c_Status eq '0'}">
                         <div class="row margin-0">
-                            <form action="MDFsomething.jsp" type="post"> <!--jsp navn skal ændres-->
+                            <form name="activeMdfForm" action="mdfViewerServlet" type="post"> <!--jsp navn skal ændres-->
                                 <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.partner_No}</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_POE}"><p>Approve MDF</p></button></div></div>
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>Approve MDF</p></button></div></div>
                             </form>
                         </div>
                     </c:if>
