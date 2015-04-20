@@ -17,8 +17,9 @@ public class CampaignDTO {
     private String id_POE;
     private String c_Status;
 
-    public CampaignDTO(String campaign_Name) {
+    public CampaignDTO(String campaign_Name, String partner_No) {
         this.campaign_Name = campaign_Name;
+        this.partner_No = partner_No;
     }
     
     

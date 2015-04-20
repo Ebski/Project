@@ -187,7 +187,7 @@ public class Queries {
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
             String sql = "INSERT INTO POE (ID_POE) VALUES (?)";
-            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE) VALUES (?, ?, ?, ?, ?)";
+            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE, C_STATUS) VALUES (?, ?, ?, ?, ?, ?)";
 
             stmt = con.prepareStatement(sql);
             stmt2 = con.prepareStatement(sql2);
@@ -196,9 +196,10 @@ public class Queries {
 
             stmt2.setString(1, camp.getCampaign_No());
             stmt2.setString(2, camp.getCampaign_Name());
-            stmt2.setString(3, "Ebbe");
+            stmt2.setString(3, camp.getPartner_No());
             stmt2.setString(4, mdf.getID_MDF());
             stmt2.setString(5, id_poe.toString());
+            stmt2.setInt(6, 0);
 
             stmt.executeQuery();
             stmt2.executeQuery();
