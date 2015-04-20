@@ -36,7 +36,7 @@ public class loginServletEmployee extends HttpServlet {
 
         session.setAttribute("Campaigns", result);
 
-        RequestDispatcher disp = request.getRequestDispatcher("employeeView.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("employeeViewActive.jsp");
         disp.forward(request, response);
 
     }
