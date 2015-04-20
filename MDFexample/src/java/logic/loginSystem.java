@@ -52,6 +52,7 @@ public class loginSystem {
         } finally {
             con.close();
             stmt.close();
+            rs.close();
         }
         
         return result;

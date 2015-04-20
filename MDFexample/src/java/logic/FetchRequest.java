@@ -47,6 +47,7 @@ public class FetchRequest {
         } finally {
             con.close();
             stmt.close();
+            rs.close();
         }
 
         return fpc;
@@ -78,6 +79,7 @@ public class FetchRequest {
         } finally {
             con.close();
             stmt.close();
+            rs.close();
         }
 
         return fpc;
@@ -114,6 +116,7 @@ public class FetchRequest {
         } finally {
             con.close();
             stmt.close();
+            rs.close();
         }
         return out;
     }
