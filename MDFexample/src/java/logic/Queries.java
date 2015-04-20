@@ -24,21 +24,7 @@ import java.util.logging.Logger;
  * @author Dennis
  */
 public class Queries {
-
-    ResultSet rs = null;
-
-    public void connectToDatabase(PreparedStatement pstmt) throws SQLException {
-        try (Connection con = DriverManager.getConnection(DB.URL, DB.user, DB.password)) {
-
-            Class.forName(DB.driver);
-
-            //  stmt.executeUpdate("INSERT INTO MDF VALUES ('2000-10-10', 'FSAF', 'GSA', 'sofar', 'KLGDS','41245','2000-10-10',4214,'2000-10-10','FDSF','2000-10-10','FSAF',0,0,0,0,0,0,0,'FDSF',0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,'FSA',0,0,0,2141,4214,'FDSF','GDSG',324,235,235)");
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }
-
+    
     private ArrayList<String> mdfArrayList() {
         ArrayList al = new ArrayList();
         al.add("ID_MDF");
@@ -274,6 +260,7 @@ public class Queries {
         } finally {
             con.close();
             stmt.close();
+            rs.close();
         }
 
         return fpc;
