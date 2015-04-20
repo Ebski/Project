@@ -85,9 +85,11 @@ public class mdfServlets extends HttpServlet {
                 request.getParameter("Additional_opportunities"),
                 request.getParameter("Additional_revenue"));
 
-        CampaignDTO camp = new CampaignDTO(request.getParameter("Campaign_name"));
+        HttpSession session = request.getSession();
+        String user = (String) session.getAttribute("user");
 
         try {
+            CampaignDTO camp = new CampaignDTO(request.getParameter("Campaign_name"), FR.fetchPartnerNo(user));
             query.addMdfRequestToDatabase(mdf, camp);
             query.addCampaignToDatabase(mdf, camp);
         } catch (SQLException ex) {
@@ -95,8 +97,6 @@ public class mdfServlets extends HttpServlet {
         }
 
 //        FETCH CAMPAIGNS FROM DATABASE
-        HttpSession session = request.getSession();
-        String user = (String) session.getAttribute("user");
         ArrayList<CampaignDTO> result = null;
 
         try {
