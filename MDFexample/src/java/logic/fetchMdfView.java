@@ -1,13 +1,11 @@
 package logic;
 
-import DTO.CampaignDTO;
 import DTO.MdfDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -17,14 +15,13 @@ public class fetchMdfView {
         MdfDTO mdf = null;
         Connection con = null;
         Statement stmt = null;
-        String out = null;
         ResultSet rs = null;
 
         try {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "Select * from mdf where ID_MDF = '" + id_MDF + "'";
+            String sql = "Select * from mdf where ID_MDF =" + id_MDF;
 
             stmt = con.createStatement();
 
@@ -32,6 +29,7 @@ public class fetchMdfView {
             
             while(rs.next()) {
                 mdf = new MdfDTO(
+                        rs.getString("ID_MDF"),
                         rs.getString("Submission_date"),
                         rs.getString("Company_address"),
                         rs.getString("Contact_name"),
@@ -82,6 +80,7 @@ public class fetchMdfView {
                         rs.getString("Additional_opportunities"),
                         rs.getString("Additional_revenue")
                 );
+                
             }
 
         } catch (ClassNotFoundException ex) {
@@ -89,6 +88,7 @@ public class fetchMdfView {
         } finally {
             con.close();
             stmt.close();
+            rs.close();
         }
         return mdf;
     }

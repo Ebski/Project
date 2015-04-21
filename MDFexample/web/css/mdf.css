@@ -29,10 +29,12 @@ input[type="text"] {
 }
 
 .logo {
-    position: absolute;
-    top: 5%;
-    right: 15%;
+    position: relative;
+    margin-top: -100px;
+    margin-bottom: 50px;
+    left: 90%;
     height: 90px;
+    z-index: 5;
 }
 
 .container {

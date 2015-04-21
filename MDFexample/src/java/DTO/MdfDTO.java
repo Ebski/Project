@@ -127,6 +127,59 @@ public class MdfDTO {
         this.Additional_revenue = Additional_revenue;
     }
 
+    public MdfDTO(String ID_MDF, String Submission_date, String Company_address, String Contact_name, String Contact_email, String Company_name, String Contact_phone, String Program_date, String Estimated_attendees, String Start_time, String Venue_name, String End_time, String Venue_address, String face_to_face, String Tradeshows, String Multi_touch_campaign, String Door_opener_campaign, String Third_party_campaign, String Direct_mail, String Blitz_campaign, String description_agenda, String Diss_Storage_1, String Diss_Storage_2, String Diss_Storage_3, String Diss_Storage_4, String Diss_Storage_5, String Diss_Storage_6, String Diss_Server_1, String Diss_Server_2, String Diss_Server_3, String Diss_Server_4, String Diss_Network_1, String Diss_Network_2, String Diss_Solutions_1, String Diss_Solutions_2, String Diss_Solutions_3, String Diss_Solutions_4, String Diss_Solutions_5, String Diss_Solutions_6, String Diss_text, String Target_1, String Target_2, String Target_3, String Additional_totalcost, String Additional_totalmdf, String Additional_reimbursement, String Additional_participating, String Additional_contribution, String Additional_opportunities, String Additional_revenue) {
+        this.ID_MDF = ID_MDF;
+        this.Submission_date = Submission_date;
+        this.Company_address = Company_address;
+        this.Contact_name = Contact_name;
+        this.Contact_email = Contact_email;
+        this.Company_name = Company_name;
+        this.Contact_phone = Contact_phone;
+        this.Program_date = Program_date;
+        this.Estimated_attendees = Estimated_attendees;
+        this.Start_time = Start_time;
+        this.Venue_name = Venue_name;
+        this.End_time = End_time;
+        this.Venue_address = Venue_address;
+        this.face_to_face = face_to_face;
+        this.Tradeshows = Tradeshows;
+        this.Multi_touch_campaign = Multi_touch_campaign;
+        this.Door_opener_campaign = Door_opener_campaign;
+        this.Third_party_campaign = Third_party_campaign;
+        this.Direct_mail = Direct_mail;
+        this.Blitz_campaign = Blitz_campaign;
+        this.description_agenda = description_agenda;
+        this.Diss_Storage_1 = Diss_Storage_1;
+        this.Diss_Storage_2 = Diss_Storage_2;
+        this.Diss_Storage_3 = Diss_Storage_3;
+        this.Diss_Storage_4 = Diss_Storage_4;
+        this.Diss_Storage_5 = Diss_Storage_5;
+        this.Diss_Storage_6 = Diss_Storage_6;
+        this.Diss_Server_1 = Diss_Server_1;
+        this.Diss_Server_2 = Diss_Server_2;
+        this.Diss_Server_3 = Diss_Server_3;
+        this.Diss_Server_4 = Diss_Server_4;
+        this.Diss_Network_1 = Diss_Network_1;
+        this.Diss_Network_2 = Diss_Network_2;
+        this.Diss_Solutions_1 = Diss_Solutions_1;
+        this.Diss_Solutions_2 = Diss_Solutions_2;
+        this.Diss_Solutions_3 = Diss_Solutions_3;
+        this.Diss_Solutions_4 = Diss_Solutions_4;
+        this.Diss_Solutions_5 = Diss_Solutions_5;
+        this.Diss_Solutions_6 = Diss_Solutions_6;
+        this.Diss_text = Diss_text;
+        this.Target_1 = Target_1;
+        this.Target_2 = Target_2;
+        this.Target_3 = Target_3;
+        this.Additional_totalcost = Additional_totalcost;
+        this.Additional_totalmdf = Additional_totalmdf;
+        this.Additional_reimbursement = Additional_reimbursement;
+        this.Additional_participating = Additional_participating;
+        this.Additional_contribution = Additional_contribution;
+        this.Additional_opportunities = Additional_opportunities;
+        this.Additional_revenue = Additional_revenue;
+    }
+
     
     
     
