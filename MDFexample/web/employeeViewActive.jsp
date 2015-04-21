@@ -26,9 +26,9 @@
                 <div class='menu-content'
                      <ul>
                         <li><a href="newPartner.jsp">New Partner</a></li>
-                        <li><a href="employeeViewPending">Pending Campaigns</a></li>
-                        <li><a href="employeeViewActive">Active Campaigns</a></li>
-                        <li><a href="employeeViewCompleted">Completed Campaigns</a></li>
+                        <li><a href="employeeViewPending.jsp">Pending Campaigns</a></li>
+                        <li><a href="employeeViewActive.jsp">Active Campaigns</a></li>
+                        <li><a href="employeeViewCompleted.jsp">Completed Campaigns</a></li>
                         <li><a href="quarter.jsp">Quarters</a></li>
                     </ul>
                 </div>
