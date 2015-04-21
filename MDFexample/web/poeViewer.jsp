@@ -15,7 +15,17 @@
 
     </head>
     <body>
-        <form action="changeMe" method="GET">
+        <form action="poeAcceptedServlet" method="GET">
+
+            <div class="col-md-12">
+                <!--FORWARDED mdf ID-->
+                <input type="hidden" name="poe_ID" value="<%
+                    String b = request.getParameter("Approve_Poe");
+                    out.print(b);
+                       %>">
+
+                </input>
+            </div>
             <div class="container">
                 <header>
                     <h1>Point of Execution:</h1>
