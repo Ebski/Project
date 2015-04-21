@@ -11,19 +11,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import logic.fetchPoeView;
+import logic.UpdateCampaignStatus;
 
 @WebServlet(name = "poeAcceptedServlet", urlPatterns = {"/poeAcceptedServlet"})
 public class poeAcceptedServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        fetchPoeView view = new fetchPoeView();
+        UpdateCampaignStatus update= new UpdateCampaignStatus();
         String poe_ID = null;
 
         try {
             poe_ID = request.getParameter("poe_ID");
-            view.updateCampaignStatusAfterPoe(poe_ID);
+            update.updateCampaignStatusAfterPoe(poe_ID);
         } catch (SQLException ex) {
             Logger.getLogger(poeAcceptedServlet.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -11,32 +11,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class fetchMdfView {
-    
-    public void updateCampaignStatusAfterMdf(String id_MDF) throws SQLException {
-        Connection con = null;
-        PreparedStatement stmt = null;
-        
-        try {
-            Class.forName(DB.driver);
-            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
-
-            String sql = "UPDATE CAMPAIGN "
-                    + "SET C_STATUS = ?"
-                    + " WHERE ID_MDF = ?";
-            stmt = con.prepareStatement(sql);
-
-            stmt.setInt(1, 1);
-            stmt.setString(2, id_MDF);
-
-
-            stmt.executeQuery();
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            con.close();
-            stmt.close();
-        }       
-    }
 
     public MdfDTO fetchMdf(String id_MDF) throws SQLException {
         MdfDTO mdf = null;
@@ -53,8 +27,8 @@ public class fetchMdfView {
             stmt = con.createStatement();
 
             rs = stmt.executeQuery(sql);
-            
-            while(rs.next()) {
+
+            while (rs.next()) {
                 mdf = new MdfDTO(
                         rs.getString("ID_MDF"),
                         rs.getString("Submission_date"),
@@ -107,7 +81,7 @@ public class fetchMdfView {
                         rs.getString("Additional_opportunities"),
                         rs.getString("Additional_revenue")
                 );
-                
+
             }
 
         } catch (ClassNotFoundException ex) {
