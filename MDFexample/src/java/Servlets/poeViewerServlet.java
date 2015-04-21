@@ -1,11 +1,9 @@
 package Servlets;
 
-import DTO.MdfDTO;
-import logic.fetchMdfView;
+import DTO.PoEDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -15,29 +13,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.fetchPoeView;
 
-@WebServlet(name = "mdfViewerServlet", urlPatterns = {"/mdfViewerServlet"})
-public class mdfViewerServlet extends HttpServlet {
+
+@WebServlet(name = "poeViewerServlet", urlPatterns = {"/poeViewerServlet"})
+public class poeViewerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            MdfDTO mdf = null;
-            String mdf_ID = null;
-            fetchMdfView view = new fetchMdfView();
-            
+        PoEDTO poe = null;
+        String poe_ID = null;
+        fetchPoeView view = new fetchPoeView();
+        
         try {
-            mdf_ID = request.getParameter("Approve_Mdf");
-            mdf = view.fetchMdf(mdf_ID);
+            poe_ID = request.getParameter("Approve_Poe");
+            poe = view.fetchPoe(poe_ID);
         } catch (SQLException ex) {
-            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(poeViewerServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        System.out.println(mdf_ID);
+        System.out.println(poe_ID);
         HttpSession session = request.getSession();
-
-        session.setAttribute("mdfViewer", mdf);
         
-        RequestDispatcher disp = request.getRequestDispatcher("mdfViewer.jsp");
+        session.setAttribute("poeViewer", poe);
+        
+        RequestDispatcher disp = request.getRequestDispatcher("poeViewer.jsp");
         disp.forward(request, response);
     }
 

@@ -95,14 +95,14 @@
                  <c:forEach var="camp" items="${Campaigns}">
                     <c:if test="${camp.c_Status eq '2'}">
                         <div class="row margin-0">
-                            <form action="MDFsomething.jsp" type="post"> <!--jsp navn skal ændres-->
+                            <form name="activePoeForm" action="poeViewerServlet" type="post">
                                 <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.partner_No}</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}"><p>Approve POE</p></button></div></div>
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p>Approve POE</p></button></div></div>
                             </form>
                         </div>
                     </c:if>
