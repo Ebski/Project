@@ -99,41 +99,24 @@
             <div class="method old-table">
                 <p><strong>Old campaigns</strong></p>
                 <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-1"><div class="header">ID</div></div>
-                    <div class="col-md-3"><div class="header">Name</div></div>
-                    <div class="col-md-2"><div class="header">Start</div></div>
-                    <div class="col-md-2"><div class="header">End</div></div>
-                    <div class="col-md-2"><div class="header">Deadline</div></div>
-                    <div class="col-md-2"><div class="header">Status</div></div>
+                    <div class="col-md-3"><div class="header">Campaign Name</div></div>
+                    <div class="col-md-3"><div class="header">Documentation</div></div>
+                    <div class="col-md-3"><div class="header">Status No.</div></div>
+                    <div class="col-md-3"><div class="header">Status</div></div>
                 </div>
 
-                <div class="row margin-0">
-                    <div class="col-md-1"><div class="cell">Test</div></div>
-                    <div class="col-md-3"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                </div>
-
-                <div class="row margin-0">
-                    <div class="col-md-1"><div class="cell">Test</div></div>
-                    <div class="col-md-3"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                </div>
-
-                <div class="row margin-0">
-                    <div class="col-md-1"><div class="cell">Test</div></div>
-                    <div class="col-md-3"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                    <div class="col-md-2"><div class="cell">Test</div></div>
-                </div>
-
+                <c:forEach var="camp" items="${Campaigns}">
+                    <c:if test="${camp.c_Status eq '0'}">
+                        <div class="row margin-0">
+                            <form action="poe.jsp" type="post">
+                                <div class="col-md-3"><div class="cell">${camp.campaign_Name}</div></div>
+                                <div class="col-md-3"><div class="cell"><button class="btn btn-primary" name="Documentation" value="${camp.campaign_No}"><p>Documentation</p></button></div></div>
+                                <div class="col-md-3"><div class="cell">${camp.c_Status}</div></div>
+                                <div class="col-md-3"><div class="cell"><p style="color: black">Completed</p></div></div>
+                            </form>
+                        </div>
+                    </c:if>
+                </c:forEach>
             </div>
 
 
