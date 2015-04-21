@@ -41,7 +41,7 @@ public class fetchPoeView {
                          rs.getString("ID_POE"),
                          rs.getString("campaign_type"),
                          rs.getString("activity"),
-                         rs.getString("date"),
+                         rs.getString("poe_date"),
                          rs.getString("recipients"),
                          rs.getString("unique_opens_hits"),
                          rs.getString("unique_clicks"),

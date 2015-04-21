@@ -22,17 +22,17 @@ public class poeViewerServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PoEDTO poe = null;
-        String poe_ID = null;
+        String id_poe = null;
         fetchPoeView view = new fetchPoeView();
         
         try {
-            poe_ID = request.getParameter("Approve_Poe");
-            poe = view.fetchPoe(poe_ID);
+            id_poe = request.getParameter("Approve_Poe");
+            poe = view.fetchPoe(id_poe);
         } catch (SQLException ex) {
             Logger.getLogger(poeViewerServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        System.out.println(poe_ID);
+        System.out.println(id_poe);
         HttpSession session = request.getSession();
         
         session.setAttribute("poeViewer", poe);
