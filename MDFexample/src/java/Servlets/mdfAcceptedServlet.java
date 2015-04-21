@@ -1,6 +1,5 @@
 package Servlets;
 
-import DTO.PoEDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -12,32 +11,26 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import logic.fetchPoeView;
+import logic.fetchMdfView;
 
-
-@WebServlet(name = "poeViewerServlet", urlPatterns = {"/poeViewerServlet"})
-public class poeViewerServlet extends HttpServlet {
+@WebServlet(name = "mdfAcceptedServlet", urlPatterns = {"/mdfAcceptedServlet"})
+public class mdfAcceptedServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        PoEDTO poe = null;
-        String id_poe = null;
-        fetchPoeView view = new fetchPoeView();
-        
+        fetchMdfView view = new fetchMdfView();
+        String mdf_ID = null;
+
         try {
-            id_poe = request.getParameter("Approve_Poe");
-            poe = view.fetchPoe(id_poe);
+            mdf_ID = request.getParameter("mdf_ID");
+            view.updateCampaignStatusAfterMdf(mdf_ID);
         } catch (SQLException ex) {
-            Logger.getLogger(poeViewerServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(mdfAcceptedServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        HttpSession session = request.getSession();
-        
-        session.setAttribute("poeViewer", poe);
-        
-        RequestDispatcher disp = request.getRequestDispatcher("poeViewer.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("loginServletEmployee");
         disp.forward(request, response);
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -3,6 +3,7 @@ package logic;
 import DTO.MdfDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,6 +11,32 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class fetchMdfView {
+    
+    public void updateCampaignStatusAfterMdf(String id_MDF) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+        
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "UPDATE CAMPAIGN "
+                    + "SET C_STATUS = ?"
+                    + " WHERE ID_MDF = ?";
+            stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, 1);
+            stmt.setString(2, id_MDF);
+
+
+            stmt.executeQuery();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }       
+    }
 
     public MdfDTO fetchMdf(String id_MDF) throws SQLException {
         MdfDTO mdf = null;

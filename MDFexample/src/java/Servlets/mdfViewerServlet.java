@@ -31,8 +31,7 @@ public class mdfViewerServlet extends HttpServlet {
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        System.out.println(mdf_ID);
+
         HttpSession session = request.getSession();
 
         session.setAttribute("mdfViewer", mdf);
