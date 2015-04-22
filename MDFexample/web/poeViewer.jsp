@@ -28,7 +28,7 @@
             </div>
             <div class="container">
                 <header>
-                    <h1>Point of Execution:</h1>
+                    <h1>Proof of Execution:</h1>
                     <img src="img/Dell_Logo.png" alt="Dell-logo" class="img-responsive logo visible-lg"/>
                 </header>
                 <div class="row">
@@ -74,7 +74,7 @@
                 <hr>
                 <div class="row">
                     <div class="col-md-12">
-                        <input type="file" name="dataFile" id="fileChooser"/><br/><br/>
+                        <a href="img/${poeViewer.filepath}" target="_blank">${poeViewer.filepath}</a>
                     </div>
                 </div>
                 <div class="row">

@@ -41,7 +41,7 @@ public class poeServlet extends HttpServlet {
                 request.getParameter("Unique_opens_hits"),
                 request.getParameter("Unique_clicks"),
                 request.getParameter("additional_information"),
-                request.getRealPath(request.getParameter("dataFile")));
+                request.getParameter("dataFile"));
 
         try {
             query.addPoERequestToDatabase(poe);

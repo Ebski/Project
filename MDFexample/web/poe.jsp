@@ -24,7 +24,7 @@
         <form action="poeServlet" method="GET">
             <div class="container">
                 <header>
-                    <h1>Point of Execution:</h1>
+                    <h1>Proof of Execution:</h1>
                     <img src="img/Dell_Logo.png" alt="Dell-logo" class="img-responsive logo visible-lg"/>
                 </header>
                 <div class="row">

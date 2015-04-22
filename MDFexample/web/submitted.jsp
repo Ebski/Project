@@ -26,7 +26,7 @@
             <h2>Your request has been sent</h2>
             <p>We will review your request and you will get a response within 1-3 working days</p>
             <br/>
-            <p>You will be redirected to dashboard within <span id="counter">20</span> seconds - or <a href="dashboard.jsp">click here</a> to go to front page</p>
+            <p>You will be redirected to dashboard within <span id="counter">20</span> seconds - or <a href="http://localhost:8080/MDFexample/loginServletPartner">click here</a> to go to front page</p>
         </div>
 
 
