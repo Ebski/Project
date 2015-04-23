@@ -73,7 +73,7 @@ public class campaignTest {
         Statement stmt3 = null;
         ResultSet rs = null;
 
-        CampaignDTO camp = new CampaignDTO("10000", "JUnitCampName", "JUnitNo", "10000", "11111", "0");
+        CampaignDTO camp = new CampaignDTO("10000", "JUnitCampName", "JUnitNo", "10000", "11111", "22", "22", "0");
 
         try {
             Class.forName(DB.driver);
