@@ -63,105 +63,132 @@
                             </form>
                         </div>
                     </c:if>
-                </c:forEach>
-            </div>
+                        <c:if test="${camp.c_Status eq '2'}">
+                            <div class="row margin-0">
+                                <form action="poe.jsp" type="post">
+                                    <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                    <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                    <div class="col-md-2"><div class="cell"><p style="color: red">Pending</p></div></div>
+                                </form>
+                            </div>
+                        </c:if>
+                            <c:if test="${camp.c_Status eq '4'}">
+                                <div class="row margin-0">
+                                    <form action="poe.jsp" type="post">
+                                        <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                        <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                        <div class="col-md-2"><div class="cell"><p style="color: red">Pending</p></div></div>
+                                    </form>
+                                </div>
+                            </c:if>
+                                <c:if test="${camp.c_Status eq '5'}">
+                                    <div class="row margin-0">
+                                        <form action="poe.jsp" type="post">
+                                            <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                            <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                            <div class="col-md-2"><div class="cell"><p style="color: red">Pending</p></div></div>
+                                        </form>
+                                    </div>
+                                </c:if>
+                                </c:forEach>
+                            </div>
 
-            <br>
-            <br>
+                            <br>
+                            <br>
 
-            <!--ACTIVE CAMPAIGNS-->
-            <div class="method active-table">
-                <p><strong>Active campaigns</strong></p>
-                <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
-                    <div class="col-md-5"><div class="header">Status</div></div>
-                    <div class="col-md-2"><div class="header">Upload POE</div></div>
-                </div>
+                            <!--ACTIVE CAMPAIGNS-->
+                            <div class="method active-table">
+                                <p><strong>Active campaigns</strong></p>
+                                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
+                                    <div class="col-md-5"><div class="header">Status</div></div>
+                                    <div class="col-md-2"><div class="header">Upload POE</div></div>
+                                </div>
 
-                <c:forEach var="camp" items="${Campaigns}">
-                    <c:if test="${camp.c_Status eq '1'}">
-                        <div class="row margin-0">
-                            <form action="poe.jsp" type="post">
-                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
-                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
-                            </form>
-                        </div>
-                    </c:if>
-                </c:forEach>
-            </div>
+                                <c:forEach var="camp" items="${Campaigns}">
+                                    <c:if test="${camp.c_Status eq '1'}">
+                                        <div class="row margin-0">
+                                            <form action="poe.jsp" type="post">
+                                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
+                                            </form>
+                                        </div>
+                                    </c:if>
+                                </c:forEach>
+                            </div>
 
-            <br>
-            <br>
+                            <br>
+                            <br>
 
-            <!-- UPLOAD INVOICE -->
-            <div class="method active-table">
-                <p><strong>Completed Campaigns</strong></p>
-                <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
-                    <div class="col-md-5"><div class="header">Status</div></div>
-                    <div class="col-md-2"><div class="header">Invoice</div></div>
-                </div>
+                            <!-- UPLOAD INVOICE -->
+                            <div class="method active-table">
+                                <p><strong>Completed Campaigns</strong></p>
+                                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
+                                    <div class="col-md-5"><div class="header">Status</div></div>
+                                    <div class="col-md-2"><div class="header">Invoice</div></div>
+                                </div>
 
-                <c:forEach var="camp" items="${Campaigns}">
-                    <c:if test="${camp.c_Status eq '3'}">
-                        <div class="row margin-0">
-                            <form action="invoice.jsp" type="post">
-                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
-                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_invoice" value="${camp.id_invoice}"><p>Upload Invoice</p></button></div></div>
-                            </form>
-                        </div>
-                    </c:if>
-                </c:forEach>
-            </div>
+                                <c:forEach var="camp" items="${Campaigns}">
+                                    <c:if test="${camp.c_Status eq '3'}">
+                                        <div class="row margin-0">
+                                            <form action="invoice.jsp" type="post">
+                                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_invoice" value="${camp.id_invoice}"><p>Upload Invoice</p></button></div></div>
+                                            </form>
+                                        </div>
+                                    </c:if>
+                                </c:forEach>
+                            </div>
 
-            <br>
-            <br>
+                            <br>
+                            <br>
 
-            <!--OLD CAMPAIGNS-->
-            <div class="method old-table">
-                <p><strong>Old campaigns</strong></p>
-                <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-2"><div class="header">Campaign Name</div></div>
-                    <div class="col-md-2"><div class="header">MDF</div></div>
-                    <div class="col-md-2"><div class="header">POE</div></div>
-                    <div class="col-md-2"><div class="header">Invoice</div></div>
-                    <div class="col-md-2"><div class="header">Factura</div></div>
-                    <div class="col-md-1"><div class="header">Status No.</div></div>
-                    <div class="col-md-1"><div class="header">Status</div></div>
-                </div>
+                            <!--OLD CAMPAIGNS-->
+                            <div class="method old-table">
+                                <p><strong>Old campaigns</strong></p>
+                                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                                    <div class="col-md-2"><div class="header">Campaign Name</div></div>
+                                    <div class="col-md-2"><div class="header">MDF</div></div>
+                                    <div class="col-md-2"><div class="header">POE</div></div>
+                                    <div class="col-md-2"><div class="header">Invoice</div></div>
+                                    <div class="col-md-2"><div class="header">Factura</div></div>
+                                    <div class="col-md-1"><div class="header">Status No.</div></div>
+                                    <div class="col-md-1"><div class="header">Status</div></div>
+                                </div>
 
-                <c:forEach var="camp" items="${Campaigns}">
-                    <c:if test="${camp.c_Status eq '6'}">
-                        <div class="row margin-0">
-                            <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
-                            <form name="activeMdfForm" action="mdfDokumentationViewServlet" type="post">
-                                 <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>MDF</p></button></div></div>
-                            </form>
-                            <form name="activePoeForm" action="poeDokumentationViewServlet" type="post">
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p>POE </p></button></div></div>
-                            </form>
-                            <form name="activeInvoiceForm" action="invoiceDokumentationViewServlet" type="post">
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_invoice}" type="submit"><p>Invoice </p></button></div></div>
-                            </form>
-                            <form name="activeFacturaForm" action="facturaDokumentationViewServlet" type="post">
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Factura" value="${camp.id_factura}" type="submit"><p>Factura</p></button></div></div>
-                            </form>
-                            <div class="col-md-1"><div class="cell">${camp.c_Status}</div></div>
-                            <div class="col-md-1"><div class="cell"><p style="color: black">Completed</p></div></div>
-                        </div>
-                    </c:if>
-                </c:forEach>
-            </div>
+                                <c:forEach var="camp" items="${Campaigns}">
+                                    <c:if test="${camp.c_Status eq '6'}">
+                                        <div class="row margin-0">
+                                            <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
+                                            <form name="activeMdfForm" action="mdfDokumentationViewServlet" type="post">
+                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>MDF</p></button></div></div>
+                                            </form>
+                                            <form name="activePoeForm" action="poeDokumentationViewServlet" type="post">
+                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p>POE </p></button></div></div>
+                                            </form>
+                                            <form name="activeInvoiceForm" action="invoiceDokumentationViewServlet" type="post">
+                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_invoice}" type="submit"><p>Invoice </p></button></div></div>
+                                            </form>
+                                            <form name="activeFacturaForm" action="facturaDokumentationViewServlet" type="post">
+                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Factura" value="${camp.id_factura}" type="submit"><p>Factura</p></button></div></div>
+                                            </form>
+                                            <div class="col-md-1"><div class="cell">${camp.c_Status}</div></div>
+                                            <div class="col-md-1"><div class="cell"><p style="color: black">Completed</p></div></div>
+                                        </div>
+                                    </c:if>
+                                </c:forEach>
+                            </div>
 
 
 
-            <!--END OF TABLE DATA-->
+                            <!--END OF TABLE DATA-->
 
-            <!--Javascript-->
+                            <!--Javascript-->
 
-            <script src="js/bootstrap.min.js" type="text/javascript"></script>
-            <script src="js/custom.js" type="text/javascript"></script>
-    </body>
-</html>
+                            <script src="js/bootstrap.min.js" type="text/javascript"></script>
+                            <script src="js/custom.js" type="text/javascript"></script>
+                    </body>
+                </html>
