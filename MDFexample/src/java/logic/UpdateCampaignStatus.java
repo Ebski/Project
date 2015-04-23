@@ -143,4 +143,29 @@ public class UpdateCampaignStatus {
         }
     }
 
+    public void updateCampaignStatusAfterFacturaUpload(String id_factura) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "UPDATE CAMPAIGN "
+                    + "SET C_STATUS = ?"
+                    + " WHERE ID_FACTURA = ?";
+            stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, 6);
+            stmt.setString(2, id_factura);
+
+            stmt.executeQuery();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+    }
+
 }

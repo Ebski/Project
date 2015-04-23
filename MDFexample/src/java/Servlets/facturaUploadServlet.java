@@ -1,7 +1,6 @@
 package Servlets;
 
-import DTO.InvoiceDTO;
-import DTO.PoEDTO;
+import DTO.FacturaDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -16,31 +15,31 @@ import javax.servlet.http.HttpServletResponse;
 import logic.Queries;
 import logic.UpdateCampaignStatus;
 
-@WebServlet(name = "invoiceUploadServlet", urlPatterns = {"/invoiceUploadServlet"})
-public class invoiceUploadServlet extends HttpServlet {
+@WebServlet(name = "facturaUploadServlet", urlPatterns = {"/facturaUploadServlet"})
+public class facturaUploadServlet extends HttpServlet {
 
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         Queries query = new Queries();
         UpdateCampaignStatus update = new UpdateCampaignStatus();
 
-        String invoice_ID = request.getParameter("id_invoice");
+        String factura_ID = request.getParameter("id_factura");
 
-        InvoiceDTO invoice = new InvoiceDTO(
-                invoice_ID,
+        FacturaDTO factura = new FacturaDTO(
+                factura_ID,
                 request.getParameter("dataFile"),
                 request.getParameter("additional_information")
         );
 
         try {
-            query.addInvoiceToDatabase(invoice);
-            update.updateCampaignStatusAfterInvoiceUpload(invoice_ID);
+            query.addFacturaToDatabase(factura);
+            update.updateCampaignStatusAfterFacturaUpload(factura_ID);
         } catch (SQLException ex) {
             Logger.getLogger(poeServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        RequestDispatcher disp = request.getRequestDispatcher("submitted.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("submittedEmployee.jsp");
         disp.forward(request, response);
     }
 

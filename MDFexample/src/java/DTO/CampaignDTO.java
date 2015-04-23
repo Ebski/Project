@@ -16,6 +16,7 @@ public class CampaignDTO {
     private String id_MDF;
     private String id_POE;
     private String id_invoice;
+    private String id_factura;
     private String c_Status;
 
     public CampaignDTO(String campaign_Name, String partner_No) {
@@ -23,13 +24,14 @@ public class CampaignDTO {
         this.partner_No = partner_No;
     }
 
-    public CampaignDTO(String campaign_No, String campaign_Name, String partner_No, String id_MDF, String id_POE, String id_invoice, String c_Status) {
+    public CampaignDTO(String campaign_No, String campaign_Name, String partner_No, String id_MDF, String id_POE, String id_invoice, String id_factura, String c_Status) {
         this.campaign_No = campaign_No;
         this.campaign_Name = campaign_Name;
         this.partner_No = partner_No;
         this.id_MDF = id_MDF;
         this.id_POE = id_POE;
         this.id_invoice = id_invoice;
+        this.id_factura = id_factura;
         this.c_Status = c_Status;
     }
 
@@ -81,6 +83,14 @@ public class CampaignDTO {
         this.id_invoice = id_invoice;
     }
 
+    public String getId_factura() {
+        return id_factura;
+    }
+
+    public void setId_factura(String id_factura) {
+        this.id_factura = id_factura;
+    }
+
     public String getC_Status() {
         return c_Status;
     }
@@ -91,7 +101,6 @@ public class CampaignDTO {
 
     @Override
     public String toString() {
-        return "CampaignDTO{" + "campaign_No=" + campaign_No + ", campaign_Name=" + campaign_Name + ", partner_No=" + partner_No + ", id_MDF=" + id_MDF + ", id_POE=" + id_POE + ", id_invoice=" + id_invoice + ", c_Status=" + c_Status + '}';
+        return "CampaignDTO{" + "campaign_No=" + campaign_No + ", campaign_Name=" + campaign_Name + ", partner_No=" + partner_No + ", id_MDF=" + id_MDF + ", id_POE=" + id_POE + ", id_invoice=" + id_invoice + ", id_factura=" + id_factura + ", c_Status=" + c_Status + '}';
     }
-    
 }
