@@ -91,6 +91,30 @@
                 </c:forEach>
             </div>
 
+            <br>
+            <br>
+
+            <!-- UPLOAD INVOICE -->
+            <div class="method active-table">
+                <p><strong>Completed Campaigns</strong></p>
+                <div class="row margin-0 list-header hidden-sm hidden-xs">
+                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
+                    <div class="col-md-5"><div class="header">Status</div></div>
+                    <div class="col-md-2"><div class="header">Invoice</div></div>
+                </div>
+
+                <c:forEach var="camp" items="${Campaigns}">
+                    <c:if test="${camp.c_Status eq '3'}">
+                        <div class="row margin-0">
+                            <form action="invoice.jsp" type="post">
+                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
+                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_invoice" value="${camp.id_invoice}"><p>Upload Invoice</p></button></div></div>
+                            </form>
+                        </div>
+                    </c:if>
+                </c:forEach>
+            </div>
 
             <br>
             <br>

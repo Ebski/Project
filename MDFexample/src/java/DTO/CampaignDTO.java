@@ -15,22 +15,30 @@ public class CampaignDTO {
     private String partner_No;
     private String id_MDF;
     private String id_POE;
+    private String id_invoice;
     private String c_Status;
 
     public CampaignDTO(String campaign_Name, String partner_No) {
         this.campaign_Name = campaign_Name;
         this.partner_No = partner_No;
     }
-    
-    
 
-    public CampaignDTO(String campaign_No, String campaign_Name, String partner_No, String id_MDF, String id_POE, String c_Status) {
+    public CampaignDTO(String campaign_No, String campaign_Name, String partner_No, String id_MDF, String id_POE, String id_invoice, String c_Status) {
         this.campaign_No = campaign_No;
         this.campaign_Name = campaign_Name;
         this.partner_No = partner_No;
         this.id_MDF = id_MDF;
         this.id_POE = id_POE;
+        this.id_invoice = id_invoice;
         this.c_Status = c_Status;
+    }
+
+    public String getCampaign_No() {
+        return campaign_No;
+    }
+
+    public void setCampaign_No(String campaign_No) {
+        this.campaign_No = campaign_No;
     }
 
     public String getCampaign_Name() {
@@ -39,16 +47,6 @@ public class CampaignDTO {
 
     public void setCampaign_Name(String campaign_Name) {
         this.campaign_Name = campaign_Name;
-    }
-    
-    
-
-    public String getCampaign_No() {
-        return campaign_No;
-    }
-
-    public void setCampaign_No(String campaign_No) {
-        this.campaign_No = campaign_No;
     }
 
     public String getPartner_No() {
@@ -75,6 +73,14 @@ public class CampaignDTO {
         this.id_POE = id_POE;
     }
 
+    public String getId_invoice() {
+        return id_invoice;
+    }
+
+    public void setId_invoice(String id_invoice) {
+        this.id_invoice = id_invoice;
+    }
+
     public String getC_Status() {
         return c_Status;
     }
@@ -85,11 +91,7 @@ public class CampaignDTO {
 
     @Override
     public String toString() {
-        return "CampaignDTO{" + "campaign_No=" + campaign_No + ", campaign_Name=" + campaign_Name + ", partner_No=" + partner_No + ", id_MDF=" + id_MDF + ", id_POE=" + id_POE + ", c_Status=" + c_Status + '}';
+        return "CampaignDTO{" + "campaign_No=" + campaign_No + ", campaign_Name=" + campaign_Name + ", partner_No=" + partner_No + ", id_MDF=" + id_MDF + ", id_POE=" + id_POE + ", id_invoice=" + id_invoice + ", c_Status=" + c_Status + '}';
     }
-    
-    
-
-    
     
 }
