@@ -15,7 +15,7 @@
 
     </head>
     <body>
-        <form action="poeAcceptedServlet" method="GET">
+        <form action="dashboard.jsp" method="GET">
 
             <div class="col-md-12">
                 <!--FORWARDED mdf ID-->
@@ -79,8 +79,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <button class="btn btn-primary pull-right" value="Accepted" id="Accept" type="submit"  style="text-decoration: none; color: white;">Accept</button>
-                        <button class="btn btn-danger pull-right" value="Declined" id="Decline" type="submit"  style="text-decoration: none; color: white; margin-right: 10px;">Decline</button>
+                        <button class="btn btn-primary pull-right"type="submit"  style="text-decoration: none; color: white;">Back</button>
                     </div>
                 </div>
                 <hr>

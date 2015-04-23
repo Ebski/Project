@@ -136,17 +136,17 @@
                     <c:if test="${camp.c_Status eq '6'}">
                         <div class="row margin-0">
                             <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
-                            <form name="activeMdfForm" action="mdfViewerServlet" type="post">
+                            <form name="activeMdfForm" action="mdfDokumentationViewServlet" type="post">
                                  <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>MDF</p></button></div></div>
                             </form>
-                            <form name="activePoeForm" action="poeViewerServlet" type="post">
+                            <form name="activePoeForm" action="poeDokumentationViewServlet" type="post">
                                 <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p>POE </p></button></div></div>
                             </form>
-                            <form name="activeInvoiceForm" action="invoiceViewerServlet" type="post">
+                            <form name="activeInvoiceForm" action="invoiceDokumentationViewServlet" type="post">
                                 <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_invoice}" type="submit"><p>Invoice </p></button></div></div>
                             </form>
-                            <form name="activeFacturaForm" action="mdfViewerServlet" type="post">
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>Factura</p></button></div></div>
+                            <form name="activeFacturaForm" action="facturaDokumentationViewServlet" type="post">
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Factura" value="${camp.id_factura}" type="submit"><p>Factura</p></button></div></div>
                             </form>
                             <div class="col-md-1"><div class="cell">${camp.c_Status}</div></div>
                             <div class="col-md-1"><div class="cell"><p style="color: black">Completed</p></div></div>
