@@ -17,7 +17,7 @@
     </head>
     <body>
 
-        <form action="mdfAcceptedServlet" method="GET"> <!-- CHANGE SERVLET!! -->
+        <form action="mdfAcceptedServlet" method="GET">
 
             <div class="col-md-12">
                 <!--FORWARDED mdf ID-->

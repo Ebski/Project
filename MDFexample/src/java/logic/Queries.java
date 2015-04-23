@@ -181,7 +181,7 @@ public class Queries {
             String sql = "INSERT INTO POE (ID_POE) VALUES (?)";
             String sql2 = "INSERT INTO INVOICE (ID_INVOICE) VALUES (?)";
             String sql3 = "INSERT INTO FACTURA (ID_FACTURA) VALUES (?)";
-            String sql4 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE, ID_INVOICE, C_STATUS) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql4 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE, ID_INVOICE, ID_FACTURA, C_STATUS) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             stmt = con.prepareStatement(sql);
             stmt2 = con.prepareStatement(sql2);
@@ -200,7 +200,8 @@ public class Queries {
             stmt4.setString(4, mdf.getID_MDF());
             stmt4.setString(5, id_poe.toString());
             stmt4.setString(6, id_invoice.toString());
-            stmt4.setInt(7, 0);
+            stmt4.setString(7, id_factura.toString());
+            stmt4.setInt(8, 0);
 
             stmt.executeQuery();
             stmt2.executeQuery();

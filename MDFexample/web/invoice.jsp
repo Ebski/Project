@@ -29,7 +29,7 @@
                 </header>
                 <div class="row">
                     <div class="col-md-12">
-                        <!--FORWARDED POE NO-->
+                        <!--FORWARDED INVOICE ID-->
                         <input type="hidden" name="id_invoice" value="<%
                             String b = request.getParameter("id_invoice");
                             out.print(b);
