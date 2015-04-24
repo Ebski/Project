@@ -63,77 +63,6 @@
                             </form>
                         </div>
                     </c:if>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                </c:forEach>
-            </div>
-
-            <br>
-            <br>
-
-            <!--ACTIVE CAMPAIGNS-->
-            <div class="method active-table">
-                <p><strong>Active campaigns</strong></p>
-                <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-5"><div class="header">Campaign Name</div></div>
-                    <div class="col-md-5"><div class="header">Status</div></div>
-                    <div class="col-md-2"><div class="header">Upload POE</div></div>
-                </div>          
-
-                <c:forEach var="camp" items="${Campaigns}">
-                    <c:if test="${camp.c_Status eq '1'}">
-                        <div class="row margin-0">
-                            <form action="poe.jsp" type="post">
-                                <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
-                                <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
-                            </form>
-                        </div>
-                    </c:if>
-                </c:forEach>
-            </div>
-
-
-            <br>
-            <br>
-
-            <!--OLD CAMPAIGNS-->
-            <div class="method old-table">
-                <p><strong>Old campaigns</strong></p>
-                <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-3"><div class="header">Campaign Name</div></div>
-                    <div class="col-md-3"><div class="header">Documentation</div></div>
-                    <div class="col-md-3"><div class="header">Status No.</div></div>
-                    <div class="col-md-3"><div class="header">Status</div></div>
-                </div>
-
-                <c:forEach var="camp" items="${Campaigns}">
-                    <c:if test="${camp.c_Status eq '0'}">
-                        <div class="row margin-0">
-                            <form action="poe.jsp" type="post">
-                                <div class="col-md-3"><div class="cell">${camp.campaign_Name}</div></div>
-                                <div class="col-md-3"><div class="cell"><button class="btn btn-primary" name="Documentation" value="${camp.campaign_No}"><p>Documentation</p></button></div></div>
-                                <div class="col-md-3"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-3"><div class="cell"><p style="color: black">Completed</p></div></div>
-                            </form>
-                        </div>
-                    </c:if>
-                </c:forEach>
-            </div>
-
-
-
-            <!--END OF TABLE DATA-->
-
-            <!--Javascript-->
-
-            <script src="js/bootstrap.min.js" type="text/javascript"></script>
-            <script src="js/custom.js" type="text/javascript"></script>
-    </body>
-</html>
-=======
-=======
->>>>>>> origin/master
                         <c:if test="${camp.c_Status eq '2'}">
                             <div class="row margin-0">
                                 <form action="poe.jsp" type="post">
@@ -263,7 +192,3 @@
                             <script src="js/custom.js" type="text/javascript"></script>
                     </body>
                 </html>
-<<<<<<< HEAD
->>>>>>> origin/master
-=======
->>>>>>> origin/master
