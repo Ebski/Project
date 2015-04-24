@@ -40,7 +40,7 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Submission date:</p>
-                        <input type="date" name="Submission_date" placeholder="Enter submission date" class="inputfield" required>
+                        <input type="date" name="Submission_date" placeholder="MM/DD/YYYY" class="inputfield" required>
                         <br/>
                         <br/>
                         <p>Company address (city, state and zip):</p>
@@ -80,7 +80,7 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Program date:</p>
-                        <input type="date" name="Program_date" placeholder="Enter Program date(DD-MM-YYYY)" required>
+                        <input type="date" name="Program_date" placeholder="MM/DD/YYYY" required>
                         <br/>
                         <br/>
                         <p>Estimated # of attendees:</p>
@@ -89,16 +89,16 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Start time:</p>
-                        <input type="date" name="Start_time" placeholder="Enter Start time" required>
+                        <input type="date" name="Start_time" placeholder="MM/DD/YYYY" required>
                         <br/>
                         <br/>
                         <p>Venue name:</p>
-                        <input type="text" name="Venue_name" placeholder="Enter Venue name" required>
+                        <input type="text" name="Venue_name" placeholder="Enter venue name" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>End time:</p>
-                        <input type="date" name="End_time" placeholder="Enter End time" required>
+                        <input type="date" name="End_time" placeholder="MM/DD/YYYY" required>
                         <br/>
                         <br/>
                         <p>Venue address (city, state and zip):</p>
@@ -244,6 +244,7 @@
                 <div class="col-md-12 pull-right" style="text-align: right">
                     <input type="checkbox" name="read-licens" onClick="EnableSubmit(this)"> <span>I have read and agree with the </span><a href="toa.jsp" target="_blank">terms and conditions</a>
                 </div>
+                <br>
                 <hr>
             </div>
         </form>
