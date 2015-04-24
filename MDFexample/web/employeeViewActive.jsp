@@ -168,7 +168,7 @@
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.c_Status}</div></div>
-                                 <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_factura" value="${camp.id_factura}"><p>Upload Factura</p></button></div></div>
+                                 <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_factura" value="${camp.id_factura}"><p>Upload Receipt</p></button></div></div>
                             </form>
                         </div>
                     </c:if>

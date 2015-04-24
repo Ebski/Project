@@ -90,7 +90,7 @@
                 </div>
 
                  <c:forEach var="camp" items="${Campaigns}">
-                    <c:if test="${camp.c_Status eq '6'}">
+                    <c:if test="${camp.c_Status eq '7'}">
                         <div class="row margin-0">
                             <form action="campaignDocumentation.jsp" type="post"> <!--jsp navn skal ændres-->
                                 <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>

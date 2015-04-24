@@ -11,7 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="shortcut icon" href="img/Dell_Logo.png">
-        <title>Point of Execution</title>
+        <title>Receipt</title>
 
         <!--Stylesheets-->
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -24,7 +24,7 @@
         <form action="facturaUploadServlet" method="GET">
             <div class="container">
                 <header>
-                    <h1>Factura</h1>
+                    <h1>Receipt</h1>
                     <img src="img/Dell_Logo.png" alt="Dell-logo" class="img-responsive logo visible-lg"/>
                 </header>
                 <div class="row">
