@@ -1,0 +1,16 @@
+Partner:
+
+Pending campaigns, isssued date - Skal kunne se hvornår tingene er uploadet 
+				- Skal kunne rykke for svar efter sidste dag i response time
+					- Kunne skrive hvor mange dage det er delayed
+
+Skal kunne recall mdf
+
+Employee:
+
+Approving, recieved date - Hvornår har Dell fået dokumentet
+			 - Overdue der viser om de er forsinket og hvor meget
+			 - Response deadline istedet for deadline
+			 - reciept - istedet for faktura
+
+Filter på partnere

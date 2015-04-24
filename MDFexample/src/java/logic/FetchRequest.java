@@ -39,7 +39,7 @@ public class FetchRequest {
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("c_Status")));
+                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
             }
 
         } catch (ClassNotFoundException ex) {
@@ -71,7 +71,7 @@ public class FetchRequest {
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("c_Status")));
+                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
             }
 
         } catch (ClassNotFoundException ex) {

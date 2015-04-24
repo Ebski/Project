@@ -20,7 +20,7 @@
 
     </head>
     <body>
-        <form action="mdfServlets" method="GET">
+        <form action="mdfServlets" method="GET" autocomplete="on">
             <div class="container">
                 <header>
                     <h1>Enterprise Field Marketing:</h1>
@@ -40,7 +40,7 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Submission date:</p>
-                        <input type="text" name="Submission_date" placeholder="Enter submission date" class="inputfield" required>
+                        <input type="date" name="Submission_date" placeholder="Enter submission date" class="inputfield" required>
                         <br/>
                         <br/>
                         <p>Company address (city, state and zip):</p>
@@ -53,7 +53,7 @@
                         <br/>
                         <br/>
                         <p>Contact email:</p>
-                        <input type="text" name="Contact_email" placeholder="Enter contact email" required>
+                        <input type="email" name="Contact_email" placeholder="Enter contact email" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
@@ -62,7 +62,7 @@
                         <br/>
                         <br/>
                         <p>Contact phone:</p>
-                        <input type="text" name="Contact_phone" placeholder="Enter contact phone" required>
+                        <input type="tel" name="Contact_phone" placeholder="Enter contact phone" required>
                     </div>
                 </div>
                 <hr>
@@ -80,16 +80,16 @@
                     <div class="col-md-4">
                         <br/>
                         <p>Program date:</p>
-                        <input type="text" name="Program_date" placeholder="Enter Program date(DD-MM-YYYY)" required>
+                        <input type="date" name="Program_date" placeholder="Enter Program date(DD-MM-YYYY)" required>
                         <br/>
                         <br/>
                         <p>Estimated # of attendees:</p>
-                        <input type="text" name="Estimated_attendees" placeholder="Enter Estimated attendees" required>
+                        <input type="number" name="Estimated_attendees" placeholder="Enter Estimated attendees" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Start time:</p>
-                        <input type="text" name="Start_time" placeholder="Enter Start time" required>
+                        <input type="date" name="Start_time" placeholder="Enter Start time" required>
                         <br/>
                         <br/>
                         <p>Venue name:</p>
@@ -98,7 +98,7 @@
                     <div class="col-md-4">
                         <br/>
                         <p>End time:</p>
-                        <input type="text" name="End_time" placeholder="Enter End time" required>
+                        <input type="date" name="End_time" placeholder="Enter End time" required>
                         <br/>
                         <br/>
                         <p>Venue address (city, state and zip):</p>
@@ -205,10 +205,10 @@
                     <h3><strong>Additional program information</strong></h3>
                     <br/>
                     <div class="col-md-12">
-                        <span>Total projected cost of program: </span><input type="text" name="Additional_totalcost" placeholder="Enter total projected cost of program" required>
+                        <span>Total projected cost of program: </span><input type="number" name="Additional_totalcost" placeholder="Enter total projected cost of program" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Total MDF requesting from Dell: </span><input type="text" name="Additional_totalmdf" placeholder="Enter total MDF requesting from Dell" required>
+                        <span>Total MDF requesting from Dell: </span><input type="number" name="Additional_totalmdf" placeholder="Enter total MDF requesting from Dell" required>
                     </div>
                     <div class="col-md-12">
                         <br/>
@@ -223,13 +223,13 @@
                         <span>Participating Technology Partner(s) (VMware, Microsoft, etc.): </span><input type="text" name="Additional_participating" placeholder="Enter participating Technology Partner(s)" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Total Technology Partner(s) MDF contribution: </span><input type="text" name="Additional_contribution" placeholder="Enter total technology partner(s) MDF contribution" required>
+                        <span>Total Technology Partner(s) MDF contribution: </span><input type="number" name="Additional_contribution" placeholder="Enter total technology partner(s) MDF contribution" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Estimated # of opportunities (deals registered through Dell Deal Registration): </span><input type="text" name="Additional_opportunities" placeholder="Enter estimated # of opportunities" required>
+                        <span>Estimated # of opportunities (deals registered through Dell Deal Registration): </span><input type="number" name="Additional_opportunities" placeholder="Enter estimated # of opportunities" required>
                     </div>
                     <div class="col-md-12">
-                        <span>Estimated revenue from program: </span><input type="text" name="Additional_revenue" placeholder="Enter estimated revenue from program" required>
+                        <span>Estimated revenue from program: </span><input type="number" name="Additional_revenue" placeholder="Enter estimated revenue from program" required>
                     </div>
                     <div class="col-md-12"
                          <br/>
@@ -247,6 +247,10 @@
                 <hr>
             </div>
         </form>
+
+        <!--BACK BUTTON-->            
+        <form><img src="img/backbtn.png" class="btn-back" Type="button" value="" onClick="history.go(-1);
+                return true;"></form>
 
 
         <!--Javascript-->

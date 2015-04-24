@@ -29,7 +29,7 @@
                         <li><a href="employeeViewPending.jsp">Pending Campaigns</a></li>
                         <li><a href="employeeViewActive.jsp">Active Campaigns</a></li>
                         <li><a href="employeeViewCompleted.jsp">Completed Campaigns</a></li>
-                        <li><a href="quarter.jsp">Quarters</a></li>
+                        <li><a href="quarters.jsp">Quarters</a></li>
                     </ul>
                 </div>
             </div>

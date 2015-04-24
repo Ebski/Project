@@ -5,9 +5,15 @@
  */
 package logic;
 
+<<<<<<< HEAD
+import DTO.*;
+=======
 import DTO.CampaignDTO;
+import DTO.FacturaDTO;
+import DTO.InvoiceDTO;
 import DTO.MdfDTO;
 import DTO.PoEDTO;
+>>>>>>> origin/master
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -24,7 +30,7 @@ import java.util.logging.Logger;
  * @author Dennis
  */
 public class Queries {
-    
+
     private ArrayList<String> mdfArrayList() {
         ArrayList al = new ArrayList();
         al.add("ID_MDF");
@@ -166,29 +172,45 @@ public class Queries {
         Connection con = null;
         PreparedStatement stmt = null;
         PreparedStatement stmt2 = null;
+        PreparedStatement stmt3 = null;
+        PreparedStatement stmt4 = null;
         Long id_poe = UUID.randomUUID().getMostSignificantBits();
+        Long id_invoice = UUID.randomUUID().getMostSignificantBits();
+        Long id_factura = UUID.randomUUID().getMostSignificantBits();
 
         try {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
             String sql = "INSERT INTO POE (ID_POE) VALUES (?)";
-            String sql2 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE, C_STATUS) VALUES (?, ?, ?, ?, ?, ?)";
+            String sql2 = "INSERT INTO INVOICE (ID_INVOICE) VALUES (?)";
+            String sql3 = "INSERT INTO FACTURA (ID_FACTURA) VALUES (?)";
+            String sql4 = "INSERT INTO CAMPAIGN (CAMPAIGN_NO, CAMPAIGN_NAME, PARTNER_NO, ID_MDF, ID_POE, ID_INVOICE, ID_FACTURA, C_STATUS) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
             stmt = con.prepareStatement(sql);
             stmt2 = con.prepareStatement(sql2);
+            stmt3 = con.prepareStatement(sql3);
+            stmt4 = con.prepareStatement(sql4);
 
             stmt.setString(1, id_poe.toString());
 
-            stmt2.setString(1, camp.getCampaign_No());
-            stmt2.setString(2, camp.getCampaign_Name());
-            stmt2.setString(3, camp.getPartner_No());
-            stmt2.setString(4, mdf.getID_MDF());
-            stmt2.setString(5, id_poe.toString());
-            stmt2.setInt(6, 0);
+            stmt2.setString(1, id_invoice.toString());
+            
+            stmt3.setString(1, id_factura.toString());
+
+            stmt4.setString(1, camp.getCampaign_No());
+            stmt4.setString(2, camp.getCampaign_Name());
+            stmt4.setString(3, camp.getPartner_No());
+            stmt4.setString(4, mdf.getID_MDF());
+            stmt4.setString(5, id_poe.toString());
+            stmt4.setString(6, id_invoice.toString());
+            stmt4.setString(7, id_factura.toString());
+            stmt4.setInt(8, 0);
 
             stmt.executeQuery();
             stmt2.executeQuery();
+            stmt3.executeQuery();
+            stmt4.executeQuery();
 
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
@@ -196,6 +218,8 @@ public class Queries {
             con.close();
             stmt.close();
             stmt2.close();
+            stmt3.close();
+            stmt4.close();
         }
     }
 
@@ -234,6 +258,60 @@ public class Queries {
 
     }
 
+    public void addInvoiceToDatabase(InvoiceDTO invoice) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "UPDATE INVOICE "
+                    + "SET FILEPATH = ?, ADDITIONAL_INFORMATION = ?"
+                    + " WHERE ID_INVOICE = ?";
+            stmt = con.prepareStatement(sql);
+
+            stmt.setString(1, invoice.getFilepath());
+            stmt.setString(2, invoice.getAdditional_information());
+            stmt.setString(3, invoice.getID_invoice());
+
+            stmt.executeQuery();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+    }
+
+    public void addFacturaToDatabase(FacturaDTO factura) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "UPDATE FACTURA "
+                    + "SET FILEPATH = ?, ADDITIONAL_INFORMATION = ?"
+                    + " WHERE ID_FACTURA = ?";
+            stmt = con.prepareStatement(sql);
+
+            stmt.setString(1, factura.getFilepath());
+            stmt.setString(2, factura.getAdditional_information());
+            stmt.setString(3, factura.getID_factura());
+
+            stmt.executeQuery();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+    }
+
     public ArrayList<CampaignDTO> fetchPendingCampaigns(String partner) throws SQLException {
         ArrayList<CampaignDTO> fpc = new ArrayList();
 
@@ -252,7 +330,7 @@ public class Queries {
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("c_Status")));
+                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
             }
 
         } catch (ClassNotFoundException ex) {
@@ -264,6 +342,42 @@ public class Queries {
         }
 
         return fpc;
+    }
+    
+    public ArrayList<quarterDTO> fetchQuarters() throws SQLException{
+    
+        ArrayList<quarterDTO> fpq = new ArrayList<>();
+        
+        Connection con = null;
+        Statement stmt = null;
+        ResultSet rs = null;  
+        
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "SELECT * FROM QUARTERS";
+
+            stmt = con.createStatement();
+
+            rs = stmt.executeQuery(sql);
+
+            while (rs.next()) {
+                fpq.add(new quarterDTO(
+                        rs.getString("quarter_Name"),
+                        rs.getString("quarter_Startdate"),
+                        rs.getString("quarters_Enddate")));
+            }
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+            rs.close();
+        }
+
+        return fpq;
     }
 
     private String makeSqlInsertString(ArrayList<String> al) {

@@ -31,38 +31,38 @@
                     <div class="col-md-12">
                         <!--FORWARDED POE NO-->
                         <input type="hidden" name="poe_ID" value="<%
-                        String b=request.getParameter("upload_poe");
-                        out.print(b);
-                        %>">
-                        
+                            String b = request.getParameter("upload_poe");
+                            out.print(b);
+                               %>">
+
                         </input>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Campaign type:</p>
-                        <input type="text" name="Campaign_type" placeholder="Enter submission date" class="inputfield" required>
+                        <input type="text" name="Campaign_type" placeholder="Enter campaign type" required>
                         <br/>
                         <br/>
                         <p>Activity:</p>
-                        <input type="text" name="Activity:" placeholder="Enter company address" required>
+                        <input type="text" name="Activity:" placeholder="Enter activity" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Date:</p>
-                        <input type="text" name="Date" placeholder="Enter contact name" required>
+                        <input type="date" name="Date" placeholder="Enter date" required>
                         <br/>
                         <br/>
                         <p>Recipients:</p>
-                        <input type="text" name="Recipients" placeholder="Enter contact email" required>
+                        <input type="number" name="Recipients" placeholder="Enter number of recipients" required>
                     </div>
                     <div class="col-md-4">
                         <br/>
                         <p>Unique opens/Hits:</p>
-                        <input type="text" name="Unique_opens_hits" placeholder="Enter company name" required>
+                        <input type="number" name="Unique_opens_hits" placeholder="Number of unique opens/hits" required>
                         <br/>
                         <br/>
                         <p>Unique clicks:</p>
-                        <input type="text" name="Unique_clicks" placeholder="Enter contact phone" required>
+                        <input type="number" name="Unique_clicks" placeholder="Number of unique clicks" required>
                     </div>
                 </div>
                 <hr>
@@ -90,6 +90,10 @@
                 <hr>
             </div>
         </form>
+    
+                   <!--BACK BUTTON-->            
+        <form><img src="img/backbtn.png" class="btn-back" Type="button" value="" onClick="history.go(-1);
+                return true;"></form>
 
 
         <!--Javascript-->

@@ -24,8 +24,37 @@ hr {
 
 input[type="text"] {
     width: 300px;
+    height: 28px;
     border-radius: 3px;
     padding-left: 4px; 
+}
+
+input[type="date"] {
+    width: 300px;
+    height: 28px;
+    border-radius: 3px;
+    padding-left: 4px;
+}
+
+input[type="number"] {
+    width: 300px;
+    height: 28px;
+    border-radius: 3px;
+    padding-left: 4px;
+}
+
+input[type="email"] {
+    width: 300px;
+    height: 28px;
+    border-radius: 3px;
+    padding-left: 4px;
+}
+
+input[type="tel"] {
+    width: 300px;
+    height: 28px;
+    border-radius: 3px;
+    padding-left: 4px;
 }
 
 .logo {
@@ -47,6 +76,21 @@ input[type="text"] {
 .toa h5,
 .toa h6 {
     margin-left: 0px;
+}
+
+.btn-back {
+    position: absolute;
+    height: 35px;
+    width: auto;
+    top: 20px;
+    left: 20px;
+    opacity: 0.5;
+    z-index: 10;
+    cursor: wait;
+}
+
+.btn-back:hover{
+    opacity: 0.8;
 }
 
 @media screen and (max-width: 450px) {

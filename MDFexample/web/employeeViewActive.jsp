@@ -26,10 +26,10 @@
                 <div class='menu-content'
                      <ul>
                         <li><a href="newPartner.jsp">New Partner</a></li>
-                        <li><a href="employeeViewPending.jsp">Pending Campaigns</a></li>
-                        <li><a href="employeeViewActive.jsp">Active Campaigns</a></li>
-                        <li><a href="employeeViewCompleted.jsp">Completed Campaigns</a></li>
-                        <li><a href="quarter.jsp">Quarters</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/employeePendingServlet.jsp">Pending Campaigns</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/employeeActiveServlet">Active Campaigns</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/employeeCompletedServlet">Completed Campaigns</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/quarterServlet">Quarters</a></li>
                     </ul>
                 </div>
             </div>
@@ -128,14 +128,14 @@
                  <c:forEach var="camp" items="${Campaigns}">
                     <c:if test="${camp.c_Status eq '4'}">
                         <div class="row margin-0">
-                            <form action="MDFsomething.jsp" type="post"> <!--jsp navn skal ændres-->
+                            <form name="activeInvoiceForm" action="invoiceViewerServlet" type="post">
                                 <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.partner_No}</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_POE}"><p>Approve Invoice</p></button></div></div>
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_invoice}"><p>Approve Invoice</p></button></div></div>
                             </form>
                         </div>
                     </c:if>
@@ -161,14 +161,14 @@
                  <c:forEach var="camp" items="${Campaigns}">
                     <c:if test="${camp.c_Status eq '5'}">
                         <div class="row margin-0">
-                            <form action="MDFsomething.jsp" type="post"> <!--jsp navn skal ændres-->
+                            <form action="factura.jsp" type="post">
                                 <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.partner_No}</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-1"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="header">--</div></div>
                                 <div class="col-md-2"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Factura" value="${camp.id_POE}"><p>Upload factura</p></button></div></div>
+                                 <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_factura" value="${camp.id_factura}"><p>Upload Factura</p></button></div></div>
                             </form>
                         </div>
                     </c:if>

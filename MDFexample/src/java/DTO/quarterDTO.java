@@ -12,44 +12,42 @@ package DTO;
 public class quarterDTO {
     
     private String quarter_Name;
-    private String start_Date;
-    private String end_Date;
+    private String quarter_Startdate;
+    private String quarter_Enddate;
 
-    public quarterDTO(String start_Date, String end_Date) {
-        this.start_Date = start_Date;
-        this.end_Date = end_Date;
-    }
-
-    public String getStart_Date() {
-        return start_Date;
+    public quarterDTO(String quarter_Name, String quarter_Startdate, String quarter_Enddate) {
+        this.quarter_Name = quarter_Name;
+        this.quarter_Startdate = quarter_Startdate;
+        this.quarter_Enddate = quarter_Enddate;
     }
 
     public String getQuarter_Name() {
         return quarter_Name;
     }
 
-    public void setStart_Date(String start_Date) {
-        this.start_Date = start_Date;
-    }
-
-    public String getEnd_Date() {
-        return end_Date;
-    }
-
-    public void setEnd_Date(String end_Date) {
-        this.end_Date = end_Date;
-    }
-
     public void setQuarter_Name(String quarter_Name) {
         this.quarter_Name = quarter_Name;
     }
 
-    @Override
-    public String toString() {
-        return "quarterDTO{" + "quarter_Name=" + quarter_Name + ", start_Date=" + start_Date + ", end_Date=" + end_Date + '}';
+    public String getQuarter_Startdate() {
+        return quarter_Startdate;
     }
 
+    public void setQuarter_Startdate(String quarter_Startdate) {
+        this.quarter_Startdate = quarter_Startdate;
+    }
 
-    
-    
+    public String getQuarter_Enddate() {
+        return quarter_Enddate;
+    }
+
+    public void setQuarter_Enddate(String quarter_Enddate) {
+        this.quarter_Enddate = quarter_Enddate;
+    }
+
+    @Override
+    public String toString() {
+        return "quarterDTO{" + "quarter_Name=" + quarter_Name + ", quarter_Startdate=" + quarter_Startdate + ", quarter_Enddate=" + quarter_Enddate + '}';
+    }
+
 }
