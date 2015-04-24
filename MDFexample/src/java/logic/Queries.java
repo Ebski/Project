@@ -5,15 +5,7 @@
  */
 package logic;
 
-<<<<<<< HEAD
 import DTO.*;
-=======
-import DTO.CampaignDTO;
-import DTO.FacturaDTO;
-import DTO.InvoiceDTO;
-import DTO.MdfDTO;
-import DTO.PoEDTO;
->>>>>>> origin/master
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
