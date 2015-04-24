@@ -80,16 +80,16 @@
                 <div class="row">
                     <div class="col-md-12">
                         <button class="btn btn-primary pull-right" value="Accepted" id="Accept" type="submit"  style="text-decoration: none; color: white;">Accept</button>
-                        <button class="btn btn-danger pull-right" value="Declined" id="Decline" type="submit"  style="text-decoration: none; color: white; margin-right: 10px;">Decline</button>
+                        </form>
+                        <form action="poeDeclinedDescription.jsp">
+                            <button class="btn btn-danger pull-right" value="<%out.print(b);%>" id="Decline" type="submit" name="Declined_button"  style="text-decoration: none; color: white; margin-right: 10px;">Decline</button>
+                        </form>
                     </div>
                 </div>
-                <hr>
             </div>
-        </form>
 
-
-        <!--Javascript-->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/custom.js" type="text/javascript"></script>
+            <!--Javascript-->
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="js/custom.js" type="text/javascript"></script>
     </body>
 </html>
