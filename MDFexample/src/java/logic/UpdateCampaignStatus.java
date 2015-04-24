@@ -43,6 +43,31 @@ public class UpdateCampaignStatus {
         }
     }
 
+    public void updateCampaignStatusAfterMdfDecline(String id_MDF) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "UPDATE CAMPAIGN "
+                    + "SET C_STATUS = ?"
+                    + " WHERE ID_MDF = ?";
+            stmt = con.prepareStatement(sql);
+
+            stmt.setInt(1, 7);
+            stmt.setString(2, id_MDF);
+
+            stmt.executeQuery();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+    }
+
     public void updateCampaignStatusAfterPoeUpload(String id_POE) throws SQLException {
         Connection con = null;
         PreparedStatement stmt = null;
