@@ -26,7 +26,7 @@
                 <div class='menu-content'
                      <ul>
                         <li><a href="newPartner.jsp">New Partner</a></li>
-                        <li><a href="http://localhost:8080/MDFexample/employeePendingServlet.jsp">Pending Campaigns</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/employeePendingServlet">Pending Campaigns</a></li>
                         <li><a href="http://localhost:8080/MDFexample/employeeActiveServlet">Active Campaigns</a></li>
                         <li><a href="http://localhost:8080/MDFexample/employeeCompletedServlet">Completed Campaigns</a></li>
                         <li><a href="http://localhost:8080/MDFexample/quarterServlet">Quarters</a></li>

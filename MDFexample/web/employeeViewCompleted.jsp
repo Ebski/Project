@@ -41,33 +41,39 @@
 
             <!--TABLE DATA-->
 
-           
+
             <!--completed done-->
 
             <div class="method completed">
                 <p><strong>Completed Campaigns</strong></p>
                 <div class="row margin-0 list-header hidden-sm hidden-xs">
-                    <div class="col-md-2"><div class="header">Campaign</div></div>
-                    <div class="col-md-2"><div class="header">Partner</div></div>
-                    <div class="col-md-1"><div class="header">Start</div></div>
-                    <div class="col-md-1"><div class="header">End</div></div>
-                    <div class="col-md-2"><div class="header">Documentation</div></div>
-                    <div class="col-md-2"><div class="header">Status No.</div></div>
-                    <div class="col-md-2"><div class="header">Status</div></div>
+                    <div class="col-md-2"><div class="header">Campaign Name</div></div>
+                    <div class="col-md-2"><div class="header">MDF</div></div>
+                    <div class="col-md-2"><div class="header">POE</div></div>
+                    <div class="col-md-2"><div class="header">Invoice</div></div>
+                    <div class="col-md-2"><div class="header">Factura</div></div>
+                    <div class="col-md-1"><div class="header">Status No.</div></div>
+                    <div class="col-md-1"><div class="header">Status</div></div>
                 </div>
 
-                 <c:forEach var="camp" items="${Campaigns}">
+                <c:forEach var="camp" items="${Campaigns}">
                     <c:if test="${camp.c_Status eq '6'}">
                         <div class="row margin-0">
-                            <form action="campaignDocumentaion.jsp" type="post"> <!--jsp navn skal ændres-->
-                                <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
-                                <div class="col-md-2"><div class="cell">${camp.partner_No}</div></div>
-                                <div class="col-md-1"><div class="header">--</div></div>
-                                <div class="col-md-1"><div class="header">--</div></div>
-                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Documentation" value="${camp.campaign_No}"><p>Documentation</p></button></div></div>
-                                <div class="col-md-2"><div class="cell">${camp.c_Status}</div></div>
-                                <div class="col-md-2"><div class="cell"><p style="color: black">Completed</p></div></div>
+                            <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
+                            <form name="activeMdfForm" action="mdfDokumentationViewServlet" type="post">
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>MDF</p></button></div></div>
                             </form>
+                            <form name="activePoeForm" action="poeDokumentationViewServlet" type="post">
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p>POE </p></button></div></div>
+                            </form>
+                            <form name="activeInvoiceForm" action="invoiceDokumentationViewServlet" type="post">
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_invoice}" type="submit"><p>Invoice </p></button></div></div>
+                            </form>
+                            <form name="activeFacturaForm" action="facturaDokumentationViewServlet" type="post">
+                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Factura" value="${camp.id_factura}" type="submit"><p>Receipt</p></button></div></div>
+                            </form>
+                            <div class="col-md-1"><div class="cell">${camp.c_Status}</div></div>
+                            <div class="col-md-1"><div class="cell"><p style="color: black">Completed</p></div></div>
                         </div>
                     </c:if>
                 </c:forEach>
@@ -89,7 +95,7 @@
                     <div class="col-md-2"><div class="header">Status</div></div>
                 </div>
 
-                 <c:forEach var="camp" items="${Campaigns}">
+                <c:forEach var="camp" items="${Campaigns}">
                     <c:if test="${camp.c_Status eq '7'}">
                         <div class="row margin-0">
                             <form action="campaignDocumentation.jsp" type="post"> <!--jsp navn skal ændres-->
@@ -106,7 +112,7 @@
                 </c:forEach>
 
             </div>
-            
+
 
             <!--END OF TABLE DATA-->
 
