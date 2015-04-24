@@ -214,18 +214,18 @@
                 <div class="col-md-12">
                     <!--USE VALUES OF BUTTONS TO CHECK IN SERVLET!!-->
                     <button class="btn btn-primary pull-right" value="Accepted" id="Accept" type="submit"  style="text-decoration: none; color: white;">Accept</button>
-                    
-                    
 
-                </div>
-            </div>
-        </form>
+                    </form>
+                    
                     <form action="mdfDeclinedDescription.jsp">
                         <button class="btn btn-danger pull-right" value="<% out.print(b);%>" id="Decline" name="Declined_button"  style="text-decoration: none; color: white; margin-right: 10px;">Decline</a>
                     </form>
 
-        <!--Javascript-->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/custom.js" type="text/javascript"></script>
+                </div>
+            </div>
+
+            <!--Javascript-->
+            <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" type="text/javascript"></script>
+            <script src="js/custom.js" type="text/javascript"></script>
     </body>
 </html>

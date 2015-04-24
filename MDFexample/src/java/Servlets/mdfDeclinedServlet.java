@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import logic.UpdateCampaignStatus;
+import logic.declineDescriptionAdder;
 
 /**
  *
@@ -28,11 +29,15 @@ public class mdfDeclinedServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
          UpdateCampaignStatus update = new UpdateCampaignStatus();
+         declineDescriptionAdder desc = new declineDescriptionAdder();
         String mdf_ID = null;
+        String description = null;
 
         try {
             mdf_ID = request.getParameter("mdf_ID");
+            description = request.getParameter("additional_information_on_decline");
             update.updateCampaignStatusAfterMdfDecline(mdf_ID);
+            desc.addDeclineMDFDescription(mdf_ID, description);
         } catch (SQLException ex) {
             Logger.getLogger(mdfAcceptedServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
