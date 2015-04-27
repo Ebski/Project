@@ -13,16 +13,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.ControlDAO;
 import logic.Queries;
 import logic.UpdateCampaignStatus;
 
 @WebServlet(name = "invoiceUploadServlet", urlPatterns = {"/invoiceUploadServlet"})
 public class invoiceUploadServlet extends HttpServlet {
 
-   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Queries query = new Queries();
+        ControlDAO query = new ControlDAO();
         UpdateCampaignStatus update = new UpdateCampaignStatus();
 
         String invoice_ID = request.getParameter("id_invoice");
@@ -33,12 +34,8 @@ public class invoiceUploadServlet extends HttpServlet {
                 request.getParameter("additional_information")
         );
 
-        try {
-            query.addInvoiceToDatabase(invoice);
-            update.updateCampaignStatusAfterInvoiceUpload(invoice_ID);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        query.addInvoiceToDatabase(invoice);
+        query.updateCampaignStatusAfterInvoiceUpload(invoice_ID);
 
         RequestDispatcher disp = request.getRequestDispatcher("submitted.jsp");
         disp.forward(request, response);

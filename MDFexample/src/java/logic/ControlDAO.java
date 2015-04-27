@@ -9,6 +9,7 @@ import DTO.CampaignDTO;
 import DTO.FacturaDTO;
 import DTO.InvoiceDTO;
 import DTO.MdfDTO;
+import DTO.PartnerDTO;
 import DTO.PoEDTO;
 import DTO.quarterDTO;
 import java.sql.SQLException;
@@ -29,6 +30,7 @@ public class ControlDAO implements ControlDAOInterface {
     private final FetchMdfView fetchMdfView = new FetchMdfView();
     private final FetchPoeView fetchPoeView = new FetchPoeView();
     private final FetchRequest fetchRequest = new FetchRequest();
+    private final FetchPartners fetchPartners = new FetchPartners();
     private final Queries queries = new Queries();
 
     private final UpdateCampaignStatus updateCampaignStatus = new UpdateCampaignStatus();
@@ -258,6 +260,16 @@ public class ControlDAO implements ControlDAOInterface {
         } catch (SQLException ex) {
 //            GIVE MESSAGE TO USER
         }
+    }
+
+    @Override
+    public ArrayList<PartnerDTO> fetchCurrentsPartners() {
+        try {
+            return fetchPartners.fetchCurrentsPartners();
+        } catch (SQLException ex) {
+//            GIVE MESSAGE TO USER
+        }
+        return null;
     }
 
 }

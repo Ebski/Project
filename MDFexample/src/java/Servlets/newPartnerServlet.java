@@ -13,7 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.fetchPartners;
+import logic.ControlDAO;
+import logic.FetchPartners;
 
 @WebServlet(name = "newPartnerServlet", urlPatterns = {"/newPartnerServlet"})
 public class newPartnerServlet extends HttpServlet {
@@ -21,14 +22,10 @@ public class newPartnerServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        fetchPartners fetch = new fetchPartners();
+        ControlDAO fetch = new ControlDAO();
         ArrayList<PartnerDTO> result = null;
 
-        try {
-            result = fetch.fetchCurrentsPartners();
-        } catch (SQLException ex) {
-            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        result = fetch.fetchCurrentsPartners();
 
         HttpSession session = request.getSession();
 

@@ -18,6 +18,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.ControlDAO;
 import logic.Queries;
 import logic.UpdateCampaignStatus;
 
@@ -27,8 +28,7 @@ public class poeServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Queries query = new Queries();
-        UpdateCampaignStatus update = new UpdateCampaignStatus();
+        ControlDAO query = new ControlDAO();
 
         String poe_ID = request.getParameter("poe_ID");
 
@@ -43,12 +43,8 @@ public class poeServlet extends HttpServlet {
                 request.getParameter("additional_information"),
                 request.getParameter("dataFile"));
 
-        try {
-            query.addPoERequestToDatabase(poe);
-            update.updateCampaignStatusAfterPoeUpload(poe_ID);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        query.addPoERequestToDatabase(poe);
+        query.updateCampaignStatusAfterPoeUpload(poe_ID);
 
         RequestDispatcher disp = request.getRequestDispatcher("submitted.jsp");
         disp.forward(request, response);

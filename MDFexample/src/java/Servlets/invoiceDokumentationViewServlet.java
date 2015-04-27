@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 import logic.FetchInvoiceView;
 
 @WebServlet(name = "invoiceDokumentationViewServlet", urlPatterns = {"/invoiceDokumentationViewServlet"})
@@ -23,14 +24,10 @@ public class invoiceDokumentationViewServlet extends HttpServlet {
 
         InvoiceDTO invoice = null;
         String id_invoice = null;
-        FetchInvoiceView view = new FetchInvoiceView();
+        ControlDAO view = new ControlDAO();
 
-        try {
-            id_invoice = request.getParameter("Approve_Invoice");
-            invoice = view.fetchInvoice(id_invoice);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeViewerServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        id_invoice = request.getParameter("Approve_Invoice");
+        invoice = view.fetchInvoice(id_invoice);
 
         HttpSession session = request.getSession();
 

@@ -9,6 +9,7 @@ import DTO.CampaignDTO;
 import DTO.FacturaDTO;
 import DTO.InvoiceDTO;
 import DTO.MdfDTO;
+import DTO.PartnerDTO;
 import DTO.PoEDTO;
 import DTO.quarterDTO;
 import java.sql.SQLException;
@@ -29,6 +30,7 @@ public interface ControlDAOInterface {
     MdfDTO fetchMdf(String id_MDF);
     PoEDTO fetchPoe(String id_POE);
     String fetchPartnerNo(String username) throws SQLException;
+    ArrayList<PartnerDTO> fetchCurrentsPartners();
     ArrayList<CampaignDTO> fetchPendingCampaigns() throws SQLException;
     ArrayList<CampaignDTO> fetchPendingCampaignsForPartner(String partner) throws SQLException;
     ArrayList<CampaignDTO> fetchPendingCampaigns(String partner) throws SQLException;

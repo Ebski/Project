@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.ControlDAO;
 import logic.Queries;
 import logic.UpdateCampaignStatus;
 
@@ -21,8 +22,7 @@ public class facturaUploadServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        Queries query = new Queries();
-        UpdateCampaignStatus update = new UpdateCampaignStatus();
+        ControlDAO query = new ControlDAO();
 
         String factura_ID = request.getParameter("id_factura");
 
@@ -31,13 +31,10 @@ public class facturaUploadServlet extends HttpServlet {
                 request.getParameter("dataFile"),
                 request.getParameter("additional_information")
         );
+        
+        query.addFacturaToDatabase(factura);
+        query.updateCampaignStatusAfterFacturaUpload(factura_ID);
 
-        try {
-            query.addFacturaToDatabase(factura);
-            update.updateCampaignStatusAfterFacturaUpload(factura_ID);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         RequestDispatcher disp = request.getRequestDispatcher("submittedEmployee.jsp");
         disp.forward(request, response);

@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.ControlDAO;
 import logic.UpdateCampaignStatus;
 import logic.DeclineDescriptionAdder;
 
@@ -28,19 +29,15 @@ public class mdfDeclinedServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-         UpdateCampaignStatus update = new UpdateCampaignStatus();
-         DeclineDescriptionAdder desc = new DeclineDescriptionAdder();
+        ControlDAO update = new ControlDAO();
+        DeclineDescriptionAdder desc = new DeclineDescriptionAdder();
         String mdf_ID = null;
         String description = null;
 
-        try {
-            mdf_ID = request.getParameter("mdf_ID");
-            description = request.getParameter("additional_information_on_decline");
-            update.updateCampaignStatusAfterMdfDecline(mdf_ID);
-            desc.addDeclineMDFDescription(mdf_ID, description);
-        } catch (SQLException ex) {
-            Logger.getLogger(mdfAcceptedServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        mdf_ID = request.getParameter("mdf_ID");
+        description = request.getParameter("additional_information_on_decline");
+        update.updateCampaignStatusAfterMdfDecline(mdf_ID);
+        update.addDeclineMDFDescription(mdf_ID, description);
 
         RequestDispatcher disp = request.getRequestDispatcher("loginServletEmployee");
         disp.forward(request, response);

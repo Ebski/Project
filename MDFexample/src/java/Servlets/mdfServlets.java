@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 import logic.FetchRequest;
 import logic.Queries;
 
@@ -30,7 +31,7 @@ import logic.Queries;
 @WebServlet(name = "mdfServlets", urlPatterns = {"/mdfServlets"})
 public class mdfServlets extends HttpServlet {
 
-    Queries query = new Queries();
+    ControlDAO query = new ControlDAO();
     FetchRequest FR = new FetchRequest();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -100,7 +101,7 @@ public class mdfServlets extends HttpServlet {
         ArrayList<CampaignDTO> result = null;
 
         try {
-            result = FR.fetchPendingCampaignsForPartner(FR.fetchPartnerNo(user));
+            result = query.fetchPendingCampaignsForPartner(FR.fetchPartnerNo(user));
         } catch (SQLException ex) {
             Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }

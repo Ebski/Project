@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author Ebbe
  */
-public class fetchPartners {
+public class FetchPartners {
 
     public ArrayList<PartnerDTO> fetchCurrentsPartners() throws SQLException {
         ArrayList<PartnerDTO> fcp = new ArrayList();

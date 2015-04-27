@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 import logic.FetchFacturaView;
 
 @WebServlet(name = "facturaDokumentationViewServlet", urlPatterns = {"/facturaDokumentationViewServlet"})
@@ -24,14 +25,11 @@ public class facturaDokumentationViewServlet extends HttpServlet {
 
         FacturaDTO factura = null;
         String id_factura = null;
-        FetchFacturaView view = new FetchFacturaView();
+        ControlDAO view = new ControlDAO();
 
-        try {
-            id_factura = request.getParameter("Approve_Factura");
-            factura = view.fetchFactura(id_factura);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeViewerServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        id_factura = request.getParameter("Approve_Factura");
+        factura = view.fetchFactura(id_factura);
+        
 
         HttpSession session = request.getSession();
 

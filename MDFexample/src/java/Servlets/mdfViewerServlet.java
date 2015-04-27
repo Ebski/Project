@@ -15,27 +15,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 
 @WebServlet(name = "mdfViewerServlet", urlPatterns = {"/mdfViewerServlet"})
 public class mdfViewerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            MdfDTO mdf = null;
-            String mdf_ID = null;
-            FetchMdfView view = new FetchMdfView();
-            
-        try {
-            mdf_ID = request.getParameter("Approve_Mdf");
-            mdf = view.fetchMdf(mdf_ID);
-        } catch (SQLException ex) {
-            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        MdfDTO mdf = null;
+        String mdf_ID = null;
+        ControlDAO view = new ControlDAO();
+
+        mdf_ID = request.getParameter("Approve_Mdf");
+        mdf = view.fetchMdf(mdf_ID);
 
         HttpSession session = request.getSession();
 
         session.setAttribute("mdfViewer", mdf);
-        
+
         RequestDispatcher disp = request.getRequestDispatcher("mdfViewer.jsp");
         disp.forward(request, response);
     }
