@@ -10,7 +10,7 @@ import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class fetchMdfView {
+public class FetchMdfView {
 
     public MdfDTO fetchMdf(String id_MDF) throws SQLException {
         MdfDTO mdf = null;

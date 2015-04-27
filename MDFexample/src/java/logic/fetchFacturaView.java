@@ -18,7 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Ebbe
  */
-public class fetchFacturaView {
+public class FetchFacturaView {
     
         public FacturaDTO fetchFactura(String id_factura) throws SQLException {
         FacturaDTO factura = null;
@@ -44,7 +44,7 @@ public class fetchFacturaView {
                 );
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();

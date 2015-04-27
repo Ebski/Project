@@ -14,12 +14,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 import logic.FetchRequest;
 
 @WebServlet(name = "loginServletPartner", urlPatterns = {"/loginServletPartner"})
 public class loginServletPartner extends HttpServlet {
 
-    FetchRequest FR = new FetchRequest();
+    ControlDAO FR = new ControlDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -28,11 +29,7 @@ public class loginServletPartner extends HttpServlet {
         String user = (String) session.getAttribute("user");
         ArrayList<CampaignDTO> result = null;
 
-        try {
-            result = FR.fetchPendingCampaignsForPartner(FR.fetchPartnerNo(user));
-        } catch (SQLException ex) {
-            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        result = FR.fetchPendingCampaignsForPartner(FR.fetchPartnerNo(user));
 
         session.setAttribute("Campaigns", result);
 

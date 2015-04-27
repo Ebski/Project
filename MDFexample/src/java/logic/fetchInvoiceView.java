@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author Ebbe
  */
-public class fetchInvoiceView {
+public class FetchInvoiceView {
 
     public InvoiceDTO fetchInvoice(String id_invoice) throws SQLException {
         InvoiceDTO invoice = null;
@@ -45,7 +45,7 @@ public class fetchInvoiceView {
                 );
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();

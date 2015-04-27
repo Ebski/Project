@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author Dennis
  */
-public class loginSystem {
+public class LoginSystem {
     
     public String login(String user, String pass) throws SQLException {
         Connection con = null;

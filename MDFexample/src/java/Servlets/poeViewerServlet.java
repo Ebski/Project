@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.fetchPoeView;
+import logic.FetchPoeView;
 
 
 @WebServlet(name = "poeViewerServlet", urlPatterns = {"/poeViewerServlet"})
@@ -23,7 +23,7 @@ public class poeViewerServlet extends HttpServlet {
             throws ServletException, IOException {
         PoEDTO poe = null;
         String id_poe = null;
-        fetchPoeView view = new fetchPoeView();
+        FetchPoeView view = new FetchPoeView();
         
         try {
             id_poe = request.getParameter("Approve_Poe");

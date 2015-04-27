@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author Ebbe
  */
-public class fetchPoeView {
+public class FetchPoeView {
 
     public PoEDTO fetchPoe(String id_POE) throws SQLException {
         PoEDTO poe = null;
@@ -51,7 +51,7 @@ public class fetchPoeView {
                 );
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();

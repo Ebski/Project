@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.fetchInvoiceView;
+import logic.FetchInvoiceView;
 
 @WebServlet(name = "invoiceViewerServlet", urlPatterns = {"/invoiceViewerServlet"})
 public class invoiceViewerServlet extends HttpServlet {
@@ -23,7 +23,7 @@ public class invoiceViewerServlet extends HttpServlet {
 
         InvoiceDTO invoice = null;
         String id_invoice = null;
-        fetchInvoiceView view = new fetchInvoiceView();
+        FetchInvoiceView view = new FetchInvoiceView();
 
         try {
             id_invoice = request.getParameter("Approve_Invoice");

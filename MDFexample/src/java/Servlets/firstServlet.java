@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.loginSystem;
+import logic.ControlDAO;
+import logic.LoginSystem;
 
 /**
  *
@@ -35,7 +36,7 @@ public class firstServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        loginSystem login = new loginSystem();
+        ControlDAO login = new ControlDAO();
         String user;
         String loginName;
 

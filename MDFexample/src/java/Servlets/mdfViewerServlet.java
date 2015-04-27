@@ -1,7 +1,7 @@
 package Servlets;
 
 import DTO.MdfDTO;
-import logic.fetchMdfView;
+import logic.FetchMdfView;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -23,7 +23,7 @@ public class mdfViewerServlet extends HttpServlet {
             throws ServletException, IOException {
             MdfDTO mdf = null;
             String mdf_ID = null;
-            fetchMdfView view = new fetchMdfView();
+            FetchMdfView view = new FetchMdfView();
             
         try {
             mdf_ID = request.getParameter("Approve_Mdf");
