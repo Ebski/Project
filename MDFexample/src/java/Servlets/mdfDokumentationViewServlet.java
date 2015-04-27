@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.fetchMdfView;
+import logic.FetchMdfView;
 
 @WebServlet(name = "mdfDokumentationViewServlet", urlPatterns = {"/mdfDokumentationViewServlet"})
 public class mdfDokumentationViewServlet extends HttpServlet {
@@ -22,7 +22,7 @@ public class mdfDokumentationViewServlet extends HttpServlet {
             throws ServletException, IOException {
             MdfDTO mdf = null;
             String mdf_ID = null;
-            fetchMdfView view = new fetchMdfView();
+            FetchMdfView view = new FetchMdfView();
             
         try {
             mdf_ID = request.getParameter("Approve_Mdf");

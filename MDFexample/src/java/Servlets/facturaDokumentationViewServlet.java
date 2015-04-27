@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.fetchFacturaView;
+import logic.FetchFacturaView;
 
 @WebServlet(name = "facturaDokumentationViewServlet", urlPatterns = {"/facturaDokumentationViewServlet"})
 public class facturaDokumentationViewServlet extends HttpServlet {
@@ -24,7 +24,7 @@ public class facturaDokumentationViewServlet extends HttpServlet {
 
         FacturaDTO factura = null;
         String id_factura = null;
-        fetchFacturaView view = new fetchFacturaView();
+        FetchFacturaView view = new FetchFacturaView();
 
         try {
             id_factura = request.getParameter("Approve_Factura");

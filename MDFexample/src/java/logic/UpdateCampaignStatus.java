@@ -36,7 +36,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -61,7 +61,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -86,7 +86,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -110,7 +110,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -136,7 +136,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -161,7 +161,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -186,7 +186,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
@@ -211,7 +211,7 @@ public class UpdateCampaignStatus {
 
             stmt.executeQuery();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchMdfView.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
