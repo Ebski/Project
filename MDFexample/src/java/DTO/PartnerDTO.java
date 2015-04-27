@@ -21,6 +21,13 @@ public class PartnerDTO {
         this.password = password;
     }
 
+    public PartnerDTO(String partner_name, String partner_mail, String partner_phone, String partner_address) {
+        this.partner_name = partner_name;
+        this.partner_mail = partner_mail;
+        this.partner_phone = partner_phone;
+        this.partner_address = partner_address;
+    }
+
     public PartnerDTO(String partner_No, String partner_name, String partner_mail, String partner_phone, String partner_address) {
         this.partner_No = partner_No;
         this.partner_name = partner_name;

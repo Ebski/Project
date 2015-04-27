@@ -26,7 +26,7 @@
                 <div class='menu-content'
                      <ul>
                         <li><a href="mdf.jsp">New campaign</a></li>
-                        <li><a href="updatePartner.jsp">Edit information</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/partnerInfoServlet">Edit information</a></li>
                         <li>Link</li>
                         <li>Link</li>
                     </ul>
@@ -38,13 +38,42 @@
             </div>
 
 
-            <!--TABLE DATA-->
+            <!--CURRENT PARTNER INFO-->
 
+            <header>
+                <h1>Current Information:</h1>
+            </header>
 
             <br>
             <br>
 
-            <!--PENDING CAMPAIGNS-->
+            <div class="row">
+                <div class="col-md-3">
+                    <br/>
+                    <p>Contact Name:</p>
+                    <p>${partnerInfo.partner_name}</p>
+                </div>
+                <div class="col-md-3">
+                    <br/>
+                    <p>Contact Mail:</p>
+                    <p>${partnerInfo.partner_mail}</p>
+                </div>
+                <div class="col-md-3">
+                    <br/>
+                    <p>Contact Phone:</p>
+                    <p>${partnerInfo.partner_phone}</p>
+                </div>
+                <div class="col-md-3">
+                    <br/>
+                    <p>Contact Address:</p>
+                    <p>${partnerInfo.partner_address}</p>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <!--UPDATE PARTNER-->
             <form action="updatePartnerServlet" method="GET">
                 <div class="row">
                     <div class="col-md-3">
