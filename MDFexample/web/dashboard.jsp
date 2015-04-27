@@ -26,6 +26,7 @@
                 <div class='menu-content'
                      <ul>
                         <li><a href="mdf.jsp">New campaign</a></li>
+                        <li><a href="updatePartner.jsp">Edit information</a></li>
                         <li>Link</li>
                         <li>Link</li>
                     </ul>
