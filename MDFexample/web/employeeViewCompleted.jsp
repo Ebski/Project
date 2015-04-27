@@ -25,7 +25,7 @@
             <div class='menu-left'>
                 <div class='menu-content'
                      <ul>
-                        <li><a href="newPartner.jsp">New Partner</a></li>
+                        <li><a href="http://localhost:8080/MDFexample/newPartnerServlet">New Partner</a></li>
                         <li><a href="employeeViewPending.jsp">Pending Campaigns</a></li>
                         <li><a href="employeeViewActive.jsp">Active Campaigns</a></li>
                         <li><a href="employeeViewCompleted.jsp">Completed Campaigns</a></li>

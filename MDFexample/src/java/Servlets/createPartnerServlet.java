@@ -1,15 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlets;
 
-import DTO.quarterDTO;
+import DTO.PartnerDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -18,35 +12,29 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import logic.Queries;
+import logic.addPartner;
 
-/**
- *
- * @author Asnorrason
- */
-@WebServlet(name = "quarterServlet", urlPatterns = {"/quarterServlet"})
-public class quarterServlet extends HttpServlet {
-
-    Queries query = new Queries();
+@WebServlet(name = "createPartnerServlet", urlPatterns = {"/createPartnerServlet"})
+public class createPartnerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ArrayList<quarterDTO> result = null;
-        
+        addPartner add = new addPartner();
+
+        PartnerDTO partner = new PartnerDTO(
+                request.getParameter("Name"),
+                request.getParameter("Username"),
+                request.getParameter("Password")
+        );
+
         try {
-            result = query.fetchQuarters();
+            add.addPartnerToDatabase(partner);
         } catch (SQLException ex) {
-            Logger.getLogger(quarterServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        HttpSession session = request.getSession();
-
-        session.setAttribute("Quarters", result);
-
-        RequestDispatcher disp = request.getRequestDispatcher("quarters.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("newPartnerServlet");
         disp.forward(request, response);
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
