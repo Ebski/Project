@@ -52,4 +52,34 @@ public class addPartner {
             stmt2.close();
         }
     }
+    
+    public void updatePartner(PartnerDTO partner) throws SQLException {
+        Connection con = null;
+        PreparedStatement stmt = null;
+
+        try {
+            Class.forName(DB.driver);
+            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
+
+            String sql = "UPDATE PARTNER "
+                    + "SET PARTNER_NAME = ?, PARTNER_MAIL = ?, PARTNER_PHONE = ?, PARTNER_ADDRESS = ?"
+                    + " WHERE PARTNER_NO = ?";
+            
+            stmt = con.prepareStatement(sql);
+
+            stmt.setString(1, partner.getPartner_name());
+            stmt.setString(2, partner.getPartner_mail());
+            stmt.setString(3, partner.getPartner_phone());
+            stmt.setString(4, partner.getPartner_address());
+            stmt.setString(5, partner.getPartner_No());
+
+            stmt.executeQuery();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            con.close();
+            stmt.close();
+        }
+    }
 }
