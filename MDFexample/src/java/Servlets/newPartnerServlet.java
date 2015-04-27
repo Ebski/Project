@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Servlets;
 
-import DTO.quarterDTO;
+import DTO.PartnerDTO;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -19,32 +13,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.Queries;
+import logic.fetchPartners;
 
-/**
- *
- * @author Asnorrason
- */
-@WebServlet(name = "quarterServlet", urlPatterns = {"/quarterServlet"})
-public class quarterServlet extends HttpServlet {
-
-    Queries query = new Queries();
+@WebServlet(name = "newPartnerServlet", urlPatterns = {"/newPartnerServlet"})
+public class newPartnerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ArrayList<quarterDTO> result = null;
-        
+
+        fetchPartners fetch = new fetchPartners();
+        ArrayList<PartnerDTO> result = null;
+
         try {
-            result = query.fetchQuarters();
+            result = fetch.fetchCurrentsPartners();
         } catch (SQLException ex) {
-            Logger.getLogger(quarterServlet.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         HttpSession session = request.getSession();
 
-        session.setAttribute("Quarters", result);
+        session.setAttribute("Users", result);
 
-        RequestDispatcher disp = request.getRequestDispatcher("quarters.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("newPartner.jsp");
         disp.forward(request, response);
 
     }
