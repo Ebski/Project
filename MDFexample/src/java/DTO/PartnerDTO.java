@@ -5,6 +5,7 @@ public class PartnerDTO {
     String partner_No;
     String username;
     String password;
+    String partner_name;
     String partner_mail;
     String partner_phone;
     String partner_address;
@@ -20,10 +21,26 @@ public class PartnerDTO {
         this.password = password;
     }
 
-    public PartnerDTO(String partner_No, String username, String password, String partner_mail, String partner_phone, String partner_address) {
+    public PartnerDTO(String partner_name, String partner_mail, String partner_phone, String partner_address) {
+        this.partner_name = partner_name;
+        this.partner_mail = partner_mail;
+        this.partner_phone = partner_phone;
+        this.partner_address = partner_address;
+    }
+
+    public PartnerDTO(String partner_No, String partner_name, String partner_mail, String partner_phone, String partner_address) {
+        this.partner_No = partner_No;
+        this.partner_name = partner_name;
+        this.partner_mail = partner_mail;
+        this.partner_phone = partner_phone;
+        this.partner_address = partner_address;
+    }
+
+    public PartnerDTO(String partner_No, String username, String password, String partner_name, String partner_mail, String partner_phone, String partner_address) {
         this.partner_No = partner_No;
         this.username = username;
         this.password = password;
+        this.partner_name = partner_name;
         this.partner_mail = partner_mail;
         this.partner_phone = partner_phone;
         this.partner_address = partner_address;
@@ -53,6 +70,14 @@ public class PartnerDTO {
         this.password = password;
     }
 
+    public String getPartner_name() {
+        return partner_name;
+    }
+
+    public void setPartner_name(String partner_name) {
+        this.partner_name = partner_name;
+    }
+
     public String getPartner_mail() {
         return partner_mail;
     }
@@ -79,8 +104,7 @@ public class PartnerDTO {
 
     @Override
     public String toString() {
-        return "PartnerDTO{" + "partner_No=" + partner_No + ", username=" + username + ", password=" + password + ", partner_mail=" + partner_mail + ", partner_phone=" + partner_phone + ", partner_address=" + partner_address + '}';
+        return "PartnerDTO{" + "partner_No=" + partner_No + ", username=" + username + ", password=" + password + ", partner_name=" + partner_name + ", partner_mail=" + partner_mail + ", partner_phone=" + partner_phone + ", partner_address=" + partner_address + '}';
     }
-
     
 }

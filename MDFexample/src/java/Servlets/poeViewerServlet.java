@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 import logic.FetchPoeView;
-
 
 @WebServlet(name = "poeViewerServlet", urlPatterns = {"/poeViewerServlet"})
 public class poeViewerServlet extends HttpServlet {
@@ -23,19 +23,15 @@ public class poeViewerServlet extends HttpServlet {
             throws ServletException, IOException {
         PoEDTO poe = null;
         String id_poe = null;
-        FetchPoeView view = new FetchPoeView();
-        
-        try {
-            id_poe = request.getParameter("Approve_Poe");
-            poe = view.fetchPoe(id_poe);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeViewerServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        ControlDAO view = new ControlDAO();
+
+        id_poe = request.getParameter("Approve_Poe");
+        poe = view.fetchPoe(id_poe);
 
         HttpSession session = request.getSession();
-        
+
         session.setAttribute("poeViewer", poe);
-        
+
         RequestDispatcher disp = request.getRequestDispatcher("poeViewer.jsp");
         disp.forward(request, response);
     }

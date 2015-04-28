@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import logic.ControlDAO;
 import logic.FetchRequest;
 
 /**
@@ -28,18 +29,14 @@ import logic.FetchRequest;
 @WebServlet(name = "employeePendingServlet", urlPatterns = {"/employeePendingServlet"})
 public class employeePendingServlet extends HttpServlet {
 
-    FetchRequest FR = new FetchRequest();
+    ControlDAO FR = new ControlDAO();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         ArrayList<CampaignDTO> result = null;
+        result = FR.fetchPendingCampaigns();
 
-        try {
-            result = FR.fetchPendingCampaigns();
-        } catch (SQLException ex) {
-            Logger.getLogger(mdfServlets.class.getName()).log(Level.SEVERE, null, ex);
-        }
 
         HttpSession session = request.getSession();
 

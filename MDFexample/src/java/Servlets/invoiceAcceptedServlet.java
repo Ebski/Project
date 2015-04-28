@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.ControlDAO;
 import logic.UpdateCampaignStatus;
 
 @WebServlet(name = "invoiceAcceptedServlet", urlPatterns = {"/invoiceAcceptedServlet"})
@@ -19,15 +20,12 @@ public class invoiceAcceptedServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        UpdateCampaignStatus update = new UpdateCampaignStatus();
+        ControlDAO update = new ControlDAO();
         String id_invoice = null;
+        
+        id_invoice = request.getParameter("id_invoice");
+        update.updateCampaignStatusAfterInvoice(id_invoice);
 
-        try {
-            id_invoice = request.getParameter("id_invoice");
-            update.updateCampaignStatusAfterInvoice(id_invoice);
-        } catch (SQLException ex) {
-            Logger.getLogger(poeAcceptedServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
         RequestDispatcher disp = request.getRequestDispatcher("loginServletEmployee");
         disp.forward(request, response);
     }

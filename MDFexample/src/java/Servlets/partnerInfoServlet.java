@@ -1,6 +1,6 @@
 package Servlets;
 
-import DTO.InvoiceDTO;
+import DTO.PartnerDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -13,27 +13,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.ControlDAO;
-import logic.FetchInvoiceView;
+import logic.FetchRequest;
+import logic.addPartner;
 
-@WebServlet(name = "invoiceDokumentationViewServlet", urlPatterns = {"/invoiceDokumentationViewServlet"})
-public class invoiceDokumentationViewServlet extends HttpServlet {
+@WebServlet(name = "partnerInfoServlet", urlPatterns = {"/partnerInfoServlet"})
+public class partnerInfoServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        InvoiceDTO invoice = null;
-        String id_invoice = null;
-        ControlDAO view = new ControlDAO();
-
-        id_invoice = request.getParameter("Approve_Invoice");
-        invoice = view.fetchInvoice(id_invoice);
-
+        PartnerDTO partner = null;
+        FetchRequest FR = new FetchRequest();
+        addPartner view = new addPartner();
         HttpSession session = request.getSession();
+        String user = null;
 
-        session.setAttribute("invoiceViewer", invoice);
+        try {
+            user = FR.fetchPartnerNo((String) session.getAttribute("user"));
+            partner = view.fetchPartnerInfo(user);
+        } catch (SQLException ex) {
+            Logger.getLogger(updatePartnerServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        RequestDispatcher disp = request.getRequestDispatcher("invoiceDokumentationView.jsp");
+        session.setAttribute("partnerInfo", partner);
+
+        RequestDispatcher disp = request.getRequestDispatcher("updatePartner.jsp");
         disp.forward(request, response);
     }
 

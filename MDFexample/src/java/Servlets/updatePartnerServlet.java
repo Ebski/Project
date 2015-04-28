@@ -1,6 +1,6 @@
 package Servlets;
 
-import DTO.InvoiceDTO;
+import DTO.PartnerDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -13,27 +13,40 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logic.ControlDAO;
-import logic.FetchInvoiceView;
+import logic.FetchRequest;
+import logic.addPartner;
 
-@WebServlet(name = "invoiceDokumentationViewServlet", urlPatterns = {"/invoiceDokumentationViewServlet"})
-public class invoiceDokumentationViewServlet extends HttpServlet {
+@WebServlet(name = "updatePartnerServlet", urlPatterns = {"/updatePartnerServlet"})
+public class updatePartnerServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        InvoiceDTO invoice = null;
-        String id_invoice = null;
-        ControlDAO view = new ControlDAO();
-
-        id_invoice = request.getParameter("Approve_Invoice");
-        invoice = view.fetchInvoice(id_invoice);
-
+        addPartner update = new addPartner();
+        FetchRequest FR = new FetchRequest();
         HttpSession session = request.getSession();
+        String user = null;
 
-        session.setAttribute("invoiceViewer", invoice);
+        try {
+            user = FR.fetchPartnerNo((String) session.getAttribute("user"));
+        } catch (SQLException ex) {
+            Logger.getLogger(updatePartnerServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
 
-        RequestDispatcher disp = request.getRequestDispatcher("invoiceDokumentationView.jsp");
+        PartnerDTO partner = new PartnerDTO(
+                user,
+                request.getParameter("Contact_Name"),
+                request.getParameter("Partner_Phone"),
+                request.getParameter("Partner_Mail"),
+                request.getParameter("Partner_Address")
+        );
+
+        try {
+            update.updatePartner(partner);
+        } catch (SQLException ex) {
+            Logger.getLogger(updatePartnerServlet.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        RequestDispatcher disp = request.getRequestDispatcher("updatePartner.jsp");
         disp.forward(request, response);
     }
 

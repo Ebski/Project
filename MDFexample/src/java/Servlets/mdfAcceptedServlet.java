@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import logic.ControlDAO;
 import logic.UpdateCampaignStatus;
 
 @WebServlet(name = "mdfAcceptedServlet", urlPatterns = {"/mdfAcceptedServlet"})
@@ -18,15 +19,11 @@ public class mdfAcceptedServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        UpdateCampaignStatus update = new UpdateCampaignStatus();
+        ControlDAO update = new ControlDAO();
         String mdf_ID = null;
 
-        try {
-            mdf_ID = request.getParameter("mdf_ID");
-            update.updateCampaignStatusAfterMdf(mdf_ID);
-        } catch (SQLException ex) {
-            Logger.getLogger(mdfAcceptedServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        mdf_ID = request.getParameter("mdf_ID");
+        update.updateCampaignStatusAfterMdf(mdf_ID);
 
         RequestDispatcher disp = request.getRequestDispatcher("loginServletEmployee");
         disp.forward(request, response);
