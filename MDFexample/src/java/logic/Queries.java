@@ -23,6 +23,8 @@ import java.util.logging.Logger;
  */
 public class Queries {
 
+    DBDAO connect = new DBDAO();
+
     private ArrayList<String> mdfArrayList() {
         ArrayList al = new ArrayList();
         al.add("ID_MDF");
@@ -187,7 +189,7 @@ public class Queries {
             stmt.setString(1, id_poe.toString());
 
             stmt2.setString(1, id_invoice.toString());
-            
+
             stmt3.setString(1, id_factura.toString());
 
             stmt4.setString(1, camp.getCampaign_No());
@@ -307,66 +309,32 @@ public class Queries {
     public ArrayList<CampaignDTO> fetchPendingCampaigns(String partner) throws SQLException {
         ArrayList<CampaignDTO> fpc = new ArrayList();
 
-        Connection con = null;
-        Statement stmt = null;
+        String variable = "*";
+        String table = "CAMPAIGN";
         ResultSet rs = null;
+        rs = connect.SelectFromDB(variable, table);
 
-        try {
-            Class.forName(DB.driver);
-            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
-
-            String sql = "SELECT * FROM CAMPAIGN";
-
-            stmt = con.createStatement();
-
-            rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
-            }
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            con.close();
-            stmt.close();
-            rs.close();
+        while (rs.next()) {
+            fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
         }
 
         return fpc;
     }
-    
-    public ArrayList<quarterDTO> fetchQuarters() throws SQLException{
-    
+
+    public ArrayList<quarterDTO> fetchQuarters() throws SQLException {
+
         ArrayList<quarterDTO> fpq = new ArrayList<>();
-        
-        Connection con = null;
-        Statement stmt = null;
-        ResultSet rs = null;  
-        
-        try {
-            Class.forName(DB.driver);
-            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "SELECT * FROM QUARTERS";
+        String variable = "*";
+        String table = "QUARTERS";
+        ResultSet rs = null;
+        rs = connect.SelectFromDB(variable, table);
 
-            stmt = con.createStatement();
-
-            rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                fpq.add(new quarterDTO(
-                        rs.getString("quarter_Name"),
-                        rs.getString("quarter_Startdate"),
-                        rs.getString("quarters_Enddate")));
-            }
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            con.close();
-            stmt.close();
-            rs.close();
+        while (rs.next()) {
+            fpq.add(new quarterDTO(
+                    rs.getString("quarter_Name"),
+                    rs.getString("quarter_Startdate"),
+                    rs.getString("quarters_Enddate")));
         }
 
         return fpq;

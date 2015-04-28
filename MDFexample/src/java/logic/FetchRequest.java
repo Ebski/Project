@@ -6,6 +6,7 @@
 package logic;
 
 import DTO.CampaignDTO;
+import logic.DBDAO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -21,33 +22,19 @@ import java.util.logging.Logger;
  */
 public class FetchRequest {
 
+    DBDAO connect = new DBDAO();
+
     public ArrayList<CampaignDTO> fetchPendingCampaigns() throws SQLException {
         ArrayList<CampaignDTO> fpc = new ArrayList();
 
-        Connection con = null;
-        Statement stmt = null;
+        // 
+        String variable = "*";
+        String table = "CAMPAIGN";
         ResultSet rs = null;
+        rs = connect.SelectFromDB(variable, table);
 
-        try {
-            Class.forName(DB.driver);
-            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
-
-            String sql = "SELECT * FROM CAMPAIGN";
-
-            stmt = con.createStatement();
-
-            rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
-            }
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            con.close();
-            stmt.close();
-            rs.close();
+        while (rs.next()) {
+            fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
         }
 
         return fpc;
@@ -56,68 +43,35 @@ public class FetchRequest {
     public ArrayList<CampaignDTO> fetchPendingCampaignsForPartner(String partner) throws SQLException {
         ArrayList<CampaignDTO> fpc = new ArrayList();
 
-        Connection con = null;
-        Statement stmt = null;
+        String variable = "*";
+        String table = "CAMPAIGN WHERE PARTNER_NO = '" + partner + "'";
         ResultSet rs = null;
+        rs = connect.SelectFromDB(variable, table);
 
-        try {
-            Class.forName(DB.driver);
-            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
-
-            String sql = "SELECT * FROM CAMPAIGN WHERE PARTNER_NO = '" + partner + "'";
-
-            stmt = con.createStatement();
-
-            rs = stmt.executeQuery(sql);
-
-            while (rs.next()) {
-                fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
-            }
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            con.close();
-            stmt.close();
-            rs.close();
+        while (rs.next()) {
+            fpc.add(new CampaignDTO(rs.getString("campaign_No"), rs.getString("campaign_Name"), rs.getString("partner_No"), rs.getString("id_MDF"), rs.getString("id_POE"), rs.getString("id_invoice"), rs.getString("id_factura"), rs.getString("c_Status")));
         }
 
         return fpc;
     }
 
     public String fetchPartnerNo(String username) throws SQLException {
-        Connection con = null;
-        Statement stmt = null;
-        String out = null;
+        String variable = "partner_no";
+        String table = "partner where username = '" + username + "'";
         ResultSet rs = null;
+        rs = connect.SelectFromDB(variable, table);
+        String out = "";
 
-        try {
-            Class.forName(DB.driver);
-            con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
-
-            String sql = "Select partner_no from partner where username = '" + username + "'";
-
-            stmt = con.createStatement();
-
-            rs = stmt.executeQuery(sql);
-
-            StringBuilder builder = new StringBuilder();
-            int columnCount = rs.getMetaData().getColumnCount();
-            while (rs.next()) {
-                for (int i = 0; i < columnCount; i++) {
-                    builder.append(rs.getString(i + 1));
-                }
+        StringBuilder builder = new StringBuilder();
+        int columnCount = rs.getMetaData().getColumnCount();
+        while (rs.next()) {
+            for (int i = 0; i < columnCount; i++) {
+                builder.append(rs.getString(i + 1));
             }
-            
-            out = builder.toString();
-
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FetchRequest.class.getName()).log(Level.SEVERE, null, ex);
-        } finally {
-            con.close();
-            stmt.close();
-            rs.close();
         }
+
+        out = builder.toString();
+
         return out;
     }
 }
