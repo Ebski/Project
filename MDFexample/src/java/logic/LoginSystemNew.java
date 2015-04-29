@@ -5,10 +5,8 @@
  */
 package logic;
 
-import DTO.PoEDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -19,8 +17,7 @@ import java.util.logging.Logger;
  *
  * @author Dennis
  */
-public class LoginSystem {
-    
+public class LoginSystemNew {
     public String login(String user, String pass) throws SQLException {
         Connection con = null;
         Statement stmt = null;

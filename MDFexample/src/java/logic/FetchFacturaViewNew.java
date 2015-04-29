@@ -16,11 +16,10 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author Ebbe
+ * @author Dennis
  */
-public class FetchFacturaView {
-    
-        public FacturaDTO fetchFactura(String id_factura) throws SQLException {
+public class FetchFacturaViewNew {
+   public FacturaDTO fetchFactura(String id_factura) throws SQLException {
         FacturaDTO factura = null;
         Connection con = null;
         Statement stmt = null;
@@ -44,12 +43,12 @@ public class FetchFacturaView {
                 );
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchPoeViewNew.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
             rs.close();
         }
         return factura;
-    }
+    } 
 }

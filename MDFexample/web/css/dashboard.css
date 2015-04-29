@@ -5,7 +5,7 @@ body {
 }
 
 .menu-left {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
@@ -16,13 +16,31 @@ body {
 }
 
 .menu-content {
-    margin-top: 200px;
-    margin-left: 15px;
+    text-align: center;
+    margin-left: -70px;
+    margin-top: 50px;
 }
 
-.menu-content ul li {
-    list-style-type: none;
+.menu-content .glyphicon {
+    font-size: 100px;
 }
+
+.menu-content>ul>li {
+    list-style: none;
+}
+
+.menu-content>ul>li>a {
+    color: #cccccc;
+    -webkit-transition: .2s all ease;
+    -moz-transition: .2s all ease;
+    -o-transition: .2s all ease;
+    transition: .2s all ease;
+}
+
+.menu-content>ul>li>a:hover {
+    color: #ff6666;
+}
+
 
 .menu-content a{
     text-decoration: none;
@@ -42,8 +60,42 @@ body {
 }
 
 
+
 /*CSS FOR THE TABLE VIEW*/
 
+.container {
+    margin-left: 230px;
+}
+
+.upload-btn {
+    background: none;
+    border: none;
+    -webkit-transition: .2s all ease;
+    -moz-transition: .2s all ease;
+    -o-transition: .2s all ease;
+    transition: .2s all ease;
+}
+
+.upload-btn:hover {
+    color: #428bca;
+}
+
+.view-btn {
+    background: none;
+    border: none;
+    -webkit-transition: .2s all ease;
+    -moz-transition: .2s all ease;
+    -o-transition: .2s all ease;
+    transition: .2s all ease;
+}
+
+.view-btn:hover {
+    color: #428bca;
+}
+
+.old-table .cell{
+    text-align: left;
+}
 
 .pending-table {
     margin-top: 90px;

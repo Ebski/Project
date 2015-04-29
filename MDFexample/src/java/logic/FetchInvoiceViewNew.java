@@ -5,51 +5,50 @@
  */
 package logic;
 
-import DTO.PartnerDTO;
+import DTO.InvoiceDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author Ebbe
+ * @author Dennis
  */
-public class FetchPartners {
-
-    public ArrayList<PartnerDTO> fetchCurrentsPartners() throws SQLException {
-        ArrayList<PartnerDTO> fcp = new ArrayList();
-
+public class FetchInvoiceViewNew {
+    public InvoiceDTO fetchInvoice(String id_invoice) throws SQLException {
+        InvoiceDTO invoice = null;
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
 
-        try {
+          try {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "SELECT PARTNER_NO, USERNAME FROM PARTNER";
+            String sql = "Select * from INVOICE where ID_INVOICE =" + id_invoice;
 
             stmt = con.createStatement();
 
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                fcp.add(new PartnerDTO(rs.getString("partner_no"), rs.getString("username")));
+                invoice = new InvoiceDTO(
+                        rs.getString("id_invoice"),
+                        rs.getString("filepath"),
+                        rs.getString("additional_information")
+                );
             }
-
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FetchPoeViewNew.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
             rs.close();
         }
-
-        return fcp;
+        return invoice;
     }
 }

@@ -23,18 +23,18 @@ import java.util.logging.Logger;
  */
 public class ControlDAO implements ControlDAOInterface {
 
-    private final LoginSystem loginSystem = new LoginSystem();
+    private final LoginSystemNew loginSystem = new LoginSystemNew();
 
-    private final FetchFacturaView fetchFacturaView = new FetchFacturaView();
-    private final FetchInvoiceView fetchInvoiceView = new FetchInvoiceView();
-    private final FetchMdfView fetchMdfView = new FetchMdfView();
-    private final FetchPoeView fetchPoeView = new FetchPoeView();
+    private final FetchFacturaViewNew fetchFacturaView = new FetchFacturaViewNew();
+    private final FetchInvoiceViewNew fetchInvoiceView = new FetchInvoiceViewNew();
+    private final FetchMdfViewNew fetchMdfView = new FetchMdfViewNew();
+    private final FetchPoeViewNew fetchPoeView = new FetchPoeViewNew();
     private final FetchRequest fetchRequest = new FetchRequest();
-    private final FetchPartners fetchPartners = new FetchPartners();
+    private final NewFetchPartners fetchPartners = new NewFetchPartners();
     private final Queries queries = new Queries();
 
     private final UpdateCampaignStatus updateCampaignStatus = new UpdateCampaignStatus();
-    private final DeclineDescriptionAdder declineDescriptionAdder = new DeclineDescriptionAdder();
+    private final DeclineDescriptionAdderNew declineDescriptionAdder = new DeclineDescriptionAdderNew();
 
     @Override
     public String login(String user, String pass) {

@@ -5,24 +5,24 @@
  */
 package logic;
 
-import DTO.PoEDTO;
+import DTO.PartnerDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  *
- * @author Ebbe
+ * @author Dennis
  */
-public class FetchPoeView {
+public class NewFetchPartners {
+    public ArrayList<PartnerDTO> fetchCurrentsPartners() throws SQLException {
+        ArrayList<PartnerDTO> fcp = new ArrayList();
 
-    public PoEDTO fetchPoe(String id_POE) throws SQLException {
-        PoEDTO poe = null;
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -31,32 +31,24 @@ public class FetchPoeView {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "Select * from poe where ID_POE =" + id_POE;
+            String sql = "SELECT PARTNER_NO, USERNAME FROM PARTNER";
 
             stmt = con.createStatement();
 
             rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                poe = new PoEDTO(
-                        rs.getString("ID_POE"),
-                        rs.getString("campaign_type"),
-                        rs.getString("activity"),
-                        rs.getString("poe_date"),
-                        rs.getString("recipients"),
-                        rs.getString("unique_opens_hits"),
-                        rs.getString("unique_clicks"),
-                        rs.getString("additional_information"),
-                        rs.getString("filepath")
-                );
+                fcp.add(new PartnerDTO(rs.getString("partner_no"), rs.getString("username")));
             }
+
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(FetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Queries.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             con.close();
             stmt.close();
             rs.close();
         }
-        return poe;
+
+        return fcp;
     }
 }

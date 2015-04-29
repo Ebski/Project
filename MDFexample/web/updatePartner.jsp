@@ -23,12 +23,9 @@
     <body>
         <div class='container'>
             <div class='menu-left'>
-                <div class='menu-content'
+                <div class='menu-content'>
                      <ul>
-                        <li><a href="mdf.jsp">New campaign</a></li>
-                        <li><a href="http://localhost:8080/MDFexample/partnerInfoServlet">Edit information</a></li>
-                        <li>Link</li>
-                        <li>Link</li>
+                        <li><a href="dashboard.jsp"><span class="glyphicon glyphicon-level-up"></span><p>Back</p></a></li>
                     </ul>
                 </div>
             </div>

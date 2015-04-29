@@ -46,7 +46,7 @@ public class updatePartnerServlet extends HttpServlet {
             Logger.getLogger(updatePartnerServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        RequestDispatcher disp = request.getRequestDispatcher("updatePartner.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("partnerInfoServlet");
         disp.forward(request, response);
     }
 

@@ -23,12 +23,11 @@
     <body>
         <div class='container'>
             <div class='menu-left'>
-                <div class='menu-content'
+                <div class='menu-content'>
                      <ul>
-                        <li><a href="mdf.jsp">New campaign</a></li>
-                        <li><a href="http://localhost:8080/MDFexample/partnerInfoServlet">Edit information</a></li>
-                        <li>Link</li>
-                        <li>Link</li>
+                         <li><a href="mdf.jsp"><span class="glyphicon glyphicon-folder-open"></span><p>New campaign</p></a></li>
+                         <br>
+                         <li><a href="http://localhost:8080/MDFexample/partnerInfoServlet"><span class="glyphicon glyphicon-cog"></span><p>Edit information</p></a></li>
                     </ul>
                 </div>
             </div>
@@ -111,7 +110,7 @@
                                             <form action="poe.jsp" type="post">
                                                 <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
                                                 <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
-                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="upload_poe" value="${camp.id_POE}"><p>Upload POE</p></button></div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="upload-btn" name="upload_poe" value="${camp.id_POE}"><p><i class="glyphicon glyphicon-open"></i> Upload POE</p></button></div></div>
                                             </form>
                                         </div>
                                     </c:if>
@@ -136,7 +135,7 @@
                                             <form action="invoice.jsp" type="post">
                                                 <div class="col-md-5"><div class="cell">${camp.campaign_Name}</div></div>
                                                 <div class="col-md-5"><div class="cell">${camp.c_Status}</div></div>
-                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="id_invoice" value="${camp.id_invoice}"><p>Upload Invoice</p></button></div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="upload-btn" name="id_invoice" value="${camp.id_invoice}"><p><i class="glyphicon glyphicon-open"></i> Upload Invoice</p></button></div></div>
                                             </form>
                                         </div>
                                     </c:if>
@@ -164,16 +163,16 @@
                                         <div class="row margin-0">
                                             <div class="col-md-2"><div class="cell">${camp.campaign_Name}</div></div>
                                             <form name="activeMdfForm" action="mdfDokumentationViewServlet" type="post">
-                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p>MDF</p></button></div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="view-btn" name="Approve_Mdf" value="${camp.id_MDF}" type="submit"><p><i class="glyphicon glyphicon-eye-open"></i> View MDF</p></button></div></div>
                                             </form>
                                             <form name="activePoeForm" action="poeDokumentationViewServlet" type="post">
-                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p>POE </p></button></div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="view-btn" name="Approve_Poe" value="${camp.id_POE}" type="submit"><p><i class="glyphicon glyphicon-eye-open"></i> View POE</p></p></button></div></div>
                                             </form>
                                             <form name="activeInvoiceForm" action="invoiceDokumentationViewServlet" type="post">
-                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Invoice" value="${camp.id_invoice}" type="submit"><p>Invoice </p></button></div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="view-btn" name="Approve_Invoice" value="${camp.id_invoice}" type="submit"><p><i class="glyphicon glyphicon-eye-open"></i> View Invoice</p></p></button></div></div>
                                             </form>
                                             <form name="activeFacturaForm" action="facturaDokumentationViewServlet" type="post">
-                                                <div class="col-md-2"><div class="cell"><button class="btn btn-primary" name="Approve_Factura" value="${camp.id_factura}" type="submit"><p>Receipt</p></button></div></div>
+                                                <div class="col-md-2"><div class="cell"><button class="view-btn" name="Approve_Factura" value="${camp.id_factura}" type="submit"><p><i class="glyphicon glyphicon-eye-open"></i> View Reciept</p></p></button></div></div>
                                             </form>
                                             <div class="col-md-1"><div class="cell">${camp.c_Status}</div></div>
                                             <div class="col-md-1"><div class="cell"><p style="color: black">Completed</p></div></div>

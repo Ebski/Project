@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logic.ControlDAO;
-import logic.FetchPartners;
 
 @WebServlet(name = "newPartnerServlet", urlPatterns = {"/newPartnerServlet"})
 public class newPartnerServlet extends HttpServlet {

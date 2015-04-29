@@ -18,8 +18,7 @@ import java.util.logging.Logger;
  *
  * @author Dennis
  */
-public class DeclineDescriptionAdder {
-    
+public class DeclineDescriptionAdderNew {
     public void addDeclineMDFDescription(String mdf, String desc) throws SQLException {
         Connection con = null;
         Statement stmt = null;
@@ -58,5 +57,4 @@ public class DeclineDescriptionAdder {
             rs.close();
         }
     }
-    
 }

@@ -15,7 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import logic.ControlDAO;
-import logic.FetchFacturaView;
 
 @WebServlet(name = "facturaDokumentationViewServlet", urlPatterns = {"/facturaDokumentationViewServlet"})
 public class facturaDokumentationViewServlet extends HttpServlet {

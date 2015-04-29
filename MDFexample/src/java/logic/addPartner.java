@@ -96,7 +96,7 @@ public class addPartner {
             Class.forName(DB.driver);
             con = DriverManager.getConnection(DB.URL, DB.user, DB.password);
 
-            String sql = "Select PARTNER_NAME, PARTNER_MAIL, PARTNER_PHONE, pARTNER_ADDRESS from PARTNER where PARTNER_NO =" + user;
+            String sql = "Select * from PARTNER where PARTNER_NO = '" + user + "'";
 
             stmt = con.createStatement();
 
@@ -111,7 +111,7 @@ public class addPartner {
                 );
             }
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(fetchPoeView.class.getName()).log(Level.SEVERE, null, ex);
+            
         } finally {
             con.close();
             stmt.close();

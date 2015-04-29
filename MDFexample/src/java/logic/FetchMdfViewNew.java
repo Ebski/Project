@@ -1,17 +1,24 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package logic;
 
 import DTO.MdfDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FetchMdfView {
-
+/**
+ *
+ * @author Dennis
+ */
+public class FetchMdfViewNew {
     public MdfDTO fetchMdf(String id_MDF) throws SQLException {
         MdfDTO mdf = null;
         Connection con = null;
